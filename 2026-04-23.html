@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 主编日报 · 2026-04-23</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..900,0..100&family=Noto+Serif+SC:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f4ede0;
+    --bg-deep: #ebe2d0;
+    --ink: #1c1814;
+    --ink-soft: #3a342c;
+    --gray: #756a5c;
+    --gray-light: #a59b8c;
+    --line: #c9bfac;
+    --line-soft: #ddd2bd;
+    --accent: #9a2828;
+    --accent-deep: #6e1d1d;
+    --gold: #8b6914;
+    --green: #3d5a3a;
+    --font-display: 'Fraunces', 'Noto Serif SC', serif;
+    --font-serif: 'Noto Serif SC', 'Fraunces', serif;
+    --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    background: var(--bg); color: var(--ink);
+    font-family: var(--font-serif); font-weight: 400;
+    line-height: 1.7; -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  .page { max-width: 880px; margin: 0 auto; padding: 56px 48px 96px; position: relative; }
+
+  /* 刊头 */
+  .masthead { border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 8px; }
+  .masthead-top {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--gray); margin-bottom: 14px;
+  }
+  .masthead-top .left { display: flex; gap: 18px; flex-wrap: wrap; }
+  .masthead-top .left span { display: flex; align-items: center; gap: 6px; }
+  .masthead-top .dot { display: inline-block; width: 5px; height: 5px; background: var(--accent); border-radius: 50%; }
+  .masthead h1 {
+    font-family: var(--font-display); font-weight: 600;
+    font-size: 76px; line-height: 0.95; letter-spacing: -0.025em;
+    font-variation-settings: "opsz" 144, "SOFT" 30; color: var(--ink);
+  }
+  .masthead h1 .en {
+    font-style: italic; font-weight: 400; font-size: 0.42em;
+    color: var(--gray); margin-left: 14px; letter-spacing: 0.01em;
+    vertical-align: middle; font-variation-settings: "opsz" 14, "SOFT" 100;
+  }
+  .masthead .tagline { font-size: 13px; color: var(--gray); margin-top: 12px; letter-spacing: 0.04em; }
+  .masthead-meta {
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    margin-top: 4px; font-family: var(--font-mono); font-size: 10.5px;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray);
+    padding-top: 10px; border-top: 1px solid var(--line);
+  }
+  .masthead-meta .stats { display: flex; gap: 24px; flex-wrap: wrap; }
+  .masthead-meta .stats b { color: var(--ink); font-weight: 500; margin-left: 4px; }
+
+  /* 通用 section */
+  section { margin-top: 56px; }
+  .section-label {
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--line); }
+  .section-title {
+    font-family: var(--font-display); font-weight: 500; font-size: 32px;
+    line-height: 1.15; letter-spacing: -0.015em; color: var(--ink);
+    margin-bottom: 24px; font-variation-settings: "opsz" 60;
+  }
+
+  /* 主编叙事 */
+  .editorial {
+    margin-top: 32px; padding: 32px 0;
+    border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  }
+  .editorial-eyebrow {
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 16px;
+  }
+  .editorial-body { font-size: 17px; line-height: 1.85; color: var(--ink-soft); }
+  .editorial-body p { margin-bottom: 18px; }
+  .editorial-body p:last-child { margin-bottom: 0; }
+  .editorial-body p:first-child::first-letter {
+    font-family: var(--font-display); font-weight: 600; font-size: 64px;
+    float: left; line-height: 0.85; margin: 8px 10px 0 0;
+    color: var(--accent); font-variation-settings: "opsz" 144;
+  }
+  .editorial-body strong {
+    font-weight: 600; color: var(--ink);
+    background: linear-gradient(to top, rgba(154,40,40,0.12) 0%, rgba(154,40,40,0.12) 30%, transparent 30%);
+    padding: 0 2px;
+  }
+  .editorial-sign {
+    margin-top: 24px; font-family: var(--font-mono); font-size: 11px;
+    letter-spacing: 0.12em; color: var(--gray); text-transform: uppercase;
+  }
+
+  /* Top Events */
+  .event {
+    padding: 36px 0; border-bottom: 1px solid var(--line-soft);
+    display: grid; grid-template-columns: 64px 1fr; gap: 32px;
+  }
+  .event:last-child { border-bottom: none; }
+  .event-num {
+    font-family: var(--font-display); font-weight: 300; font-size: 56px;
+    line-height: 1; color: var(--accent);
+    font-variation-settings: "opsz" 144; letter-spacing: -0.04em;
+  }
+  .event-num .slash { color: var(--gray-light); font-size: 0.5em; margin: 0 2px; }
+  .event-num .total { color: var(--gray-light); font-size: 0.5em; }
+  .event-body { min-width: 0; }
+  .event-headline {
+    font-family: var(--font-display); font-weight: 500; font-size: 26px;
+    line-height: 1.25; letter-spacing: -0.01em; color: var(--ink);
+    margin-bottom: 10px; font-variation-settings: "opsz" 48;
+  }
+  .event-meta {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 10px;
+    margin-bottom: 18px; font-family: var(--font-mono); font-size: 10.5px;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray);
+  }
+  .grade {
+    display: inline-flex; align-items: center; gap: 5px;
+    padding: 3px 8px 2px; font-family: var(--font-mono); font-size: 10px;
+    font-weight: 500; letter-spacing: 0.15em; border: 1px solid;
+    text-transform: uppercase;
+  }
+  .grade.s { color: var(--accent); border-color: var(--accent); background: rgba(154,40,40,0.06); }
+  .grade.a { color: var(--gold); border-color: var(--gold); background: rgba(139,105,20,0.06); }
+  .grade.b { color: var(--green); border-color: var(--green); background: rgba(61,90,58,0.06); }
+  .grade.c { color: var(--gray); border-color: var(--gray-light); }
+  .meta-sep { width: 3px; height: 3px; background: var(--gray-light); border-radius: 50%; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 24px; }
+  .tag {
+    font-size: 12px; color: var(--ink-soft); padding: 2px 10px;
+    background: var(--bg-deep); border: 1px solid var(--line-soft);
+    border-radius: 2px; letter-spacing: 0.02em;
+  }
+  .tag.tech { color: var(--accent-deep); border-color: rgba(154,40,40,0.25); background: rgba(154,40,40,0.05); }
+
+  /* 四段式深读 */
+  .deep-row {
+    display: grid; grid-template-columns: 100px 1fr; gap: 24px;
+    padding: 14px 0; border-top: 1px dotted var(--line);
+  }
+  .deep-row:first-child { border-top: none; padding-top: 4px; }
+  .deep-label {
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--accent); padding-top: 4px; font-weight: 500;
+  }
+  .deep-content { font-size: 15px; line-height: 1.75; color: var(--ink-soft); }
+  .deep-content p { margin-bottom: 8px; }
+  .deep-content p:last-child { margin-bottom: 0; }
+  .deep-content strong { color: var(--ink); font-weight: 600; }
+
+  /* 多来源观点 */
+  .source-views { display: grid; gap: 12px; }
+  .source-view {
+    display: grid; grid-template-columns: 110px 1fr; gap: 16px;
+    padding: 4px 0; align-items: baseline;
+  }
+  .source-name {
+    font-family: var(--font-display); font-weight: 500; font-style: italic;
+    font-size: 13px; color: var(--ink); text-align: right;
+    border-right: 2px solid var(--line); padding-right: 14px; line-height: 1.4;
+    font-variation-settings: "opsz" 14;
+  }
+  .source-name .stype {
+    display: block; font-style: normal; font-family: var(--font-mono);
+    font-size: 9px; color: var(--gray-light); letter-spacing: 0.12em;
+    text-transform: uppercase; margin-top: 2px; font-weight: 400;
+  }
+  .source-text { font-size: 14px; color: var(--ink-soft); line-height: 1.6; }
+
+  /* 主编判断框 */
+  .judgment {
+    margin-top: 18px; padding: 16px 20px; background: var(--bg-deep);
+    border-left: 3px solid var(--accent); font-size: 15px; line-height: 1.7; color: var(--ink);
+  }
+  .judgment::before {
+    content: '主编判断'; display: block; font-family: var(--font-mono);
+    font-size: 9.5px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--accent); font-weight: 500; margin-bottom: 6px;
+  }
+
+  /* 同事件多来源对比 */
+  .multi-source-event {
+    border: 1px solid var(--line); background: rgba(255,253,248,0.5);
+    padding: 24px 28px; margin-bottom: 16px;
+  }
+  .multi-source-event .event-headline { font-size: 20px; margin-bottom: 8px; }
+  .source-table { margin-top: 14px; font-size: 13.5px; line-height: 1.55; }
+  .source-row {
+    display: grid; grid-template-columns: 130px 1fr; gap: 18px;
+    padding: 8px 0; border-top: 1px dotted var(--line-soft);
+  }
+  .source-row:first-of-type { border-top: 1px solid var(--line); padding-top: 12px; }
+  .source-row .name {
+    font-weight: 600; color: var(--ink); font-family: var(--font-display);
+    font-style: italic; font-variation-settings: "opsz" 14;
+  }
+  .source-row .view { color: var(--ink-soft); }
+
+  /* Week 2 占位 */
+  .placeholder {
+    border: 1.5px dashed var(--line); padding: 28px 32px;
+    background: rgba(0,0,0,0.015); text-align: center;
+  }
+  .placeholder-title {
+    font-family: var(--font-display); font-weight: 500; font-size: 18px;
+    color: var(--ink-soft); margin-bottom: 6px;
+  }
+  .placeholder-desc {
+    font-size: 13.5px; color: var(--gray); line-height: 1.6;
+    max-width: 480px; margin: 0 auto;
+  }
+  .placeholder-eta {
+    margin-top: 12px; display: inline-block; font-family: var(--font-mono);
+    font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--accent); border: 1px solid var(--accent); padding: 3px 10px;
+  }
+
+  /* 扫描列表 */
+  .scan-list { list-style: none; }
+  .scan-item {
+    display: grid; grid-template-columns: 50px 1fr auto; gap: 18px;
+    padding: 12px 0; border-bottom: 1px solid var(--line-soft); align-items: baseline;
+  }
+  .scan-item:last-child { border-bottom: none; }
+  .scan-grade {
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em;
+    color: var(--gray); font-weight: 500;
+  }
+  .scan-grade.b { color: var(--green); }
+  .scan-grade.c { color: var(--gray-light); }
+  .scan-title { font-size: 15px; color: var(--ink); line-height: 1.5; }
+  .scan-source {
+    font-family: var(--font-mono); font-size: 10.5px; color: var(--gray);
+    letter-spacing: 0.04em; white-space: nowrap;
+  }
+
+  /* 主编寄语 */
+  .closing {
+    margin-top: 80px; padding: 36px 0 32px;
+    border-top: 2px solid var(--ink); text-align: center;
+  }
+  .closing-mark {
+    font-family: var(--font-display); font-style: italic; font-size: 14px;
+    letter-spacing: 0.12em; color: var(--accent); text-transform: uppercase;
+    margin-bottom: 18px; font-variation-settings: "opsz" 14, "SOFT" 100;
+  }
+  .closing-text {
+    font-family: var(--font-display); font-weight: 400; font-style: italic;
+    font-size: 19px; line-height: 1.7; color: var(--ink);
+    max-width: 640px; margin: 0 auto; white-space: pre-line;
+    font-variation-settings: "opsz" 60, "SOFT" 80;
+  }
+  .closing-sig {
+    margin-top: 24px; font-family: var(--font-mono); font-size: 11px;
+    letter-spacing: 0.18em; color: var(--gray); text-transform: uppercase;
+  }
+
+  /* 页脚 */
+  .footer {
+    margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--line);
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--gray-light);
+  }
+
+  /* 响应式 */
+  @media (max-width: 720px) {
+    .page { padding: 32px 22px 64px; }
+    .masthead h1 { font-size: 48px; }
+    .masthead h1 .en { display: block; margin-left: 0; margin-top: 6px; }
+    .event { grid-template-columns: 1fr; gap: 12px; }
+    .event-num { font-size: 36px; }
+    .deep-row { grid-template-columns: 1fr; gap: 6px; }
+    .deep-label { padding-top: 0; }
+    .source-view { grid-template-columns: 1fr; gap: 4px; }
+    .source-name {
+      text-align: left; border-right: none; border-left: 2px solid var(--line);
+      padding-right: 0; padding-left: 10px;
+    }
+    .source-row { grid-template-columns: 1fr; gap: 4px; }
+    .scan-item { grid-template-columns: 40px 1fr; }
+    .scan-source { grid-column: 2; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <header class="masthead">
+    <div class="masthead-top">
+      <div class="left">
+        <span><span class="dot"></span>2026 年 04 月 23 日</span>
+        <span>星期四</span>
+      </div>
+      <div>AI 主编日报</div>
+    </div>
+
+    <h1>AI 主编日报<span class="en">The Editor's Brief</span></h1>
+
+    <div class="tagline">每天五分钟,读懂 AI 世界今天真正重要的事。不堆砌信息,只提供判断。</div>
+
+    <div class="masthead-meta">
+      <div class="stats">
+        <span>原始新闻 <b>40</b></span>
+        <span>合并事件 <b>18</b></span>
+        <span>S 级 <b>3</b></span>
+        <span>A 级 <b>6</b></span>
+      </div>
+      <div>主笔 / Claude Editorial</div>
+    </div>
+  </header>
+
+  
+  <article class="editorial">
+    <div class="editorial-eyebrow">— 今日叙事 / Today's Narrative</div>
+    <div class="editorial-body">
+      
+      <p>今天的 AI 新闻有两条清晰的主线。</p>
+      
+      <p>第一条是<strong>企业 AI Agent 全面开闸</strong>。OpenAI 推出 Workspace Agents（Custom GPTs 的继任者），Google 在 Cloud Next 上密集发布 Gemini Enterprise Agent Platform、Chrome auto browse、Workspace Intelligence，Microsoft 紧随其后在 Word/Excel/PowerPoint 中上线 Agent Mode——三大巨头在同一天集中释放企业 agent 能力，标志着 AI 正式从"对话助手"升级为"后台执行者"。与此同时，Stanford 研究却泼了一盆冷水：在相同算力预算下，单 agent 往往不输多 agent 架构，多数企业可能在为架构复杂度白交"群体税"。这提醒我们，agent 热潮中，"该省略什么"比"能做什么"更值得思考。</p>
+      
+      <p>第二条是<strong>Google 的芯片独立宣言</strong>。第八代 TPU 首次将训练与推理拆分为两块专用芯片（TPU 8t / 8i），推理性能跃升近 10 倍，训练可扩展至百万芯片规模。Google 正用垂直整合策略构建一条不经过 Nvidia 的 AI 算力路径，cost-per-token 的护城河正在成形。这不只是一个硬件发布，而是一场关于谁控制 AI 经济底层成本结构的权力博弈。</p>
+      
+    </div>
+    <div class="editorial-sign">— 编辑部 · 04 月 23 日</div>
+  </article>
+
+  
+  
+  <section>
+    <div class="section-label">Top Stories · 今日 8 件最重要的事</div>
+
+    <div class="top-events">
+      
+      <article class="event">
+        <div class="event-num">01<span class="slash">/</span><span class="total">08</span></div>
+        <div class="event-body">
+          <h3 class="event-headline">OpenAI 推出 Workspace Agents：Custom GPTs 继任者，企业 AI 进入无人值守时代</h3>
+          <div class="event-meta">
+            <span class="grade s">S 级 · 必须关注</span>
+            <span class="meta-sep"></span>
+            <span>3 个来源</span>
+            <span class="meta-sep"></span>
+            <span>4 条新闻</span>
+          </div>
+
+          <div class="tags">
+            <span class="tag tech">Agent</span><span class="tag tech">大模型/LLM</span>
+            <span class="tag">办公/生产力</span><span class="tag">通用/跨领域</span>
+            <span class="tag">产品发布</span>
+            <span class="tag">规模性</span><span class="tag">生态性</span>
+          </div>
+
+          
+          <div class="deep-block">
+            <div class="deep-row">
+              <div class="deep-label">是什么</div>
+              <div class="deep-content"><p>OpenAI 推出 Workspace Agents，面向 Business/Enterprise/Edu 用户，支持在无人值守状态下自动执行业务任务。产品集成 Slack、Salesforce、Google Drive、Notion 等主流企业工具，由 Codex 云执行基础设施驱动，支持代码运行、跨会话持久记忆与定时调度。免费试用至 5 月 6 日，之后转积分制。</p></div>
+            </div>
+            <div class="deep-row">
+              <div class="deep-label">为什么重要</div>
+              <div class="deep-content"><p>这不是 ChatGPT 的又一次小更新，而是产品形态的代际跃迁。Custom GPTs 本质上还是"用户提问、AI 回答"的对话模式；Workspace Agents 则是"用户下指令后离开，AI 在后台持续工作"的异步执行模式。这直接威胁了 Zapier、Make 等工作流自动化工具的生存空间，也让 Salesforce 的 Agentforce 面临来自上游的降维竞争。</p></div>
+            </div>
+            
+            <div class="deep-row">
+              <div class="deep-label">不同来源</div>
+              <div class="deep-content">
+                <div class="source-views">
+                  
+                  <div class="source-view">
+                    <div class="source-name">The Verge AI<span class="stype">科技媒体</span></div>
+                    <div class="source-text">侧重产品功能描述，强调"离线后仍可持续工作"这一核心卖点，将其定位为面向企业团队的生产力工具。</div>
+                  </div>
+                  
+                  <div class="source-view">
+                    <div class="source-name">VentureBeat<span class="stype">科技媒体</span></div>
+                    <div class="source-text">从架构层面深度拆解，揭示 Codex 云执行引擎、权限管理和合规 API 的企业级设计，强调 Custom GPT 到 Workspace Agents 的迁移路径。</div>
+                  </div>
+                  
+                  <div class="source-view">
+                    <div class="source-name">GitHub Feeds（Aaron Levie）<span class="stype">行业领袖观点</span></div>
+                    <div class="source-text">Box CEO 将其定性为"软件走向无头化的最重要里程碑"，认为这将推动知识工作 agent 从小圈子走向大众。</div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          
+          <div class="judgment">Workspace Agents 的战略意图非常清晰：OpenAI 不再满足于做"最聪明的聊天伙伴"，而是要成为企业自动化的操作系统。免费试用期截至 5 月 6 日的设计颇有心思——先让企业产生依赖，再开始收费。真正的考验在于：当 agent 在后台自动操作企业数据时，出错了谁负责？这个问题目前没有答案。</div>
+          
+          
+        </div>
+      </article>
+      
+      <article class="event">
+        <div class="event-num">02<span class="slash">/</span><span class="total">08</span></div>
+        <div class="event-body">
+          <h3 class="event-headline">Google 发布第八代 TPU：训练推理分芯，推理性能跃升近 10 倍，不交 Nvidia 税</h3>
+          <div class="event-meta">
+            <span class="grade s">S 级 · 必须关注</span>
+            <span class="meta-sep"></span>
+            <span>2 个来源</span>
+            <span class="meta-sep"></span>
+            <span>2 条新闻</span>
+          </div>
+
+          <div class="tags">
+            <span class="tag tech">芯片/硬件</span><span class="tag tech">推理优化</span><span class="tag tech">基础设施/MLOps</span>
+            <span class="tag">通用/跨领域</span>
+            <span class="tag">产品发布</span>
+            <span class="tag">突破性</span><span class="tag">生态性</span>
+          </div>
+
+          
+          <div class="deep-block">
+            <div class="deep-row">
+              <div class="deep-label">是什么</div>
+              <div class="deep-content"><p>Google 在 Cloud Next 发布第八代 TPU，首次分为 TPU 8t（训练专用）和 TPU 8i（推理专用）。TPU 8t 相比上代提升 2.8 倍 FP4 算力，通过 Virgo 互联技术可扩展至百万芯片；TPU 8i 实现 9.8 倍 FP8 算力跃升，实时 LLM 采样延迟降低 5 倍。Google AI 基础设施 SVP Amin Vahdat 直言："一年一块芯片已经不够了。"</p></div>
+            </div>
+            <div class="deep-row">
+              <div class="deep-label">为什么重要</div>
+              <div class="deep-content"><p>这不只是一次硬件升级，而是 Google 垂直整合战略的关键落子。训练和推理拆分为两芯的设计表明 Google 正在针对 agentic 推理场景做深度优化——低延迟采样是 agent 实时决策的前提。更深层看，不向 Nvidia 支付高额芯片利润意味着 Google 在 cost-per-token 上正形成竞争对手难以复制的结构性优势。</p></div>
+            </div>
+            
+            <div class="deep-row">
+              <div class="deep-label">不同来源</div>
+              <div class="deep-content">
+                <div class="source-views">
+                  
+                  <div class="source-view">
+                    <div class="source-name">VentureBeat<span class="stype">科技媒体</span></div>
+                    <div class="source-text">标题直指"不交 Nvidia 税"，深入解析训练推理分芯的技术架构和百万芯片扩展能力，将其框定为成本结构的竞争。</div>
+                  </div>
+                  
+                  <div class="source-view">
+                    <div class="source-name">TechCrunch AI<span class="stype">科技媒体</span></div>
+                    <div class="source-text">报道更为务实，指出 Google 虽自研芯片强劲但仍在云平台中持续支持 Nvidia GPU，双线并行的策略更具商业弹性。</div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          
+          <div class="judgment">"一年一块芯片不够了"这句话道出了 AI 算力竞赛的本质——摩尔定律的节奏已经跟不上模型需求的增速。Google 选择训练推理分芯是一个务实且有远见的决定：agent 时代的推理需求会爆炸性增长，专用芯片的效率优势会被放大。但要真正撼动 Nvidia，还需要看第三方开发者的迁移意愿——这不是单纯的硬件问题，而是生态问题。</div>
+          
+          
+        </div>
+      </article>
+      
+      <article class="event">
+        <div class="event-num">03<span class="slash">/</span><span class="total">08</span></div>
+        <div class="event-body">
+          <h3 class="event-headline">Google Cloud Next 全面发力：企业 Agent 平台、Chrome agent 化、Workspace AI 化同步推出</h3>
+          <div class="event-meta">
+            <span class="grade s">S 级 · 必须关注</span>
+            <span class="meta-sep"></span>
+            <span>4 个来源</span>
+            <span class="meta-sep"></span>
+            <span>7 条新闻</span>
+          </div>
+
+          <div class="tags">
+            <span class="tag tech">Agent</span><span class="tag tech">大模型/LLM</span><span class="tag tech">基础设施/MLOps</span>
+            <span class="tag">办公/生产力</span><span class="tag">通用/跨领域</span>
+            <span class="tag">产品发布</span>
+            <span class="tag">规模性</span><span class="tag">生态性</span>
+          </div>
+
+          
+          <div class="deep-block">
+            <div class="deep-row">
+              <div class="deep-label">是什么</div>
+              <div class="deep-content"><p>Google 在 Cloud Next 2026 上集中发布：Gemini Enterprise Agent Platform（企业 agent 构建平台）、Chrome auto browse（浏览器 agent 化）、Workspace Intelligence（办公 AI 化）、Gmail AI Overviews、Google Meet 跨平台 AI 笔记。同时 Vertex AI 更名为 Gemini Enterprise Platform，CEO Pichai 透露 75% 新代码由 AI 生成。</p></div>
+            </div>
+            <div class="deep-row">
+              <div class="deep-label">为什么重要</div>
+              <div class="deep-content"><p>这不是零散的产品更新，而是 Google AI 全栈战略的系统性展示。从底层 TPU 芯片，到中间的 Gemini Enterprise Platform，再到面向终端用户的 Chrome/Workspace/Gmail——Google 正在构建一条从硅片到像素的完整 AI 链条。与 AWS 在 agent 技术栈上走向分野（Google 选择治理控制、AWS 选择执行加速）则揭示了企业 AI 基础设施的路线之争。</p></div>
+            </div>
+            
+            <div class="deep-row">
+              <div class="deep-label">不同来源</div>
+              <div class="deep-content">
+                <div class="source-views">
+                  
+                  <div class="source-view">
+                    <div class="source-name">TechCrunch AI<span class="stype">科技媒体</span></div>
+                    <div class="source-text">分别报道各产品线更新，聚焦企业 Agent Platform 面向技术用户的差异化定位，以及 Chrome agent 化对工作流的改变。</div>
+                  </div>
+                  
+                  <div class="source-view">
+                    <div class="source-name">VentureBeat<span class="stype">科技媒体</span></div>
+                    <div class="source-text">以更宏观的视角分析 Google 与 AWS 在 agent 栈上的战略分野，指出治理控制 vs 执行加速是企业 AI 的核心博弈。</div>
+                  </div>
+                  
+                  <div class="source-view">
+                    <div class="source-name">Hacker News AI<span class="stype">技术社区</span></div>
+                    <div class="source-text">关注 Pichai 75% AI 编码的数据点，社区讨论集中在这一比例的可信度和对工程师角色的影响。</div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          
+          <div class="judgment">Google 这次 Cloud Next 的密度令人印象深刻，但更值得注意的是其背后的逻辑一致性：每一个产品都在推动同一件事——让 AI 从"你来用"变成"它来做"。75% 的 AI 编码比例如果属实，说明 Google 在内部已经走完了 AI agent 化的第一程，现在轮到把这套体系卖给企业客户了。</div>
+          
+          
+        </div>
+      </article>
+      
+      <article class="event">
+        <div class="event-num">04<span class="slash">/</span><span class="total">08</span></div>
+        <div class="event-body">
+          <h3 class="event-headline">Microsoft Office 推出 Agent Mode（"vibe working"），AI 从顾问升级为执行者</h3>
+          <div class="event-meta">
+            <span class="grade a">A 级 · 值得细读</span>
+            <span class="meta-sep"></span>
+            <span>1 个来源</span>
+            <span class="meta-sep"></span>
+            <span>1 条新闻</span>
+          </div>
+
+          <div class="tags">
+            <span class="tag tech">Agent</span><span class="tag tech">大模型/LLM</span>
+            <span class="tag">办公/生产力</span>
+            <span class="tag">产品发布</span>
+            <span class="tag">规模性</span>
+          </div>
+
+          
+          <div class="deep-block">
+            <div class="deep-row">
+              <div class="deep-label">是什么</div>
+              <div class="deep-content"><p>Microsoft 在 Word、Excel、PowerPoint 中正式推出 Agent Mode（内部代号 vibe working），是 Copilot 的重大升级。副总裁 Sumit Chauhan 承认早期 Copilot 受限于基础模型能力只能被动回答问题，Agent Mode 则能主动在画布上执行操作。</p></div>
+            </div>
+            <div class="deep-row">
+              <div class="deep-label">为什么重要</div>
+              <div class="deep-content"><p>从"顾问"到"执行者"的升级看似渐进，实则是产品范式的根本转变。早期 Copilot 被广泛批评为"很贵的搜索框"，Agent Mode 试图解决这个核心痛点。考虑到 Office 在全球企业中的渗透率，这可能是 AI agent 触达最多终端用户的一次部署。</p></div>
+            </div>
+            
+            <div class="deep-row">
+              <div class="deep-label">不同来源</div>
+              <div class="deep-content">
+                <div class="source-views">
+                  
+                  <div class="source-view">
+                    <div class="source-name">The Verge AI<span class="stype">科技媒体</span></div>
+                    <div class="source-text">直接引用产品负责人对早期 Copilot 局限性的坦诚反思，突出 Agent Mode 是对此前不足的实质性回应。</div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          
+          <div class="judgment">Microsoft 的坦诚值得肯定——承认早期 Copilot"只能被动回答"等于公开承认了此前产品的不足。Agent Mode 能否兑现"执行者"的承诺是另一个问题：在 Excel 公式和 PPT 排版这种高度结构化的场景中，AI 犯错的成本远高于写一封邮件。用户信任需要时间建立。</div>
+          
+          
+        </div>
+      </article>
+      
+      <article class="event">
+        <div class="event-num">05<span class="slash">/</span><span class="total">08</span></div>
+        <div class="event-body">
+          <h3 class="event-headline">Salesforce Agentforce Vibes 2.0 瞄准企业 AI agent 的隐藏杀手：上下文过载</h3>
+          <div class="event-meta">
+            <span class="grade a">A 级 · 值得细读</span>
+            <span class="meta-sep"></span>
+            <span>1 个来源</span>
+            <span class="meta-sep"></span>
+            <span>1 条新闻</span>
+          </div>
+
+          <div class="tags">
+            <span class="tag tech">Agent</span><span class="tag tech">RAG/检索增强</span>
+            <span class="tag">通用/跨领域</span>
+            <span class="tag">产品发布</span>
+            <span class="tag">实用性</span><span class="tag">信号性</span>
+          </div>
+
+          
+          <div class="deep-block">
+            <div class="deep-row">
+              <div class="deep-label">是什么</div>
+              <div class="deep-content"><p>VentureBeat 深度报道 Salesforce 推出 Agentforce Vibes 2.0，核心创新是 Abilities 和 Skills 功能，帮助企业将 agent 行为约束在自身数据模型和代码库范围内。这一设计直接回应了企业 agent 部署中"context bloat"（上下文膨胀）导致推理质量下降、延迟升高、成本失控的普遍问题。</p></div>
+            </div>
+            <div class="deep-row">
+              <div class="deep-label">为什么重要</div>
+              <div class="deep-content"><p>"给 agent 更多信息不等于更好的结果"——这一洞见看似简单，却是当前企业 agent 部署中最被忽视的真理。当工作流复杂度上升时，agent 获取的数据和工具指数级增长，但推理能力是有限的。Salesforce 选择了"约束范围"而非"压缩信息"的路径，与 Claude Code 和 OpenAI Codex 的"自主扩展再压缩"策略形成了有趣对比。</p></div>
+            </div>
+            
+            <div class="deep-row">
+              <div class="deep-label">不同来源</div>
+              <div class="deep-content">
+                <div class="source-views">
+                  
+                  <div class="source-view">
+                    <div class="source-name">VentureBeat<span class="stype">科技媒体</span></div>
+                    <div class="source-text">通过引用产品负责人和多位行业专家，将上下文过载定性为 agentic 实现中的"头号失败原因"，并对比了 Salesforce 与 Claude Code/Codex 的不同技术路线。</div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          
+          <div class="judgment">这篇报道的价值不在于 Salesforce 的产品本身，而在于它提炼出的核心命题：企业 agent 的瓶颈不是"能做什么"，而是"该省略什么"。这与今天 Stanford 关于多 agent"群体税"的研究遥相呼应，共同指向一个被热潮掩盖的事实——更多 ≠ 更好。</div>
+          
+          
+        </div>
+      </article>
+      
+      <article class="event">
+        <div class="event-num">06<span class="slash">/</span><span class="total">08</span></div>
+        <div class="event-body">
+          <h3 class="event-headline">Stanford 研究：单 agent 往往不输多 agent，你可能在白交"群体税"</h3>
+          <div class="event-meta">
+            <span class="grade a">A 级 · 值得细读</span>
+            <span class="meta-sep"></span>
+            <span>1 个来源</span>
+            <span class="meta-sep"></span>
+            <span>1 条新闻</span>
+          </div>
+
+          <div class="tags">
+            <span class="tag tech">Agent</span><span class="tag tech">大模型/LLM</span>
+            <span class="tag">通用/跨领域</span>
+            <span class="tag">研究成果</span>
+            <span class="tag">信号性</span><span class="tag">实用性</span>
+          </div>
+
+          
+          <div class="deep-block">
+            <div class="deep-row">
+              <div class="deep-label">是什么</div>
+              <div class="deep-content"><p>Stanford 最新研究系统性对比了单 agent 与多 agent 在复杂多跳推理任务上的表现，发现在控制 thinking token 总量的情况下，单 agent 往往持平甚至优于多 agent 架构。研究建议：只要任务能在单一连贯上下文窗口内处理，应将单 agent 作为默认选择。</p></div>
+            </div>
+            <div class="deep-row">
+              <div class="deep-label">为什么重要</div>
+              <div class="deep-content"><p>当整个行业都在推销"AI swarm"和"multi-agent orchestration"时，这份研究指出了皇帝的新衣：多 agent 的性能优势可能只是因为花了更多钱（更多 token），而非架构更聪明。对于正在评估 agent 架构的企业决策者而言，这意味着"先把单 agent 做好"远比"急着上多 agent"更明智。</p></div>
+            </div>
+            
+            <div class="deep-row">
+              <div class="deep-label">不同来源</div>
+              <div class="deep-content">
+                <div class="source-views">
+                  
+                  <div class="source-view">
+                    <div class="source-name">VentureBeat<span class="stype">科技媒体</span></div>
+                    <div class="source-text">用"群体税"这一生动比喻框定问题，建议企业在上下文严重碎片化时才考虑多 agent，避免为架构复杂度额外支付成本。</div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          
+          <div class="judgment">这份研究的核心洞见其实不新——Occam's Razor 早就说过，不要引入不必要的复杂度。但在 agent 热潮中，它的价值在于用实验数据验证了这个直觉。我的建议：把这篇论文发给每一个正在画多 agent 架构图的工程师。</div>
+          
+          
+        </div>
+      </article>
+      
+      <article class="event">
+        <div class="event-num">07<span class="slash">/</span><span class="total">08</span></div>
+        <div class="event-body">
+          <h3 class="event-headline">OpenAI 开源 Privacy Filter：本地 PII 脱敏模型，15 亿参数仅激活 5000 万</h3>
+          <div class="event-meta">
+            <span class="grade a">A 级 · 值得细读</span>
+            <span class="meta-sep"></span>
+            <span>1 个来源</span>
+            <span class="meta-sep"></span>
+            <span>1 条新闻</span>
+          </div>
+
+          <div class="tags">
+            <span class="tag tech">开源模型</span><span class="tag tech">安全/对齐</span><span class="tag tech">大模型/LLM</span>
+            <span class="tag">法律/合规</span><span class="tag">通用/跨领域</span>
+            <span class="tag">开源发布</span>
+            <span class="tag">实用性</span><span class="tag">信号性</span>
+          </div>
+
+          
+          <div class="deep-block">
+            <div class="deep-row">
+              <div class="deep-label">是什么</div>
+              <div class="deep-content"><p>OpenAI 在 Hugging Face 发布 Privacy Filter 开源模型（Apache 2.0），基于 gpt-oss 架构，采用稀疏 MoE 设计，总参数 15 亿但每次推理仅激活 5000 万，支持 128K token 上下文，可在普通笔记本或浏览器 WebGPU 中运行。在 PII-Masking-300k 基准上达到 96% F1，支持八类 PII 检测与遮蔽。</p></div>
+            </div>
+            <div class="deep-row">
+              <div class="deep-label">为什么重要</div>
+              <div class="deep-content"><p>这是一个精准解决真实痛点的产品：企业想用 GPT-5 等强模型但担心数据隐私泄露，Privacy Filter 在数据上传前就在本地完成脱敏，解决了 GDPR/HIPAA 合规的最后一公里。更有意义的是，5000 万激活参数 + WebGPU 运行意味着真正的零门槛部署，不需要企业搭建额外基础设施。</p></div>
+            </div>
+            
+            <div class="deep-row">
+              <div class="deep-label">不同来源</div>
+              <div class="deep-content">
+                <div class="source-views">
+                  
+                  <div class="source-view">
+                    <div class="source-name">VentureBeat<span class="stype">科技媒体</span></div>
+                    <div class="source-text">从企业合规角度切入，详细解析技术架构和部署门槛，将其定位为连接企业与大模型的"信任层"基础设施。</div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          
+          <div class="judgment">OpenAI 做开源通常是为了扩大生态而非做慈善。Privacy Filter 的战略意图很清晰：降低企业调用 GPT-5 的最后顾虑——"我的数据安全吗？"有了这个工具，答案变成"你可以先在本地脱敏"。这既是产品，也是销售漏斗的一环。不过，96% 的 F1 意味着每 25 条 PII 就有一条漏网，在金融和医疗场景中这个误差率是否可接受，还需要进一步验证。</div>
+          
+          
+        </div>
+      </article>
+      
+      <article class="event">
+        <div class="event-num">08<span class="slash">/</span><span class="total">08</span></div>
+        <div class="event-body">
+          <h3 class="event-headline">Claude Code 桌面端重大重设计：多 agent 并行工作流与侧边栏会话管理</h3>
+          <div class="event-meta">
+            <span class="grade a">A 级 · 值得细读</span>
+            <span class="meta-sep"></span>
+            <span>1 个来源</span>
+            <span class="meta-sep"></span>
+            <span>2 条新闻</span>
+          </div>
+
+          <div class="tags">
+            <span class="tag tech">Agent</span><span class="tag tech">大模型/LLM</span>
+            <span class="tag">编程/Coding</span>
+            <span class="tag">产品发布</span>
+            <span class="tag">实用性</span><span class="tag">突破性</span>
+          </div>
+
+          
+          <div class="deep-block">
+            <div class="deep-row">
+              <div class="deep-label">是什么</div>
+              <div class="deep-content"><p>Anthropic 发布 Claude Code 桌面端重大重设计，核心是全新侧边栏会话管理系统，支持多个 agent 同时跨 repo 并行工作。新功能包括集成终端、in-app 文件编辑器、重建后的 diff 查看器、HTML/PDF 扩展预览、side chat（不干扰主线程的临时提问）、三种视图模式（Verbose/Normal/Summary），并完全对等 CLI plugins，新增 Mac SSH 远程会话支持。</p></div>
+            </div>
+            <div class="deep-row">
+              <div class="deep-label">为什么重要</div>
+              <div class="deep-content"><p>这次重设计的核心理念是让开发者从"执行者"变为"编排者"——多个 agent 任务同时在飞，你负责掌舵和审查。这与 Google、OpenAI 在企业端推出 agent 化产品的方向完全一致，但 Anthropic 选择了开发者生态作为主战场。侧边栏按状态/项目分组、已合并 PR 自动归档等设计细节，显示出对真实开发工作流的深入理解。</p></div>
+            </div>
+            
+            <div class="deep-row">
+              <div class="deep-label">不同来源</div>
+              <div class="deep-content">
+                <div class="source-views">
+                  
+                  <div class="source-view">
+                    <div class="source-name">GitHub Feeds（Claude Blog）<span class="stype">官方博客</span></div>
+                    <div class="source-text">以开发者视角详细展示新功能，强调"orchestrator 角色"的产品愿景和并行工作流对生产力的提升。</div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          
+          <div class="judgment">Claude Code 的这次重设计表面上是功能升级，实质上是对开发者角色的重新定义。当多个 agent 可以并行写代码时，开发者的核心能力不再是"写得好"，而是"审得准"和"拆得对"——如何把一个大任务拆分成多个可并行的子任务，如何在 agent 产出中快速发现问题。这对 Cursor 等竞品构成直接压力。</div>
+          
+          
+        </div>
+      </article>
+      
+    </div>
+  </section>
+  
+
+  
+  
+  <section>
+    <div class="section-label">Cross-Source · 同事件 · 不同视角</div>
+    <h2 class="section-title">同一件事,不同说法</h2>
+
+    
+    <div class="multi-source-event">
+      <h3 class="event-headline">OpenAI 推出 Workspace Agents：Custom GPTs 继任者，企业 AI 进入无人值守时代</h3>
+      <div class="event-meta">
+        <span class="grade s">S 级</span>
+        <span class="meta-sep"></span>
+        <span>合并自 3 个来源</span>
+      </div>
+      
+      <div class="source-table">
+        
+        <div class="source-row">
+          <div class="name">The Verge AI</div>
+          <div class="view">侧重产品功能，强调离线后持续工作的核心卖点</div>
+        </div>
+        
+        <div class="source-row">
+          <div class="name">VentureBeat</div>
+          <div class="view">从架构层面拆解 Codex 执行引擎和企业级权限设计</div>
+        </div>
+        
+        <div class="source-row">
+          <div class="name">GitHub Feeds（行业领袖）</div>
+          <div class="view">Sam Altman 和 Aaron Levie 分别背书，将其定性为企业标配和软件无头化里程碑</div>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+    <div class="multi-source-event">
+      <h3 class="event-headline">Google 发布第八代 TPU：训练推理分芯，推理性能跃升近 10 倍，不交 Nvidia 税</h3>
+      <div class="event-meta">
+        <span class="grade s">S 级</span>
+        <span class="meta-sep"></span>
+        <span>合并自 2 个来源</span>
+      </div>
+      
+      <div class="source-table">
+        
+        <div class="source-row">
+          <div class="name">VentureBeat</div>
+          <div class="view">深入解析训练推理分芯架构和百万芯片扩展能力</div>
+        </div>
+        
+        <div class="source-row">
+          <div class="name">TechCrunch AI</div>
+          <div class="view">指出 Google 仍支持 Nvidia GPU 的双线策略</div>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+    <div class="multi-source-event">
+      <h3 class="event-headline">Google Cloud Next 全面发力：企业 Agent 平台、Chrome agent 化、Workspace AI 化同步推出</h3>
+      <div class="event-meta">
+        <span class="grade s">S 级</span>
+        <span class="meta-sep"></span>
+        <span>合并自 4 个来源</span>
+      </div>
+      
+      <div class="source-table">
+        
+        <div class="source-row">
+          <div class="name">TechCrunch AI</div>
+          <div class="view">分别报道各产品线更新</div>
+        </div>
+        
+        <div class="source-row">
+          <div class="name">VentureBeat</div>
+          <div class="view">分析 Google 与 AWS 的战略分野</div>
+        </div>
+        
+        <div class="source-row">
+          <div class="name">Hacker News AI</div>
+          <div class="view">关注 75% AI 编码的数据点</div>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+    <div class="multi-source-event">
+      <h3 class="event-headline">Claude Code 桌面端重大重设计：多 agent 并行工作流与侧边栏会话管理</h3>
+      <div class="event-meta">
+        <span class="grade a">A 级</span>
+        <span class="meta-sep"></span>
+        <span>合并自 1 个来源</span>
+      </div>
+      
+      <div class="source-table">
+        
+        <div class="source-row">
+          <div class="name">GitHub Feeds（Claude Blog）</div>
+          <div class="view">详细展示新功能，强调 orchestrator 角色</div>
+        </div>
+        
+        <div class="source-row">
+          <div class="name">GitHub Feeds（Claude 官方）</div>
+          <div class="view">配合发布交互式图表功能</div>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+  </section>
+  
+
+  
+  <section>
+    <div class="section-label">Storyline · 关键话题持续追踪</div>
+    <div class="placeholder">
+      <div class="placeholder-title">话题主线追踪</div>
+      <div class="placeholder-desc">
+        本模块将持续追踪 AI Agent、模型发布、芯片硬件、监管政策等关键主线的演进。
+        判断每条新事件是"全新主线"还是"已有主线的新进展"，并展示主线的发展轨迹。
+        <br><br>
+        需要至少 7 天历史数据积累，Week 2 启用。
+      </div>
+      <span class="placeholder-eta">Week 2 启用</span>
+    </div>
+  </section>
+
+  
+  
+  <section>
+    <div class="section-label">Scan · 一句话扫描区 · B / C 级</div>
+    <h2 class="section-title">其余 10 条 · 知道有就行</h2>
+
+    <ul class="scan-list">
+      
+      <li class="scan-item">
+        <span class="scan-grade b">B 级</span>
+        <span class="scan-title">Sony AI 乒乓球机器人 Ace 首次在 ITTF 规则下击败顶级人类选手</span>
+        <span class="scan-source">The Verge AI</span>
+      </li>
+      
+      <li class="scan-item">
+        <span class="scan-grade b">B 级</span>
+        <span class="scan-title">Anthropic Mythos 模型未向美国网络安全局（CISA）开放，分发策略引关注</span>
+        <span class="scan-source">The Verge AI</span>
+      </li>
+      
+      <li class="scan-item">
+        <span class="scan-grade b">B 级</span>
+        <span class="scan-title">NPM 与 PyPI 发现恶意包：植入后门将服务器变为中国 LLM 中继节点</span>
+        <span class="scan-source">Hacker News AI</span>
+      </li>
+      
+      <li class="scan-item">
+        <span class="scan-grade b">B 级</span>
+        <span class="scan-title">Elizabeth Warren 发出 AI 泡沫警告：支出增速远超营收，与 2008 年金融危机前相似</span>
+        <span class="scan-source">The Verge AI</span>
+      </li>
+      
+      <li class="scan-item">
+        <span class="scan-grade b">B 级</span>
+        <span class="scan-title">AI 货币化困境：Anthropic 限制第三方工具 OpenClaw，token 经济学成核心议题</span>
+        <span class="scan-source">The Verge AI</span>
+      </li>
+      
+      <li class="scan-item">
+        <span class="scan-grade b">B 级</span>
+        <span class="scan-title">Tesla 2026 年资本支出提至 250 亿美元，全年自由现金流将转负</span>
+        <span class="scan-source">TechCrunch AI</span>
+      </li>
+      
+      <li class="scan-item">
+        <span class="scan-grade b">B 级</span>
+        <span class="scan-title">AI 行业观察：人们并不渴望自动化，AI 健康回答错误率达 50%</span>
+        <span class="scan-source">The Verge AI, Hacker News AI</span>
+      </li>
+      
+      <li class="scan-item">
+        <span class="scan-grade c">C 级</span>
+        <span class="scan-title">AI 时代人类角色再思考："AI 三明治"理论与"overcooking"现象</span>
+        <span class="scan-source">GitHub Feeds</span>
+      </li>
+      
+      <li class="scan-item">
+        <span class="scan-grade c">C 级</span>
+        <span class="scan-title">行业碎片：X 推 AI 信息流、美国议员观看 AI 越狱演示、Vercel 安全事件持续、Context AI 安全事故</span>
+        <span class="scan-source">TechCrunch AI, Hacker News AI, GitHub Feeds</span>
+      </li>
+      
+      <li class="scan-item">
+        <span class="scan-grade c">C 级</span>
+        <span class="scan-title">小工具与小观察：Gemma 4 VLA 边缘部署、Dead Simple Email、Viscacha、Chrome 本地 LLM 等</span>
+        <span class="scan-source">HuggingFace Blog, Hacker News AI, GitHub Feeds, TechCrunch AI, MIT Technology Review</span>
+      </li>
+      
+    </ul>
+  </section>
+  
+
+  
+  
+  <div class="closing">
+    <div class="closing-mark">— 主编寄语 —</div>
+    <div class="closing-text">今天是企业 AI agent 的"官宣日"——OpenAI、Google、Microsoft 三巨头几乎同时按下发令枪。但 Stanford 的研究和 Salesforce 对"上下文过载"的警示提醒我们：在这场agent 军备竞赛中，真正的竞争力不在于能做多少事，而在于知道该省略什么。保持清醒，比保持忙碌更重要。</div>
+    <div class="closing-sig">明天见 · 编辑部</div>
+  </div>
+  
+
+  <footer class="footer">
+    <span>AI 主编日报 · 2026-04-23</span>
+    <span>主笔 / Claude Editorial</span>
+  </footer>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 主编日报 · 2026-04-25</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..900,0..100&family=Noto+Serif+SC:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f4ede0;
+    --bg-deep: #ebe2d0;
+    --ink: #1c1814;
+    --ink-soft: #3a342c;
+    --gray: #756a5c;
+    --gray-light: #a59b8c;
+    --line: #c9bfac;
+    --line-soft: #ddd2bd;
+    --accent: #9a2828;
+    --accent-deep: #6e1d1d;
+    --gold: #8b6914;
+    --green: #3d5a3a;
+    --font-display: 'Fraunces', 'Noto Serif SC', serif;
+    --font-serif: 'Noto Serif SC', 'Fraunces', serif;
+    --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    background: var(--bg); color: var(--ink);
+    font-family: var(--font-serif); font-weight: 400;
+    line-height: 1.7; -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  .page { max-width: 880px; margin: 0 auto; padding: 56px 48px 96px; position: relative; }
+
+  /* 刊头 */
+  .masthead { border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 8px; }
+  .masthead-top {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--gray); margin-bottom: 14px;
+  }
+  .masthead-top .left { display: flex; gap: 18px; flex-wrap: wrap; }
+  .masthead-top .left span { display: flex; align-items: center; gap: 6px; }
+  .masthead-top .dot { display: inline-block; width: 5px; height: 5px; background: var(--accent); border-radius: 50%; }
+  .masthead h1 {
+    font-family: var(--font-display); font-weight: 600;
+    font-size: 76px; line-height: 0.95; letter-spacing: -0.025em;
+    font-variation-settings: "opsz" 144, "SOFT" 30; color: var(--ink);
+  }
+  .masthead h1 .en {
+    font-style: italic; font-weight: 400; font-size: 0.42em;
+    color: var(--gray); margin-left: 14px; letter-spacing: 0.01em;
+    vertical-align: middle; font-variation-settings: "opsz" 14, "SOFT" 100;
+  }
+  .masthead .tagline { font-size: 13px; color: var(--gray); margin-top: 12px; letter-spacing: 0.04em; }
+  .masthead-meta {
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    margin-top: 4px; font-family: var(--font-mono); font-size: 10.5px;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray);
+    padding-top: 10px; border-top: 1px solid var(--line);
+  }
+  .masthead-meta .stats { display: flex; gap: 24px; flex-wrap: wrap; }
+  .masthead-meta .stats b { color: var(--ink); font-weight: 500; margin-left: 4px; }
+
+  /* 通用 section */
+  section { margin-top: 56px; }
+  .section-label {
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--line); }
+  .section-title {
+    font-family: var(--font-display); font-weight: 500; font-size: 32px;
+    line-height: 1.15; letter-spacing: -0.015em; color: var(--ink);
+    margin-bottom: 24px; font-variation-settings: "opsz" 60;
+  }
+
+  /* 主编叙事 */
+  .editorial {
+    margin-top: 32px; padding: 32px 0;
+    border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  }
+  .editorial-eyebrow {
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 16px;
+  }
+  .editorial-body { font-size: 17px; line-height: 1.85; color: var(--ink-soft); }
+  .editorial-body p { margin-bottom: 18px; }
+  .editorial-body p:last-child { margin-bottom: 0; }
+  .editorial-body p:first-child::first-letter {
+    font-family: var(--font-display); font-weight: 600; font-size: 64px;
+    float: left; line-height: 0.85; margin: 8px 10px 0 0;
+    color: var(--accent); font-variation-settings: "opsz" 144;
+  }
+  .editorial-body strong {
+    font-weight: 600; color: var(--ink);
+    background: linear-gradient(to top, rgba(154,40,40,0.12) 0%, rgba(154,40,40,0.12) 30%, transparent 30%);
+    padding: 0 2px;
+  }
+  .editorial-sign {
+    margin-top: 24px; font-family: var(--font-mono); font-size: 11px;
+    letter-spacing: 0.12em; color: var(--gray); text-transform: uppercase;
+  }
+
+  /* Top Events */
+  .event {
+    padding: 36px 0; border-bottom: 1px solid var(--line-soft);
+    display: grid; grid-template-columns: 64px 1fr; gap: 32px;
+  }
+  .event:last-child { border-bottom: none; }
+  .event-num {
+    font-family: var(--font-display); font-weight: 300; font-size: 56px;
+    line-height: 1; color: var(--accent);
+    font-variation-settings: "opsz" 144; letter-spacing: -0.04em;
+  }
+  .event-num .slash { color: var(--gray-light); font-size: 0.5em; margin: 0 2px; }
+  .event-num .total { color: var(--gray-light); font-size: 0.5em; }
+  .event-body { min-width: 0; }
+  .event-headline {
+    font-family: var(--font-display); font-weight: 500; font-size: 26px;
+    line-height: 1.25; letter-spacing: -0.01em; color: var(--ink);
+    margin-bottom: 10px; font-variation-settings: "opsz" 48;
+  }
+  .event-meta {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 10px;
+    margin-bottom: 18px; font-family: var(--font-mono); font-size: 10.5px;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray);
+  }
+  .grade {
+    display: inline-flex; align-items: center; gap: 5px;
+    padding: 3px 8px 2px; font-family: var(--font-mono); font-size: 10px;
+    font-weight: 500; letter-spacing: 0.15em; border: 1px solid;
+    text-transform: uppercase;
+  }
+  .grade.s { color: var(--accent); border-color: var(--accent); background: rgba(154,40,40,0.06); }
+  .grade.a { color: var(--gold); border-color: var(--gold); background: rgba(139,105,20,0.06); }
+  .grade.b { color: var(--green); border-color: var(--green); background: rgba(61,90,58,0.06); }
+  .grade.c { color: var(--gray); border-color: var(--gray-light); }
+  .meta-sep { width: 3px; height: 3px; background: var(--gray-light); border-radius: 50%; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 24px; }
+  .tag {
+    font-size: 12px; color: var(--ink-soft); padding: 2px 10px;
+    background: var(--bg-deep); border: 1px solid var(--line-soft);
+    border-radius: 2px; letter-spacing: 0.02em;
+  }
+  .tag.tech { color: var(--accent-deep); border-color: rgba(154,40,40,0.25); background: rgba(154,40,40,0.05); }
+
+  /* 四段式深读 */
+  .deep-row {
+    display: grid; grid-template-columns: 100px 1fr; gap: 24px;
+    padding: 14px 0; border-top: 1px dotted var(--line);
+  }
+  .deep-row:first-child { border-top: none; padding-top: 4px; }
+  .deep-label {
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--accent); padding-top: 4px; font-weight: 500;
+  }
+  .deep-content { font-size: 15px; line-height: 1.75; color: var(--ink-soft); }
+  .deep-content p { margin-bottom: 8px; }
+  .deep-content p:last-child { margin-bottom: 0; }
+  .deep-content strong { color: var(--ink); font-weight: 600; }
+
+  /* 多来源观点 */
+  .source-views { display: grid; gap: 12px; }
+  .source-view {
+    display: grid; grid-template-columns: 110px 1fr; gap: 16px;
+    padding: 4px 0; align-items: baseline;
+  }
+  .source-name {
+    font-family: var(--font-display); font-weight: 500; font-style: italic;
+    font-size: 13px; color: var(--ink); text-align: right;
+    border-right: 2px solid var(--line); padding-right: 14px; line-height: 1.4;
+    font-variation-settings: "opsz" 14;
+  }
+  .source-name .stype {
+    display: block; font-style: normal; font-family: var(--font-mono);
+    font-size: 9px; color: var(--gray-light); letter-spacing: 0.12em;
+    text-transform: uppercase; margin-top: 2px; font-weight: 400;
+  }
+  .source-text { font-size: 14px; color: var(--ink-soft); line-height: 1.6; }
+
+  /* 主编判断框 */
+  .judgment {
+    margin-top: 18px; padding: 16px 20px; background: var(--bg-deep);
+    border-left: 3px solid var(--accent); font-size: 15px; line-height: 1.7; color: var(--ink);
+  }
+  .judgment::before {
+    content: '主编判断'; display: block; font-family: var(--font-mono);
+    font-size: 9.5px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--accent); font-weight: 500; margin-bottom: 6px;
+  }
+
+  /* 同事件多来源对比 */
+  .multi-source-event {
+    border: 1px solid var(--line); background: rgba(255,253,248,0.5);
+    padding: 24px 28px; margin-bottom: 16px;
+  }
+  .multi-source-event .event-headline { font-size: 20px; margin-bottom: 8px; }
+  .source-table { margin-top: 14px; font-size: 13.5px; line-height: 1.55; }
+  .source-row {
+    display: grid; grid-template-columns: 130px 1fr; gap: 18px;
+    padding: 8px 0; border-top: 1px dotted var(--line-soft);
+  }
+  .source-row:first-of-type { border-top: 1px solid var(--line); padding-top: 12px; }
+  .source-row .name {
+    font-weight: 600; color: var(--ink); font-family: var(--font-display);
+    font-style: italic; font-variation-settings: "opsz" 14;
+  }
+  .source-row .view { color: var(--ink-soft); }
+
+  /* Week 2 占位 */
+  .placeholder {
+    border: 1.5px dashed var(--line); padding: 28px 32px;
+    background: rgba(0,0,0,0.015); text-align: center;
+  }
+  .placeholder-title {
+    font-family: var(--font-display); font-weight: 500; font-size: 18px;
+    color: var(--ink-soft); margin-bottom: 6px;
+  }
+  .placeholder-desc {
+    font-size: 13.5px; color: var(--gray); line-height: 1.6;
+    max-width: 480px; margin: 0 auto;
+  }
+  .placeholder-eta {
+    margin-top: 12px; display: inline-block; font-family: var(--font-mono);
+    font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--accent); border: 1px solid var(--accent); padding: 3px 10px;
+  }
+
+  /* 扫描列表 */
+  .scan-list { list-style: none; }
+  .scan-item {
+    display: grid; grid-template-columns: 50px 1fr auto; gap: 18px;
+    padding: 12px 0; border-bottom: 1px solid var(--line-soft); align-items: baseline;
+  }
+  .scan-item:last-child { border-bottom: none; }
+  .scan-grade {
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em;
+    color: var(--gray); font-weight: 500;
+  }
+  .scan-grade.b { color: var(--green); }
+  .scan-grade.c { color: var(--gray-light); }
+  .scan-title { font-size: 15px; color: var(--ink); line-height: 1.5; }
+  .scan-source {
+    font-family: var(--font-mono); font-size: 10.5px; color: var(--gray);
+    letter-spacing: 0.04em; white-space: nowrap;
+  }
+
+  /* 主编寄语 */
+  .closing {
+    margin-top: 80px; padding: 36px 0 32px;
+    border-top: 2px solid var(--ink); text-align: center;
+  }
+  .closing-mark {
+    font-family: var(--font-display); font-style: italic; font-size: 14px;
+    letter-spacing: 0.12em; color: var(--accent); text-transform: uppercase;
+    margin-bottom: 18px; font-variation-settings: "opsz" 14, "SOFT" 100;
+  }
+  .closing-text {
+    font-family: var(--font-display); font-weight: 400; font-style: italic;
+    font-size: 19px; line-height: 1.7; color: var(--ink);
+    max-width: 640px; margin: 0 auto; white-space: pre-line;
+    font-variation-settings: "opsz" 60, "SOFT" 80;
+  }
+  .closing-sig {
+    margin-top: 24px; font-family: var(--font-mono); font-size: 11px;
+    letter-spacing: 0.18em; color: var(--gray); text-transform: uppercase;
+  }
+
+  /* 页脚 */
+  .footer {
+    margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--line);
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--gray-light);
+  }
+
+  /* 响应式 */
+  @media (max-width: 720px) {
+    .page { padding: 32px 22px 64px; }
+    .masthead h1 { font-size: 48px; }
+    .masthead h1 .en { display: block; margin-left: 0; margin-top: 6px; }
+    .event { grid-template-columns: 1fr; gap: 12px; }
+    .event-num { font-size: 36px; }
+    .deep-row { grid-template-columns: 1fr; gap: 6px; }
+    .deep-label { padding-top: 0; }
+    .source-view { grid-template-columns: 1fr; gap: 4px; }
+    .source-name {
+      text-align: left; border-right: none; border-left: 2px solid var(--line);
+      padding-right: 0; padding-left: 10px;
+    }
+    .source-row { grid-template-columns: 1fr; gap: 4px; }
+    .scan-item { grid-template-columns: 40px 1fr; }
+    .scan-source { grid-column: 2; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <header class="masthead">
+    <div class="masthead-top">
+      <div class="left">
+        <span><span class="dot"></span>2026 年 04 月 25 日</span>
+        <span>星期六</span>
+      </div>
+      <div>AI 主编日报</div>
+    </div>
+
+    <h1>AI 主编日报<span class="en">The Editor's Brief</span></h1>
+
+    <div class="tagline">每天五分钟,读懂 AI 世界今天真正重要的事。不堆砌信息,只提供判断。</div>
+
+    <div class="masthead-meta">
+      <div class="stats">
+        <span>原始新闻 <b>10</b></span>
+        <span>合并事件 <b>8</b></span>
+        <span>S 级 <b>2</b></span>
+        <span>A 级 <b>3</b></span>
+      </div>
+      <div>主笔 / Claude Editorial</div>
+    </div>
+  </header>
+
+  
+  <article class="editorial">
+    <div class="editorial-eyebrow">— 今日叙事 / Today's Narrative</div>
+    <div class="editorial-body">
+      
+      <p>今天的 AI 世界有两条主线值得拆开来看，都指向同一个关键词：<strong>格局重塑</strong>。</p>
+      
+      <p>第一条是 DeepSeek-V4 的发布。1.6 万亿参数的 MoE 开源模型，MIT 许可，性能逼近 GPT-5.5 和 Claude Opus 4.7，而 API 定价仅为后者的六分之一。更耐人寻味的是其在华为昇腾 NPU 上的推理优化——这不是一个技术 demo，而是中国 AI 基础设施去 Nvidia 化的实质性落子。第二条是 Google 拟向 Anthropic 投资最高 400 亿美元（现金加算力），恰逢 Anthropic 有限发布安全领域模型 Mythos。一边是开源势力的成本碾压，一边是闭源阵营的资本加固，前沿 AI 的竞争正式进入重装对峙阶段。</p>
+      
+      <p>其余事件中，Elon Musk 拟 600 亿美元收购 Cursor 和 Tesla 低调披露 20 亿美元 AI 硬件收购值得留意，两者叠加勾勒出 Musk 在 AI 基础设施和开发工具两端同时下注的战略轮廓。ComfyUI 以 5 亿估值完成融资则代表了另一种信号：AI 创作工具正在从"能用"走向"可控"。</p>
+      
+    </div>
+    <div class="editorial-sign">— 编辑部 · 04 月 25 日</div>
+  </article>
+
+  
+  
+  <section>
+    <div class="section-label">Top Stories · 今日 5 件最重要的事</div>
+
+    <div class="top-events">
+      
+      <article class="event">
+        <div class="event-num">01<span class="slash">/</span><span class="total">05</span></div>
+        <div class="event-body">
+          <h3 class="event-headline">DeepSeek-V4 发布：1.6 万亿参数开源模型逼近顶级闭源性能，定价仅为六分之一</h3>
+          <div class="event-meta">
+            <span class="grade s">S 级 · 必须关注</span>
+            <span class="meta-sep"></span>
+            <span>2 个来源</span>
+            <span class="meta-sep"></span>
+            <span>2 条新闻</span>
+          </div>
+
+          <div class="tags">
+            <span class="tag tech">大模型/LLM</span><span class="tag tech">开源模型</span><span class="tag tech">推理优化</span>
+            <span class="tag">通用/跨领域</span>
+            <span class="tag">开源发布</span>
+            <span class="tag">突破性</span><span class="tag">生态性</span>
+          </div>
+
+          
+          <div class="deep-block">
+            <div class="deep-row">
+              <div class="deep-label">是什么</div>
+              <div class="deep-content"><p>DeepSeek 发布 V4，一个 1.6 万亿参数的 MoE 开源模型（MIT 许可），在多项基准上接近 GPT-5.5 和 Claude Opus 4.7，API 定价仅为后者的六分之一，并首次在华为昇腾 NPU 上完成推理优化验证。</p></div>
+            </div>
+            <div class="deep-row">
+              <div class="deep-label">为什么重要</div>
+              <div class="deep-content"><p>这是开源模型首次在性能层面实质逼近闭源顶级的里程碑。更深层的意义在于两点：一是成本结构的颠覆——六分之一的定价将迫使闭源厂商重新审视定价策略；二是在华为昇腾上的推理优化，标志着中国 AI 基础设施去 Nvidia 化从论文走向工程实践。</p></div>
+            </div>
+            
+            <div class="deep-row">
+              <div class="deep-label">不同来源</div>
+              <div class="deep-content">
+                <div class="source-views">
+                  
+                  <div class="source-view">
+                    <div class="source-name">VentureBeat<span class="stype">科技媒体</span></div>
+                    <div class="source-text">聚焦成本对比和商业冲击，强调 V4 对 GPT-5.5 和 Opus 4.7 的定价压力，标题直接点出"六分之一成本"。</div>
+                  </div>
+                  
+                  <div class="source-view">
+                    <div class="source-name">MIT Technology Review<span class="stype">权威科技评论</span></div>
+                    <div class="source-text">从技术架构角度切入，重点分析注意力机制改进带来的计算效率提升，以及昇腾优化的地缘战略含义。</div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          
+          <div class="judgment">V4 的性能数据需要独立验证，但即便打个折扣，开源模型的追赶速度也已经快到让闭源阵营不舒服。昇腾优化这步棋才是真正值得长期关注的变量——如果成功规模化，整个 AI 算力供应链的权力格局都会松动。</div>
+          
+          
+        </div>
+      </article>
+      
+      <article class="event">
+        <div class="event-num">02<span class="slash">/</span><span class="total">05</span></div>
+        <div class="event-body">
+          <h3 class="event-headline">Google 计划向 Anthropic 投资最高 400 亿美元现金与算力</h3>
+          <div class="event-meta">
+            <span class="grade s">S 级 · 必须关注</span>
+            <span class="meta-sep"></span>
+            <span>1 个来源</span>
+            <span class="meta-sep"></span>
+            <span>1 条新闻</span>
+          </div>
+
+          <div class="tags">
+            <span class="tag tech">大模型/LLM</span><span class="tag tech">基础设施/MLOps</span>
+            <span class="tag">通用/跨领域</span>
+            <span class="tag">融资/收购</span>
+            <span class="tag">规模性</span><span class="tag">生态性</span>
+          </div>
+
+          
+          <div class="deep-block">
+            <div class="deep-row">
+              <div class="deep-label">是什么</div>
+              <div class="deep-content"><p>Google 宣布计划向 Anthropic 投资最高 400 亿美元，以现金和算力组合形式进行。同期 Anthropic 有限发布了聚焦网络安全的模型 Mythos。</p></div>
+            </div>
+            <div class="deep-row">
+              <div class="deep-label">为什么重要</div>
+              <div class="deep-content"><p>这是 AI 领域迄今最大规模的单笔投资之一。400 亿美元中的算力部分意味着 Anthropic 将获得持续稳定的 TPU/GPU 供给，这在算力日益稀缺的背景下等于获得了战略级护城河。同时也表明 Google 选择了"投资+合作"而非"纯自研"的双线策略。</p></div>
+            </div>
+            
+            <div class="deep-row">
+              <div class="deep-label">不同来源</div>
+              <div class="deep-content">
+                <div class="source-views">
+                  
+                  <div class="source-view">
+                    <div class="source-name">TechCrunch AI<span class="stype">科技媒体</span></div>
+                    <div class="source-text">聚焦投资规模和 Mythos 模型发布的时间巧合，暗示 Anthropic 正在用安全领域的差异化能力来证明自身价值。</div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          
+          <div class="judgment">400 亿是一个让人必须停下来想一想的数字。Google 在自研 Gemini 的同时重注 Anthropic，说明即便是最大的玩家也不敢只赌一条路。这笔钱的真正含义不是"看好 Anthropic"，而是"算力就是军火，必须提前锁定"。</div>
+          
+          
+        </div>
+      </article>
+      
+      <article class="event">
+        <div class="event-num">03<span class="slash">/</span><span class="total">05</span></div>
+        <div class="event-body">
+          <h3 class="event-headline">Elon Musk 拟 600 亿美元收购 Cursor，Tim Cook 计划卸任 Apple CEO</h3>
+          <div class="event-meta">
+            <span class="grade a">A 级 · 值得细读</span>
+            <span class="meta-sep"></span>
+            <span>1 个来源</span>
+            <span class="meta-sep"></span>
+            <span>1 条新闻</span>
+          </div>
+
+          <div class="tags">
+            <span class="tag tech">Agent</span><span class="tag tech">大模型/LLM</span>
+            <span class="tag">编程/Coding</span>
+            <span class="tag">融资/收购</span><span class="tag">人事变动</span>
+            <span class="tag">规模性</span><span class="tag">信号性</span>
+          </div>
+
+          
+          <div class="deep-block">
+            <div class="deep-row">
+              <div class="deep-label">是什么</div>
+              <div class="deep-content"><p>Tim Cook 宣布计划今年九月卸任 Apple CEO，由硬件主管 John Ternus 接棒。同时报道称 Elon Musk 有意以 600 亿美元收购 AI 编程工具 Cursor。</p></div>
+            </div>
+            <div class="deep-row">
+              <div class="deep-label">为什么重要</div>
+              <div class="deep-content"><p>Cursor 收购如果成真，意味着 Musk 正在构建一个从底层算力（xAI）到开发者工具（Cursor）的完整 AI 栈。结合 Tesla 同日披露的 20 亿美元 AI 硬件收购，Musk 的 AI 布局正在从分散走向系统化。</p></div>
+            </div>
+            
+            <div class="deep-row">
+              <div class="deep-label">不同来源</div>
+              <div class="deep-content">
+                <div class="source-views">
+                  
+                  <div class="source-view">
+                    <div class="source-name">TechCrunch AI<span class="stype">科技媒体</span></div>
+                    <div class="source-text">将两条新闻并列报道，暗示科技行业正在经历一轮领导层和战略方向的集中调整。</div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          
+          <div class="judgment">600 亿的报价听起来夸张，但考虑到 Cursor 的增长速度和 AI 编程赛道的战略地位，这个数字更多反映的是 Musk 的焦虑而非 Cursor 的估值。值得跟踪但不宜过度解读——Musk 放风收购的频率远高于实际成交。</div>
+          
+          
+        </div>
+      </article>
+      
+      <article class="event">
+        <div class="event-num">04<span class="slash">/</span><span class="total">05</span></div>
+        <div class="event-body">
+          <h3 class="event-headline">Tesla 在季报中低调披露 20 亿美元 AI 硬件公司收购</h3>
+          <div class="event-meta">
+            <span class="grade a">A 级 · 值得细读</span>
+            <span class="meta-sep"></span>
+            <span>1 个来源</span>
+            <span class="meta-sep"></span>
+            <span>1 条新闻</span>
+          </div>
+
+          <div class="tags">
+            <span class="tag tech">芯片/硬件</span><span class="tag tech">基础设施/MLOps</span>
+            <span class="tag">通用/跨领域</span>
+            <span class="tag">融资/收购</span>
+            <span class="tag">信号性</span><span class="tag">规模性</span>
+          </div>
+
+          
+          <div class="deep-block">
+            <div class="deep-row">
+              <div class="deep-label">是什么</div>
+              <div class="deep-content"><p>Tesla 在 10-Q 季度报告中披露了一笔 20 亿美元的 AI 硬件公司收购，未通过新闻发布会或单独公告对外宣传。</p></div>
+            </div>
+            <div class="deep-row">
+              <div class="deep-label">为什么重要</div>
+              <div class="deep-content"><p>"悄然披露"本身就是信号。20 亿美元不是小数目，选择藏在 10-Q 里而非高调宣布，说明 Tesla/Musk 不希望这笔收购引发过多审视——可能涉及与 xAI 的关联交易，也可能涉及敏感的供应链布局。</p></div>
+            </div>
+            
+            <div class="deep-row">
+              <div class="deep-label">不同来源</div>
+              <div class="deep-content">
+                <div class="source-views">
+                  
+                  <div class="source-view">
+                    <div class="source-name">Hacker News AI<span class="stype">技术社区</span></div>
+                    <div class="source-text">关注"悄然披露"的异常操作，讨论区聚焦于可能的利益冲突和 Musk 旗下多家 AI 公司之间的资源调配。</div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          
+          <div class="judgment">与同日 Cursor 收购传闻叠加来看，Musk 在 AI 硬件和软件两端同时下重注。但"悄然"二字值得警惕——通常意味着有不方便说的理由。</div>
+          
+          
+        </div>
+      </article>
+      
+      <article class="event">
+        <div class="event-num">05<span class="slash">/</span><span class="total">05</span></div>
+        <div class="event-body">
+          <h3 class="event-headline">ComfyUI 完成 3000 万美元融资，估值达 5 亿美元</h3>
+          <div class="event-meta">
+            <span class="grade a">A 级 · 值得细读</span>
+            <span class="meta-sep"></span>
+            <span>1 个来源</span>
+            <span class="meta-sep"></span>
+            <span>1 条新闻</span>
+          </div>
+
+          <div class="tags">
+            <span class="tag tech">图像/视频生成</span>
+            <span class="tag">创意/设计</span>
+            <span class="tag">融资/收购</span>
+            <span class="tag">信号性</span><span class="tag">实用性</span>
+          </div>
+
+          
+          <div class="deep-block">
+            <div class="deep-row">
+              <div class="deep-label">是什么</div>
+              <div class="deep-content"><p>开源 AI 创作工具 ComfyUI 完成 3000 万美元融资，估值达 5 亿美元，专注于为创作者提供对 AI 图像、视频和音频生成的精细控制能力。</p></div>
+            </div>
+            <div class="deep-row">
+              <div class="deep-label">为什么重要</div>
+              <div class="deep-content"><p>ComfyUI 的估值折射出 AI 生成工具的进化方向：市场已经不满足于"输入 prompt 等输出"的黑箱模式，创作者需要节点式的精细控制流程。这标志着 AI 创作从消费级走向专业级。</p></div>
+            </div>
+            
+            <div class="deep-row">
+              <div class="deep-label">不同来源</div>
+              <div class="deep-content">
+                <div class="source-views">
+                  
+                  <div class="source-view">
+                    <div class="source-name">TechCrunch AI<span class="stype">科技媒体</span></div>
+                    <div class="source-text">着重报道融资规模和估值，将 ComfyUI 定位为创作者经济中的关键基础设施。</div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          
+          <div class="judgment">ComfyUI 证明了"给专业用户更多控制权"比"让小白也能用"更有商业价值——至少在当前阶段。5 亿估值合不合理另说，但这个方向是对的。</div>
+          
+          
+        </div>
+      </article>
+      
+    </div>
+  </section>
+  
+
+  
+  
+  <section>
+    <div class="section-label">Cross-Source · 同事件 · 不同视角</div>
+    <h2 class="section-title">同一件事,不同说法</h2>
+
+    
+    <div class="multi-source-event">
+      <h3 class="event-headline">DeepSeek-V4 发布：1.6 万亿参数开源模型逼近顶级闭源性能，定价仅为六分之一</h3>
+      <div class="event-meta">
+        <span class="grade s">S 级</span>
+        <span class="meta-sep"></span>
+        <span>合并自 2 个来源</span>
+      </div>
+      
+      <div class="source-table">
+        
+        <div class="source-row">
+          <div class="name">VentureBeat</div>
+          <div class="view">聚焦成本对比和商业冲击，强调定价压力</div>
+        </div>
+        
+        <div class="source-row">
+          <div class="name">MIT Technology Review</div>
+          <div class="view">从技术架构切入，重点分析昇腾优化的地缘战略含义</div>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+  </section>
+  
+
+  
+  <section>
+    <div class="section-label">Storyline · 关键话题持续追踪</div>
+    <div class="placeholder">
+      <div class="placeholder-title">话题主线追踪</div>
+      <div class="placeholder-desc">
+        本模块将持续追踪 AI Agent、模型发布、芯片硬件、监管政策等关键主线的演进。
+        判断每条新事件是"全新主线"还是"已有主线的新进展"，并展示主线的发展轨迹。
+        <br><br>
+        需要至少 7 天历史数据积累，Week 2 启用。
+      </div>
+      <span class="placeholder-eta">Week 2 启用</span>
+    </div>
+  </section>
+
+  
+  
+  <section>
+    <div class="section-label">Scan · 一句话扫描区 · B / C 级</div>
+    <h2 class="section-title">其余 4 条 · 知道有就行</h2>
+
+    <ul class="scan-list">
+      
+      <li class="scan-item">
+        <span class="scan-grade b">B 级</span>
+        <span class="scan-title">Project Maven：军事 AI 如何重塑现代战争目标筛选效率</span>
+        <span class="scan-source">The Verge AI</span>
+      </li>
+      
+      <li class="scan-item">
+        <span class="scan-grade b">B 级</span>
+        <span class="scan-title">Mac mini 因本地 AI 模型需求激增遭抢购，eBay 大量溢价转卖</span>
+        <span class="scan-source">TechCrunch AI</span>
+      </li>
+      
+      <li class="scan-item">
+        <span class="scan-grade c">C 级</span>
+        <span class="scan-title">Palo Alto 两个中低危漏洞组合利用致 13000 台设备遭入侵</span>
+        <span class="scan-source">VentureBeat</span>
+      </li>
+      
+      <li class="scan-item">
+        <span class="scan-grade c">C 级</span>
+        <span class="scan-title">Meta 与 Thinking Machines Lab 之间的 AI 人才双向流动</span>
+        <span class="scan-source">TechCrunch AI</span>
+      </li>
+      
+    </ul>
+  </section>
+  
+
+  
+  
+  <div class="closing">
+    <div class="closing-mark">— 主编寄语 —</div>
+    <div class="closing-text">今天两个数字值得并排放在一起看：DeepSeek 把成本压到六分之一，Google 把投资拉到 400 亿。
+一边在证明"不需要那么多钱也能做到"，一边在证明"再多钱也不够花"。
+这个矛盾本身，就是 2026 年 AI 行业最真实的注脚。</div>
+    <div class="closing-sig">明天见 · 编辑部</div>
+  </div>
+  
+
+  <footer class="footer">
+    <span>AI 主编日报 · 2026-04-25</span>
+    <span>主笔 / Claude Editorial</span>
+  </footer>
+
+</div>
+
+</body>
+</html>

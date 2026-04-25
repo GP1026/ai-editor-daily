@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 主编日报 · 2026-04-22</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..900,0..100&family=Noto+Serif+SC:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f4ede0;
+    --bg-deep: #ebe2d0;
+    --ink: #1c1814;
+    --ink-soft: #3a342c;
+    --gray: #756a5c;
+    --gray-light: #a59b8c;
+    --line: #c9bfac;
+    --line-soft: #ddd2bd;
+    --accent: #9a2828;
+    --accent-deep: #6e1d1d;
+    --gold: #8b6914;
+    --green: #3d5a3a;
+    --font-display: 'Fraunces', 'Noto Serif SC', serif;
+    --font-serif: 'Noto Serif SC', 'Fraunces', serif;
+    --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    background: var(--bg); color: var(--ink);
+    font-family: var(--font-serif); font-weight: 400;
+    line-height: 1.7; -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  .page { max-width: 880px; margin: 0 auto; padding: 56px 48px 96px; position: relative; }
+
+  /* 刊头 */
+  .masthead { border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 8px; }
+  .masthead-top {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--gray); margin-bottom: 14px;
+  }
+  .masthead-top .left { display: flex; gap: 18px; flex-wrap: wrap; }
+  .masthead-top .left span { display: flex; align-items: center; gap: 6px; }
+  .masthead-top .dot { display: inline-block; width: 5px; height: 5px; background: var(--accent); border-radius: 50%; }
+  .masthead h1 {
+    font-family: var(--font-display); font-weight: 600;
+    font-size: 76px; line-height: 0.95; letter-spacing: -0.025em;
+    font-variation-settings: "opsz" 144, "SOFT" 30; color: var(--ink);
+  }
+  .masthead h1 .en {
+    font-style: italic; font-weight: 400; font-size: 0.42em;
+    color: var(--gray); margin-left: 14px; letter-spacing: 0.01em;
+    vertical-align: middle; font-variation-settings: "opsz" 14, "SOFT" 100;
+  }
+  .masthead .tagline { font-size: 13px; color: var(--gray); margin-top: 12px; letter-spacing: 0.04em; }
+  .masthead-meta {
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    margin-top: 4px; font-family: var(--font-mono); font-size: 10.5px;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray);
+    padding-top: 10px; border-top: 1px solid var(--line);
+  }
+  .masthead-meta .stats { display: flex; gap: 24px; flex-wrap: wrap; }
+  .masthead-meta .stats b { color: var(--ink); font-weight: 500; margin-left: 4px; }
+
+  /* 通用 section */
+  section { margin-top: 56px; }
+  .section-label {
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--line); }
+  .section-title {
+    font-family: var(--font-display); font-weight: 500; font-size: 32px;
+    line-height: 1.15; letter-spacing: -0.015em; color: var(--ink);
+    margin-bottom: 24px; font-variation-settings: "opsz" 60;
+  }
+
+  /* 主编叙事 */
+  .editorial {
+    margin-top: 32px; padding: 32px 0;
+    border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  }
+  .editorial-eyebrow {
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 16px;
+  }
+  .editorial-body { font-size: 17px; line-height: 1.85; color: var(--ink-soft); }
+  .editorial-body p { margin-bottom: 18px; }
+  .editorial-body p:last-child { margin-bottom: 0; }
+  .editorial-body p:first-child::first-letter {
+    font-family: var(--font-display); font-weight: 600; font-size: 64px;
+    float: left; line-height: 0.85; margin: 8px 10px 0 0;
+    color: var(--accent); font-variation-settings: "opsz" 144;
+  }
+  .editorial-body strong {
+    font-weight: 600; color: var(--ink);
+    background: linear-gradient(to top, rgba(154,40,40,0.12) 0%, rgba(154,40,40,0.12) 30%, transparent 30%);
+    padding: 0 2px;
+  }
+  .editorial-sign {
+    margin-top: 24px; font-family: var(--font-mono); font-size: 11px;
+    letter-spacing: 0.12em; color: var(--gray); text-transform: uppercase;
+  }
+
+  /* Top Events */
+  .event {
+    padding: 36px 0; border-bottom: 1px solid var(--line-soft);
+    display: grid; grid-template-columns: 64px 1fr; gap: 32px;
+  }
+  .event:last-child { border-bottom: none; }
+  .event-num {
+    font-family: var(--font-display); font-weight: 300; font-size: 56px;
+    line-height: 1; color: var(--accent);
+    font-variation-settings: "opsz" 144; letter-spacing: -0.04em;
+  }
+  .event-num .slash { color: var(--gray-light); font-size: 0.5em; margin: 0 2px; }
+  .event-num .total { color: var(--gray-light); font-size: 0.5em; }
+  .event-body { min-width: 0; }
+  .event-headline {
+    font-family: var(--font-display); font-weight: 500; font-size: 26px;
+    line-height: 1.25; letter-spacing: -0.01em; color: var(--ink);
+    margin-bottom: 10px; font-variation-settings: "opsz" 48;
+  }
+  .event-meta {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 10px;
+    margin-bottom: 18px; font-family: var(--font-mono); font-size: 10.5px;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray);
+  }
+  .grade {
+    display: inline-flex; align-items: center; gap: 5px;
+    padding: 3px 8px 2px; font-family: var(--font-mono); font-size: 10px;
+    font-weight: 500; letter-spacing: 0.15em; border: 1px solid;
+    text-transform: uppercase;
+  }
+  .grade.s { color: var(--accent); border-color: var(--accent); background: rgba(154,40,40,0.06); }
+  .grade.a { color: var(--gold); border-color: var(--gold); background: rgba(139,105,20,0.06); }
+  .grade.b { color: var(--green); border-color: var(--green); background: rgba(61,90,58,0.06); }
+  .grade.c { color: var(--gray); border-color: var(--gray-light); }
+  .meta-sep { width: 3px; height: 3px; background: var(--gray-light); border-radius: 50%; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 24px; }
+  .tag {
+    font-size: 12px; color: var(--ink-soft); padding: 2px 10px;
+    background: var(--bg-deep); border: 1px solid var(--line-soft);
+    border-radius: 2px; letter-spacing: 0.02em;
+  }
+  .tag.tech { color: var(--accent-deep); border-color: rgba(154,40,40,0.25); background: rgba(154,40,40,0.05); }
+
+  /* 四段式深读 */
+  .deep-row {
+    display: grid; grid-template-columns: 100px 1fr; gap: 24px;
+    padding: 14px 0; border-top: 1px dotted var(--line);
+  }
+  .deep-row:first-child { border-top: none; padding-top: 4px; }
+  .deep-label {
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--accent); padding-top: 4px; font-weight: 500;
+  }
+  .deep-content { font-size: 15px; line-height: 1.75; color: var(--ink-soft); }
+  .deep-content p { margin-bottom: 8px; }
+  .deep-content p:last-child { margin-bottom: 0; }
+  .deep-content strong { color: var(--ink); font-weight: 600; }
+
+  /* 多来源观点 */
+  .source-views { display: grid; gap: 12px; }
+  .source-view {
+    display: grid; grid-template-columns: 110px 1fr; gap: 16px;
+    padding: 4px 0; align-items: baseline;
+  }
+  .source-name {
+    font-family: var(--font-display); font-weight: 500; font-style: italic;
+    font-size: 13px; color: var(--ink); text-align: right;
+    border-right: 2px solid var(--line); padding-right: 14px; line-height: 1.4;
+    font-variation-settings: "opsz" 14;
+  }
+  .source-name .stype {
+    display: block; font-style: normal; font-family: var(--font-mono);
+    font-size: 9px; color: var(--gray-light); letter-spacing: 0.12em;
+    text-transform: uppercase; margin-top: 2px; font-weight: 400;
+  }
+  .source-text { font-size: 14px; color: var(--ink-soft); line-height: 1.6; }
+
+  /* 主编判断框 */
+  .judgment {
+    margin-top: 18px; padding: 16px 20px; background: var(--bg-deep);
+    border-left: 3px solid var(--accent); font-size: 15px; line-height: 1.7; color: var(--ink);
+  }
+  .judgment::before {
+    content: '主编判断'; display: block; font-family: var(--font-mono);
+    font-size: 9.5px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--accent); font-weight: 500; margin-bottom: 6px;
+  }
+
+  /* 同事件多来源对比 */
+  .multi-source-event {
+    border: 1px solid var(--line); background: rgba(255,253,248,0.5);
+    padding: 24px 28px; margin-bottom: 16px;
+  }
+  .multi-source-event .event-headline { font-size: 20px; margin-bottom: 8px; }
+  .source-table { margin-top: 14px; font-size: 13.5px; line-height: 1.55; }
+  .source-row {
+    display: grid; grid-template-columns: 130px 1fr; gap: 18px;
+    padding: 8px 0; border-top: 1px dotted var(--line-soft);
+  }
+  .source-row:first-of-type { border-top: 1px solid var(--line); padding-top: 12px; }
+  .source-row .name {
+    font-weight: 600; color: var(--ink); font-family: var(--font-display);
+    font-style: italic; font-variation-settings: "opsz" 14;
+  }
+  .source-row .view { color: var(--ink-soft); }
+
+  /* Week 2 占位 */
+  .placeholder {
+    border: 1.5px dashed var(--line); padding: 28px 32px;
+    background: rgba(0,0,0,0.015); text-align: center;
+  }
+  .placeholder-title {
+    font-family: var(--font-display); font-weight: 500; font-size: 18px;
+    color: var(--ink-soft); margin-bottom: 6px;
+  }
+  .placeholder-desc {
+    font-size: 13.5px; color: var(--gray); line-height: 1.6;
+    max-width: 480px; margin: 0 auto;
+  }
+  .placeholder-eta {
+    margin-top: 12px; display: inline-block; font-family: var(--font-mono);
+    font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--accent); border: 1px solid var(--accent); padding: 3px 10px;
+  }
+
+  /* 扫描列表 */
+  .scan-list { list-style: none; }
+  .scan-item {
+    display: grid; grid-template-columns: 50px 1fr auto; gap: 18px;
+    padding: 12px 0; border-bottom: 1px solid var(--line-soft); align-items: baseline;
+  }
+  .scan-item:last-child { border-bottom: none; }
+  .scan-grade {
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em;
+    color: var(--gray); font-weight: 500;
+  }
+  .scan-grade.b { color: var(--green); }
+  .scan-grade.c { color: var(--gray-light); }
+  .scan-title { font-size: 15px; color: var(--ink); line-height: 1.5; }
+  .scan-source {
+    font-family: var(--font-mono); font-size: 10.5px; color: var(--gray);
+    letter-spacing: 0.04em; white-space: nowrap;
+  }
+
+  /* 主编寄语 */
+  .closing {
+    margin-top: 80px; padding: 36px 0 32px;
+    border-top: 2px solid var(--ink); text-align: center;
+  }
+  .closing-mark {
+    font-family: var(--font-display); font-style: italic; font-size: 14px;
+    letter-spacing: 0.12em; color: var(--accent); text-transform: uppercase;
+    margin-bottom: 18px; font-variation-settings: "opsz" 14, "SOFT" 100;
+  }
+  .closing-text {
+    font-family: var(--font-display); font-weight: 400; font-style: italic;
+    font-size: 19px; line-height: 1.7; color: var(--ink);
+    max-width: 640px; margin: 0 auto; white-space: pre-line;
+    font-variation-settings: "opsz" 60, "SOFT" 80;
+  }
+  .closing-sig {
+    margin-top: 24px; font-family: var(--font-mono); font-size: 11px;
+    letter-spacing: 0.18em; color: var(--gray); text-transform: uppercase;
+  }
+
+  /* 页脚 */
+  .footer {
+    margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--line);
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--gray-light);
+  }
+
+  /* 响应式 */
+  @media (max-width: 720px) {
+    .page { padding: 32px 22px 64px; }
+    .masthead h1 { font-size: 48px; }
+    .masthead h1 .en { display: block; margin-left: 0; margin-top: 6px; }
+    .event { grid-template-columns: 1fr; gap: 12px; }
+    .event-num { font-size: 36px; }
+    .deep-row { grid-template-columns: 1fr; gap: 6px; }
+    .deep-label { padding-top: 0; }
+    .source-view { grid-template-columns: 1fr; gap: 4px; }
+    .source-name {
+      text-align: left; border-right: none; border-left: 2px solid var(--line);
+      padding-right: 0; padding-left: 10px;
+    }
+    .source-row { grid-template-columns: 1fr; gap: 4px; }
+    .scan-item { grid-template-columns: 40px 1fr; }
+    .scan-source { grid-column: 2; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <header class="masthead">
+    <div class="masthead-top">
+      <div class="left">
+        <span><span class="dot"></span>2026 年 04 月 22 日</span>
+        <span>星期三</span>
+      </div>
+      <div>AI 主编日报</div>
+    </div>
+
+    <h1>AI 主编日报<span class="en">The Editor's Brief</span></h1>
+
+    <div class="tagline">每天五分钟,读懂 AI 世界今天真正重要的事。不堆砌信息,只提供判断。</div>
+
+    <div class="masthead-meta">
+      <div class="stats">
+        <span>原始新闻 <b>46</b></span>
+        <span>合并事件 <b>21</b></span>
+        <span>S 级 <b>3</b></span>
+        <span>A 级 <b>7</b></span>
+      </div>
+      <div>主笔 / Claude Editorial</div>
+    </div>
+  </header>
+
+  
+  <article class="editorial">
+    <div class="editorial-eyebrow">— 今日叙事 / Today's Narrative</div>
+    <div class="editorial-body">
+      
+      <p>今天的 AI 新闻场由三条重量级主线交织而成，每一条都指向行业深层结构的裂变。</p>
+      
+      <p>第一条是 SpaceX 拟以 600 亿美元收购 AI 编程平台 Cursor。这个数字本身就是一颗信号弹——它表明 AI 开发者工具已从"提效小插件"升格为战略级资产。Elon Musk 试图将 xAI 的模型能力、Tesla 的硬件野心和 Cursor 的开发者入口串联成一条完整的 AI 价值链，而 SpaceX 的 IPO 时间窗口让这笔交易更显紧迫。第二条是 Anthropic 网络安全模型 Mythos 疑遭未授权访问，一个能发现并利用操作系统漏洞的 AI 模型落入不明用户之手，这不是假设性的安全讨论，而是真实发生的安全事件。Sam Altman 趁势将其定性为"恐惧营销"，竞争对手之间的攻防已从技术赛道蔓延到叙事战场。第三条是 Meta 悄然在员工电脑上部署键鼠追踪工具用于训练 AI agent，将"人类行为数据"的采集边界推到了新的极限。</p>
+      
+      <p>三条主线合在一起，勾勒出 2026 年春天 AI 行业的真实面貌：资本在加速押注开发者生态、安全边界在被实际突破、数据采集的伦理红线在被静默移动。与此同时，Google Cloud Next 大会上一系列发布——Deep Research 双版本、Agentic Data Cloud、Gemini 隔离部署方案、与 Thinking Machines Lab 的数十亿美元协议——表明 Google 正在同时向 agent 基础设施和高安全场景两个方向发力，试图重新定义"企业 AI"的含义。</p>
+      
+    </div>
+    <div class="editorial-sign">— 编辑部 · 04 月 22 日</div>
+  </article>
+
+  
+  
+  <section>
+    <div class="section-label">Top Stories · 今日 10 件最重要的事</div>
+
+    <div class="top-events">
+      
+      <article class="event">
+        <div class="event-num">01<span class="slash">/</span><span class="total">10</span></div>
+        <div class="event-body">
+          <h3 class="event-headline">SpaceX 拟以 600 亿美元收购 AI 编程平台 Cursor，Musk AI 版图再扩张</h3>
+          <div class="event-meta">
+            <span class="grade s">S 级 · 必须关注</span>
+            <span class="meta-sep"></span>
+            <span>3 个来源</span>
+            <span class="meta-sep"></span>
+            <span>3 条新闻</span>
+          </div>
+
+          <div class="tags">
+            <span class="tag tech">Agent</span><span class="tag tech">大模型/LLM</span>
+            <span class="tag">编程/Coding</span>
+            <span class="tag">融资/收购</span>
+            <span class="tag">规模性</span><span class="tag">生态性</span>
+          </div>
+
+          
+          <div class="deep-block">
+            <div class="deep-row">
+              <div class="deep-label">是什么</div>
+              <div class="deep-content"><p>SpaceX 宣布与 AI 编程平台 Cursor 达成特殊安排，持有以 600 亿美元收购的选择权，替代方案为 100 亿美元授权费。此举将帮助 Musk 旗下 xAI 在 AI 编程工具赛道与 Anthropic（Claude Code）等竞争对手正面抗衡。交易背景是 SpaceX/xAI/X 的 IPO 计划日益临近。</p></div>
+            </div>
+            <div class="deep-row">
+              <div class="deep-label">为什么重要</div>
+              <div class="deep-content"><p>这笔交易的意义远超一次并购。Cursor 是当前最受开发者欢迎的 AI 编程工具之一，控制 Cursor 意味着掌握了 AI 时代最关键的开发者入口。Musk 试图构建从底层模型（xAI Grok）到开发者工具（Cursor）再到硬件算力的完整垂直整合，这是一个与 OpenAI+Microsoft、Google+Anthropic 平行的第三极战略。600 亿的数字本身就在重新定义 AI 开发工具的估值天花板。</p></div>
+            </div>
+            
+            <div class="deep-row">
+              <div class="deep-label">不同来源</div>
+              <div class="deep-content">
+                <div class="source-views">
+                  
+                  <div class="source-view">
+                    <div class="source-name">The Verge AI<span class="stype">科技媒体</span></div>
+                    <div class="source-text">强调 SpaceX IPO 背景下的战略逻辑，并提及 Sergey Brin 指派 Google 突击队推进 agentic AI、Sam Altman 在 OpenAI 内部发出"红色警报"，将此事置于整个行业军备竞赛的框架中。</div>
+                  </div>
+                  
+                  <div class="source-view">
+                    <div class="source-name">TechCrunch AI<span class="stype">科技媒体</span></div>
+                    <div class="source-text">聚焦"只有 Elon 才会在 IPO 前做这种事"的评价，暗示此举既是商业决策也是个人风格驱动。</div>
+                  </div>
+                  
+                  <div class="source-view">
+                    <div class="source-name">GitHub Feeds / Swyx<span class="stype">行业 KOL</span></div>
+                    <div class="source-text">从 Cursor 早期 5 人团队到 600 亿估值的戏剧性反差出发，折射出 AI 编程赛道的增速之惊人。</div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          
+          <div class="judgment">600 亿是一个需要打引号的数字——它是选择权而非已完成交易。但即便只是放出风声，也足以说明 Musk 在 AI 开发者生态上的焦虑程度。真正值得关注的不是价格，而是这笔交易背后的逻辑：当 AI 编码能力越来越强，控制开发者工具就等于控制了 AI 写代码的最后一公里。这场争夺才刚开始。</div>
+          
+          
+        </div>
+      </article>
+      
+      <article class="event">
+        <div class="event-num">02<span class="slash">/</span><span class="total">10</span></div>
+        <div class="event-body">
+          <h3 class="event-headline">Anthropic 网络安全模型 Mythos 疑遭未授权访问，Altman 抨击为"恐惧营销"</h3>
+          <div class="event-meta">
+            <span class="grade s">S 级 · 必须关注</span>
+            <span class="meta-sep"></span>
+            <span>3 个来源</span>
+            <span class="meta-sep"></span>
+            <span>4 条新闻</span>
+          </div>
+
+          <div class="tags">
+            <span class="tag tech">安全/对齐</span><span class="tag tech">大模型/LLM</span>
+            <span class="tag">法律/合规</span>
+            <span class="tag">安全事件</span><span class="tag">观点/评论</span>
+            <span class="tag">争议性</span><span class="tag">信号性</span>
+          </div>
+
+          
+          <div class="deep-block">
+            <div class="deep-row">
+              <div class="deep-label">是什么</div>
+              <div class="deep-content"><p>Anthropic 专为网络安全设计的 AI 模型 Claude Mythos Preview 被一小群未授权用户通过第三方承包商的访问权限获取。该模型具备在主流操作系统和浏览器中识别并利用漏洞的能力。与此同时，OpenAI CEO Sam Altman 公开抨击 Mythos 的定位是"恐惧营销"。</p></div>
+            </div>
+            <div class="deep-row">
+              <div class="deep-label">为什么重要</div>
+              <div class="deep-content"><p>这是 AI 安全领域的标志性事件：一个设计用于发现和利用系统漏洞的 AI 工具，本身因安全管控不到位而泄露。讽刺感之外，更深层的问题是——当 AI 模型的攻击能力越来越强，现有的访问管控机制是否跟得上？同时，Altman 的"恐惧营销"批评揭示了 AI 安全叙事正在成为竞争武器：谁拥有最强安全工具，谁就在"负责任的 AI"话语权上占据优势。</p></div>
+            </div>
+            
+            <div class="deep-row">
+              <div class="deep-label">不同来源</div>
+              <div class="deep-content">
+                <div class="source-views">
+                  
+                  <div class="source-view">
+                    <div class="source-name">The Verge AI<span class="stype">科技媒体</span></div>
+                    <div class="source-text">详细报道了泄露路径——通过第三方承包商的访问权限和私人在线论坛——强调供应链安全的脆弱性。</div>
+                  </div>
+                  
+                  <div class="source-view">
+                    <div class="source-name">TechCrunch AI<span class="stype">科技媒体</span></div>
+                    <div class="source-text">分开报道了泄露事件本身和 Altman 的批评，将事件置于 AI 公司间竞争摩擦升温的语境中。</div>
+                  </div>
+                  
+                  <div class="source-view">
+                    <div class="source-name">MIT Technology Review<span class="stype">权威科技评论</span></div>
+                    <div class="source-text">在"10 Things That Matter"专题中将此事列为当日重要事件之一，侧面确认了事件的行业影响力。</div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          
+          <div class="judgment">最值得玩味的不是泄露本身，而是泄露路径：第三方承包商 → 私人论坛。这恰恰是所有 AI 安全讨论中最被低估的风险——不是模型被破解，而是人和流程出问题。Altman 的"恐惧营销"批评虽然有竞争意图，但也点出了一个真实问题：安全能力的商业化本身就充满悖论。</div>
+          
+          
+        </div>
+      </article>
+      
+      <article class="event">
+        <div class="event-num">03<span class="slash">/</span><span class="total">10</span></div>
+        <div class="event-body">
+          <h3 class="event-headline">Meta 部署员工键鼠追踪工具 MCI，采集行为数据训练 AI agent</h3>
+          <div class="event-meta">
+            <span class="grade s">S 级 · 必须关注</span>
+            <span class="meta-sep"></span>
+            <span>2 个来源</span>
+            <span class="meta-sep"></span>
+            <span>2 条新闻</span>
+          </div>
+
+          <div class="tags">
+            <span class="tag tech">Agent</span><span class="tag tech">数据/标注</span>
+            <span class="tag">办公/生产力</span>
+            <span class="tag">行业动态</span>
+            <span class="tag">争议性</span><span class="tag">信号性</span>
+          </div>
+
+          
+          <div class="deep-block">
+            <div class="deep-row">
+              <div class="deep-label">是什么</div>
+              <div class="deep-content"><p>Meta 正在美国员工电脑上部署名为 Model Capability Initiative（MCI）的工具，记录鼠标移动、点击、键盘输入和屏幕截图。这些行为数据将用于训练 AI 模型，使其能够模拟人类与电脑的交互方式并自动化日常工作任务。Meta 表示数据不会用于员工绩效评估。</p></div>
+            </div>
+            <div class="deep-row">
+              <div class="deep-label">为什么重要</div>
+              <div class="deep-content"><p>这是大型科技公司首次公开承认将员工行为数据大规模系统化采集用于 AI 训练。它触及了两个深层问题：一是"雇佣关系中的数据权力不对等"——员工能否真正拒绝？二是"人类行为数据"正在成为 AI agent 训练的核心资源。如果这条路走通，每个企业都可能效仿，办公场景的隐私边界将被根本重塑。</p></div>
+            </div>
+            
+            <div class="deep-row">
+              <div class="deep-label">不同来源</div>
+              <div class="deep-content">
+                <div class="source-views">
+                  
+                  <div class="source-view">
+                    <div class="source-name">TechCrunch AI<span class="stype">科技媒体</span></div>
+                    <div class="source-text">聚焦隐私争议和数据采集边界扩展的趋势性意义，将其置于大型科技公司"不断拓展数据采集边界"的叙事框架中。</div>
+                  </div>
+                  
+                  <div class="source-view">
+                    <div class="source-name">The Verge AI<span class="stype">科技媒体</span></div>
+                    <div class="source-text">披露了工具的具体名称 MCI 和采集细节（包括截图），并注意到 Meta "不用于绩效评估"的免责声明，暗示信任度存疑。</div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          
+          <div class="judgment">"不用于绩效评估"这句免责声明，大概是今天所有新闻里最脆弱的承诺。数据一旦采集，用途的边界就不再完全由承诺决定。更值得思考的是：如果 AI agent 最终需要学会"像人一样操作电脑"，那么这类行为数据就是石油——问题只是谁先开采、谁有权开采。</div>
+          
+          
+        </div>
+      </article>
+      
+      <article class="event">
+        <div class="event-num">04<span class="slash">/</span><span class="total">10</span></div>
+        <div class="event-body">
+          <h3 class="event-headline">YouTube 将 AI 深度伪造检测扩展至名人群体</h3>
+          <div class="event-meta">
+            <span class="grade a">A 级 · 值得细读</span>
+            <span class="meta-sep"></span>
+            <span>2 个来源</span>
+            <span class="meta-sep"></span>
+            <span>2 条新闻</span>
+          </div>
+
+          <div class="tags">
+            <span class="tag tech">多模态</span><span class="tag tech">安全/对齐</span>
+            <span class="tag">创意/设计</span><span class="tag">法律/合规</span>
+            <span class="tag">产品发布</span>
+            <span class="tag">规模性</span><span class="tag">实用性</span>
+          </div>
+
+          
+          <div class="deep-block">
+            <div class="deep-row">
+              <div class="deep-label">是什么</div>
+              <div class="deep-content"><p>YouTube 正将其 AI 深度伪造肖像检测工具的覆盖范围从内容创作者、政治人物和记者扩展至好莱坞名人群体。已加入计划的公众人物可借助平台工具主动追踪涉及自身的 AI 合成内容并申请下架，但最终删除决定仍需依据 YouTube 隐私政策逐案审核。</p></div>
+            </div>
+            <div class="deep-row">
+              <div class="deep-label">为什么重要</div>
+              <div class="deep-content"><p>deepfake 检测从技术 demo 走向规模化部署，YouTube 作为全球最大视频平台的这一举措，事实上正在定义 AI 合成内容治理的行业标准。更重要的是，它建立了一个"权利人主动检测 + 平台审核下架"的双层机制，这可能成为未来所有平台处理 AI 生成内容的模板。</p></div>
+            </div>
+            
+            <div class="deep-row">
+              <div class="deep-label">不同来源</div>
+              <div class="deep-content">
+                <div class="source-views">
+                  
+                  <div class="source-view">
+                    <div class="source-name">TechCrunch AI<span class="stype">科技媒体</span></div>
+                    <div class="source-text">简洁报道功能扩展，强调这是平台应对 deepfake 问题的"重要一步"。</div>
+                  </div>
+                  
+                  <div class="source-view">
+                    <div class="source-name">The Verge AI<span class="stype">科技媒体</span></div>
+                    <div class="source-text">更详细地梳理了功能的历史覆盖范围（创作者 → 政治人物 → 记者 → 名人），并指出"最终是否删除仍需依隐私政策逐一审核"的关键限制。</div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          
+          <div class="judgment">方向正确，但"逐案审核"这个限制条件值得关注——当 AI 生成内容的速度以指数级增长时，逐案审核的效率能否跟上？真正的考验不在于检测能力，而在于审核规模化之后的误判率和公平性。</div>
+          
+          
+        </div>
+      </article>
+      
+      <article class="event">
+        <div class="event-num">05<span class="slash">/</span><span class="total">10</span></div>
+        <div class="event-body">
+          <h3 class="event-headline">ChatGPT Images 2.0 发布：新增联网搜索辅助、文字渲染大幅提升</h3>
+          <div class="event-meta">
+            <span class="grade a">A 级 · 值得细读</span>
+            <span class="meta-sep"></span>
+            <span>3 个来源</span>
+            <span class="meta-sep"></span>
+            <span>3 条新闻</span>
+          </div>
+
+          <div class="tags">
+            <span class="tag tech">图像/视频生成</span><span class="tag tech">多模态</span>
+            <span class="tag">创意/设计</span>
+            <span class="tag">产品发布</span>
+            <span class="tag">实用性</span><span class="tag">突破性</span>
+          </div>
+
+          
+          <div class="deep-block">
+            <div class="deep-row">
+              <div class="deep-label">是什么</div>
+              <div class="deep-content"><p>OpenAI 发布 ChatGPT Images 2.0，由 GPT Image 2 模型驱动，三大升级：联网搜索辅助生成（thinking 功能）、单 prompt 多图输出、图像内嵌文字渲染质量大幅提升。新功能面向 Plus、Pro、Business 和 Enterprise 用户开放。</p></div>
+            </div>
+            <div class="deep-row">
+              <div class="deep-label">为什么重要</div>
+              <div class="deep-content"><p>联网搜索辅助图像生成意味着 AI 图像生成从"凭想象画"进化到"带着知识画"——模型可以先了解一个概念再生成视觉化表达。文字渲染的突破则解决了图像生成领域最顽固的技术痛点之一，使 AI 生成图像在商业场景中的可用性大幅提升。</p></div>
+            </div>
+            
+            <div class="deep-row">
+              <div class="deep-label">不同来源</div>
+              <div class="deep-content">
+                <div class="source-views">
+                  
+                  <div class="source-view">
+                    <div class="source-name">TechCrunch AI<span class="stype">科技媒体</span></div>
+                    <div class="source-text">聚焦文字渲染的"令人惊讶"的质量提升，将其置于 AI 图像生成技术快速演进的叙事中。</div>
+                  </div>
+                  
+                  <div class="source-view">
+                    <div class="source-name">The Verge AI<span class="stype">科技媒体</span></div>
+                    <div class="source-text">更全面地报道了 thinking 联网搜索功能和多图输出能力，强调指令遵循和细节保留的整体提升。</div>
+                  </div>
+                  
+                  <div class="source-view">
+                    <div class="source-name">GitHub Feeds / Peter Yang<span class="stype">用户反馈</span></div>
+                    <div class="source-text">实际使用中发现网页端 bug，模型偶尔"忘记"图像生成能力，反映新功能的稳定性仍有待打磨。</div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          
+          <div class="judgment">技术进步是实在的，但 Peter Yang 发现的 bug 也很有代表性——模型"忘记自己会画画"恰恰说明多模态能力的集成仍不够稳健。产品力和稳定性之间的差距，才是决定这类工具能否从"惊艳 demo"走向"日常工具"的关键。</div>
+          
+          
+        </div>
+      </article>
+      
+      <article class="event">
+        <div class="event-num">06<span class="slash">/</span><span class="total">10</span></div>
+        <div class="event-body">
+          <h3 class="event-headline">AI 治理幻觉：72% 企业高估自身管控能力，Agent 安全治理体系亟待建立</h3>
+          <div class="event-meta">
+            <span class="grade a">A 级 · 值得细读</span>
+            <span class="meta-sep"></span>
+            <span>2 个来源</span>
+            <span class="meta-sep"></span>
+            <span>3 条新闻</span>
+          </div>
+
+          <div class="tags">
+            <span class="tag tech">Agent</span><span class="tag tech">安全/对齐</span><span class="tag tech">基础设施/MLOps</span>
+            <span class="tag">金融/商业</span><span class="tag">法律/合规</span>
+            <span class="tag">研究成果</span><span class="tag">观点/评论</span>
+            <span class="tag">信号性</span><span class="tag">实用性</span>
+          </div>
+
+          
+          <div class="deep-block">
+            <div class="deep-row">
+              <div class="deep-label">是什么</div>
+              <div class="deep-content"><p>多份报告同时揭示企业 AI 治理的严峻现状：Deloitte 数据显示 74% 的企业计划部署 agentic AI，但仅 21% 建立了成熟治理模型；VentureBeat 调研发现 72% 的企业对自身 AI 管控能力存在严重误判，近三分之一缺乏检测 AI 异常行为的机制。"把 AI 安全外包给制造 AI 风险的同一批供应商"被指为最危险的陷阱。</p></div>
+            </div>
+            <div class="deep-row">
+              <div class="deep-label">为什么重要</div>
+              <div class="deep-content"><p>这组数据揭示了一个危险的"治理幻觉"：企业以为自己在管控 AI，实际上既看不清 agent 在做什么，也缺乏出事后的问责机制。当非人类身份（NHI）数量已超越人类账户时，传统的身份与访问管理体系已根本不适用。这不是技术问题，而是组织架构和治理范式需要根本性重建。</p></div>
+            </div>
+            
+            <div class="deep-row">
+              <div class="deep-label">不同来源</div>
+              <div class="deep-content">
+                <div class="source-views">
+                  
+                  <div class="source-view">
+                    <div class="source-name">MIT Technology Review<span class="stype">权威科技评论</span></div>
+                    <div class="source-text">引用 Deloitte 报告，从控制平面概念出发阐述治理体系设计，强调"如果无法回答 agent 做了什么，就没有真正的控制"。</div>
+                  </div>
+                  
+                  <div class="source-view">
+                    <div class="source-name">VentureBeat<span class="stype">科技媒体</span></div>
+                    <div class="source-text">以 Mass General Brigham 和 MassMutual 为案例，批评依赖供应商内置安全的被动策略，主张建立独立控制平面。</div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          
+          <div class="judgment">两组数据放在一起看更有说服力：74% 要部署、21% 有治理、72% 误判自身能力。这三个数字拼出的画面是——大多数企业正在闭着眼睛往前冲。在 Vercel 的 OAuth 安全事件（见下）提供了活生生的案例之后，"先部署再治理"的路径依赖到底还能维持多久？</div>
+          
+          
+        </div>
+      </article>
+      
+      <article class="event">
+        <div class="event-num">07<span class="slash">/</span><span class="total">10</span></div>
+        <div class="event-body">
+          <h3 class="event-headline">Google Cloud Next 密集发布：Deep Research 双版本、Agentic Data Cloud、Thinking Machines Lab 数十亿美元合作</h3>
+          <div class="event-meta">
+            <span class="grade a">A 级 · 值得细读</span>
+            <span class="meta-sep"></span>
+            <span>2 个来源</span>
+            <span class="meta-sep"></span>
+            <span>6 条新闻</span>
+          </div>
+
+          <div class="tags">
+            <span class="tag tech">Agent</span><span class="tag tech">搜索/信息检索</span><span class="tag tech">基础设施/MLOps</span><span class="tag tech">大模型/LLM</span>
+            <span class="tag">通用/跨领域</span><span class="tag">科学研究</span>
+            <span class="tag">产品发布</span><span class="tag">融资/收购</span>
+            <span class="tag">规模性</span><span class="tag">生态性</span>
+          </div>
+
+          
+          <div class="deep-block">
+            <div class="deep-row">
+              <div class="deep-label">是什么</div>
+              <div class="deep-content"><p>Google 在 Cloud Next 2026 大会上密集发布：基于 Gemini 3.1 Pro 的 Deep Research 双版本（支持 MCP 协议融合公私数据）、面向 agent 的 Agentic Data Cloud 架构（含 Knowledge Catalog 和 Data Agent Kit）、与 Mira Murati 的 Thinking Machines Lab 签署数十亿美元基础设施协议、Gemini 单台隔离服务器部署方案（断电即消）。</p></div>
+            </div>
+            <div class="deep-row">
+              <div class="deep-label">为什么重要</div>
+              <div class="deep-content"><p>这不是碎片化的产品更新，而是一次系统性的战略宣言。Deep Research 的 MCP 支持意味着 Google 正在接纳开放协议而非封闭生态；Agentic Data Cloud 试图重新定义数据栈的设计对象——从人到 agent；Gemini 隔离部署则直接切入金融/医疗/政府等高壁垒市场。与 Thinking Machines Lab 的合作则显示 Google 在自研 Gemini 之外继续加码"多方押注"策略。</p></div>
+            </div>
+            
+            <div class="deep-row">
+              <div class="deep-label">不同来源</div>
+              <div class="deep-content">
+                <div class="source-views">
+                  
+                  <div class="source-view">
+                    <div class="source-name">VentureBeat<span class="stype">科技媒体</span></div>
+                    <div class="source-text">分别深度报道了 Deep Research 的技术细节和 Agentic Data Cloud 的架构设计，引用 Google Cloud 副总裁"从人类规模迈向 agent 规模"的表态。</div>
+                  </div>
+                  
+                  <div class="source-view">
+                    <div class="source-name">TechCrunch AI<span class="stype">科技媒体</span></div>
+                    <div class="source-text">独家披露 Thinking Machines Lab 协议，并报道了 Maps AI 和初创公司展示，侧重 Google 在 AI 生态拉拢方面的动作。</div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          
+          <div class="judgment">Google 这次 Cloud Next 的信息量很大，但最值得记住的是两个关键词：MCP 和"断电即消"。前者说明 Google 开始拥抱互操作性标准而非封闭围墙，后者则是对"我们不信任云"这类客户顾虑的最直接回应。至于与 Thinking Machines Lab 的合作——当你连前竞争对手的 CTO 都能拉进阵营，这场算力军备竞赛的烈度可见一斑。</div>
+          
+          
+        </div>
+      </article>
+      
+      <article class="event">
+        <div class="event-num">08<span class="slash">/</span><span class="total">10</span></div>
+        <div class="event-body">
+          <h3 class="event-headline">Kimi K2.6 让 agent 连跑数天，暴露企业级编排框架的根本性缺陷</h3>
+          <div class="event-meta">
+            <span class="grade a">A 级 · 值得细读</span>
+            <span class="meta-sep"></span>
+            <span>1 个来源</span>
+            <span class="meta-sep"></span>
+            <span>1 条新闻</span>
+          </div>
+
+          <div class="tags">
+            <span class="tag tech">Agent</span><span class="tag tech">大模型/LLM</span><span class="tag tech">基础设施/MLOps</span>
+            <span class="tag">编程/Coding</span>
+            <span class="tag">产品发布</span><span class="tag">观点/评论</span>
+            <span class="tag">信号性</span><span class="tag">突破性</span>
+          </div>
+
+          
+          <div class="deep-block">
+            <div class="deep-row">
+              <div class="deep-label">是什么</div>
+              <div class="deep-content"><p>Moonshot AI 发布 Kimi K2.6，专为长时间连续执行设计。案例包括一个连跑五天自主处理监控与故障响应的 agent，以及 13 小时完成 1000+ 工具调用、修改 4000+ 行代码的工程任务。然而，长周期 agent 正在暴露编排框架在状态维护、动态规划和回滚机制上的根本性缺陷。</p></div>
+            </div>
+            <div class="deep-row">
+              <div class="deep-label">为什么重要</div>
+              <div class="deep-content"><p>这是"agent 能跑多久"这个问题的第一次工程化回答。连跑五天意味着 agent 不再是"一次性执行任务"的工具，而是需要像服务一样被运维的持久化基础设施。但现有的编排框架从未为此设计——没有 checkpoint、没有回滚、没有优雅降级。正如 F5 首席产品官所言，行业"缺乏相应的治理语言和架构范式"。</p></div>
+            </div>
+            
+            <div class="deep-row">
+              <div class="deep-label">不同来源</div>
+              <div class="deep-content">
+                <div class="source-views">
+                  
+                  <div class="source-view">
+                    <div class="source-name">VentureBeat<span class="stype">科技媒体</span></div>
+                    <div class="source-text">平衡报道了 K2.6 的能力突破和编排框架的结构性缺陷，引用多位从业者观点指出这"不是写 prompt 能解决的问题"。</div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          
+          <div class="judgment">K2.6 本身是否最强并不重要，重要的是它把"agent 运行时间"从小时级推到了天级，而整个基础设施层还停留在"函数调用"的心智模型里。这个落差才是真正的新闻——当 agent 变成了需要运维的服务，谁来写它的 SRE 手册？</div>
+          
+          
+        </div>
+      </article>
+      
+      <article class="event">
+        <div class="event-num">09<span class="slash">/</span><span class="total">10</span></div>
+        <div class="event-body">
+          <h3 class="event-headline">Vercel 安全事件：OAuth 授权漏洞横跨四个组织边界完成渗透</h3>
+          <div class="event-meta">
+            <span class="grade a">A 级 · 值得细读</span>
+            <span class="meta-sep"></span>
+            <span>1 个来源</span>
+            <span class="meta-sep"></span>
+            <span>1 条新闻</span>
+          </div>
+
+          <div class="tags">
+            <span class="tag tech">安全/对齐</span><span class="tag tech">基础设施/MLOps</span>
+            <span class="tag">编程/Coding</span><span class="tag">法律/合规</span>
+            <span class="tag">安全事件</span>
+            <span class="tag">争议性</span><span class="tag">实用性</span>
+          </div>
+
+          
+          <div class="deep-block">
+            <div class="deep-row">
+              <div class="deep-label">是什么</div>
+              <div class="deep-content"><p>Vercel 一名员工安装了 Context.ai 浏览器插件并以企业 Google Workspace 账号授予"允许所有权限"。Context.ai 随后遭 Lumma Stealer 木马攻击，攻击者通过继承 OAuth 令牌进入 Vercel 生产环境，利用未标记为"敏感"的环境变量完成权限提升。整条攻击链横跨四个组织边界、两家云服务商和一个身份认证层，全程无需任何零日漏洞。</p></div>
+            </div>
+            <div class="deep-row">
+              <div class="deep-label">为什么重要</div>
+              <div class="deep-content"><p>这个案例的教科书级别在于：每一步都合规、每一步都有授权、最终结果却是灾难性的。它暴露的不是某个产品的漏洞，而是整个 OAuth 授权模型在 AI 工具时代的系统性缺陷——当员工安装的每个 AI 插件都可能成为攻击入口时，传统的"边界防御"思维已经失效。</p></div>
+            </div>
+            
+            <div class="deep-row">
+              <div class="deep-label">不同来源</div>
+              <div class="deep-content">
+                <div class="source-views">
+                  
+                  <div class="source-view">
+                    <div class="source-name">VentureBeat<span class="stype">科技媒体</span></div>
+                    <div class="source-text">深度技术解析完整攻击链，引用 Vercel CEO 关于攻击者"显著借助 AI 加速"的判断，将此案定位为 OAuth 治理缺失的标志性案例。</div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          
+          <div class="judgment">Vercel CEO 说攻击者"显著借助 AI 加速"——这句话本身就值得关注。当攻击工具也在用 AI 提效时，防御侧的反应速度和自动化程度如果跟不上，安全态势只会越来越不对称。这个案例应该被每个使用 OAuth 授权 AI 工具的企业研读。</div>
+          
+          
+        </div>
+      </article>
+      
+      <article class="event">
+        <div class="event-num">10<span class="slash">/</span><span class="total">10</span></div>
+        <div class="event-body">
+          <h3 class="event-headline">AI 安全报告涌入"高质量混乱"时代：LLM 生成的报告推动 Linux 内核代码被批量移除</h3>
+          <div class="event-meta">
+            <span class="grade a">A 级 · 值得细读</span>
+            <span class="meta-sep"></span>
+            <span>1 个来源</span>
+            <span class="meta-sep"></span>
+            <span>2 条新闻</span>
+          </div>
+
+          <div class="tags">
+            <span class="tag tech">安全/对齐</span><span class="tag tech">大模型/LLM</span>
+            <span class="tag">编程/Coding</span>
+            <span class="tag">行业动态</span><span class="tag">观点/评论</span>
+            <span class="tag">争议性</span><span class="tag">信号性</span>
+          </div>
+
+          
+          <div class="deep-block">
+            <div class="deep-row">
+              <div class="deep-label">是什么</div>
+              <div class="deep-content"><p>两条互补的报道揭示了同一个趋势：AI 生成的安全漏洞报告正在大量涌入开源项目，安全社区称之为"高质量混乱"时代。更具体地，LLM 生成的安全报告已经在推动 Linux 内核代码被批量移除，但其中部分移除可能是误报导致的错误剔除。</p></div>
+            </div>
+            <div class="deep-row">
+              <div class="deep-label">为什么重要</div>
+              <div class="deep-content"><p>这是 AI 工具"双刃剑效应"的典型案例。一方面，AI 确实能发现人类忽略的潜在漏洞；另一方面，当误报率不可控时，修复行为本身就成了新的风险源。对于 Linux 内核这样的关键基础设施，误删功能正常的代码可能引发连锁故障。更深层的问题是：谁来审核 AI 的审核？</p></div>
+            </div>
+            
+            <div class="deep-row">
+              <div class="deep-label">不同来源</div>
+              <div class="deep-content">
+                <div class="source-views">
+                  
+                  <div class="source-view">
+                    <div class="source-name">Hacker News AI（curl 维护者博客）<span class="stype">技术社区</span></div>
+                    <div class="source-text">从开源项目维护者的一线视角描述 AI 安全报告的涌入现状，强调审核成本和疲劳感。</div>
+                  </div>
+                  
+                  <div class="source-view">
+                    <div class="source-name">Hacker News AI（LWN.net）<span class="stype">技术社区</span></div>
+                    <div class="source-text">聚焦 Linux 内核的具体案例，指出 AI 自动化安全分析在提效的同时产生了"错误删除功能代码"的负面后果。</div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          
+          <div class="judgment">"高质量混乱"这个词用得精准——AI 生成的安全报告写得像模像样，但可能完全是错的。当 Linux 内核都在被 AI 误报推着删代码时，我们需要认真思考：AI 安全工具的准入门槛应该是什么？是不是该对"AI 生成"这个标签增加额外的审核层？</div>
+          
+          
+        </div>
+      </article>
+      
+    </div>
+  </section>
+  
+
+  
+  
+  <section>
+    <div class="section-label">Cross-Source · 同事件 · 不同视角</div>
+    <h2 class="section-title">同一件事,不同说法</h2>
+
+    
+    <div class="multi-source-event">
+      <h3 class="event-headline">SpaceX 拟以 600 亿美元收购 AI 编程平台 Cursor，Musk AI 版图再扩张</h3>
+      <div class="event-meta">
+        <span class="grade s">S 级</span>
+        <span class="meta-sep"></span>
+        <span>合并自 3 个来源</span>
+      </div>
+      
+      <div class="source-table">
+        
+        <div class="source-row">
+          <div class="name">The Verge AI</div>
+          <div class="view">SpaceX 拟 600 亿美元收购 Cursor 或 100 亿授权费</div>
+        </div>
+        
+        <div class="source-row">
+          <div class="name">TechCrunch AI</div>
+          <div class="view">TechCrunch 确认 SpaceX 持有 Cursor 收购选择权</div>
+        </div>
+        
+        <div class="source-row">
+          <div class="name">GitHub Feeds / Swyx</div>
+          <div class="view">Swyx 翻出 Cursor 5 人团队时期的早期播客</div>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+    <div class="multi-source-event">
+      <h3 class="event-headline">Anthropic 网络安全模型 Mythos 疑遭未授权访问，Altman 抨击为"恐惧营销"</h3>
+      <div class="event-meta">
+        <span class="grade s">S 级</span>
+        <span class="meta-sep"></span>
+        <span>合并自 3 个来源</span>
+      </div>
+      
+      <div class="source-table">
+        
+        <div class="source-row">
+          <div class="name">The Verge AI</div>
+          <div class="view">Anthropic Mythos 模型经第三方承包商渠道泄露</div>
+        </div>
+        
+        <div class="source-row">
+          <div class="name">TechCrunch AI</div>
+          <div class="view">TechCrunch 报道 Mythos 安全工具遭未授权访问</div>
+        </div>
+        
+        <div class="source-row">
+          <div class="name">TechCrunch AI</div>
+          <div class="view">Altman 抨击 Mythos 为"恐惧营销"</div>
+        </div>
+        
+        <div class="source-row">
+          <div class="name">MIT Technology Review</div>
+          <div class="view">MIT TR 将 Mythos 泄露列为 AI 重要事件</div>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+    <div class="multi-source-event">
+      <h3 class="event-headline">Meta 部署员工键鼠追踪工具 MCI，采集行为数据训练 AI agent</h3>
+      <div class="event-meta">
+        <span class="grade s">S 级</span>
+        <span class="meta-sep"></span>
+        <span>合并自 2 个来源</span>
+      </div>
+      
+      <div class="source-table">
+        
+        <div class="source-row">
+          <div class="name">TechCrunch AI</div>
+          <div class="view">Meta 将员工键鼠行为转化为 AI 训练数据</div>
+        </div>
+        
+        <div class="source-row">
+          <div class="name">The Verge AI</div>
+          <div class="view">The Verge 披露 Meta MCI 工具采集员工屏幕操作</div>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+    <div class="multi-source-event">
+      <h3 class="event-headline">YouTube 将 AI 深度伪造检测扩展至名人群体</h3>
+      <div class="event-meta">
+        <span class="grade a">A 级</span>
+        <span class="meta-sep"></span>
+        <span>合并自 2 个来源</span>
+      </div>
+      
+      <div class="source-table">
+        
+        <div class="source-row">
+          <div class="name">TechCrunch AI</div>
+          <div class="view">YouTube AI 肖像检测从创作者扩展至名人</div>
+        </div>
+        
+        <div class="source-row">
+          <div class="name">The Verge AI</div>
+          <div class="view">名人可在 YouTube 主动检索并下架 AI deepfake</div>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+    <div class="multi-source-event">
+      <h3 class="event-headline">ChatGPT Images 2.0 发布：联网搜索辅助、文字渲染大幅提升</h3>
+      <div class="event-meta">
+        <span class="grade a">A 级</span>
+        <span class="meta-sep"></span>
+        <span>合并自 3 个来源</span>
+      </div>
+      
+      <div class="source-table">
+        
+        <div class="source-row">
+          <div class="name">TechCrunch AI</div>
+          <div class="view">ChatGPT Images 2.0 文字渲染质量大幅提升</div>
+        </div>
+        
+        <div class="source-row">
+          <div class="name">The Verge AI</div>
+          <div class="view">Images 2.0 新增联网检索和 thinking 功能</div>
+        </div>
+        
+        <div class="source-row">
+          <div class="name">GitHub Feeds / Peter Yang</div>
+          <div class="view">用户反馈 Images 网页端偶发功能遗忘 bug</div>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+    <div class="multi-source-event">
+      <h3 class="event-headline">AI 治理幻觉：72% 企业高估自身管控能力</h3>
+      <div class="event-meta">
+        <span class="grade a">A 级</span>
+        <span class="meta-sep"></span>
+        <span>合并自 2 个来源</span>
+      </div>
+      
+      <div class="source-table">
+        
+        <div class="source-row">
+          <div class="name">MIT Technology Review</div>
+          <div class="view">74% 企业要部署 agent，仅 21% 有成熟治理</div>
+        </div>
+        
+        <div class="source-row">
+          <div class="name">VentureBeat</div>
+          <div class="view">72% 企业高估自身 AI 管控能力</div>
+        </div>
+        
+        <div class="source-row">
+          <div class="name">MIT Technology Review</div>
+          <div class="view">SAP 高管：AI 没有数据上下文就无法做正确判断</div>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+    <div class="multi-source-event">
+      <h3 class="event-headline">Google Cloud Next 密集发布：Deep Research、Agentic Data Cloud、Thinking Machines Lab 合作</h3>
+      <div class="event-meta">
+        <span class="grade a">A 级</span>
+        <span class="meta-sep"></span>
+        <span>合并自 2 个来源</span>
+      </div>
+      
+      <div class="source-table">
+        
+        <div class="source-row">
+          <div class="name">VentureBeat</div>
+          <div class="view">Google 推出 Deep Research 双版本，融合公私数据</div>
+        </div>
+        
+        <div class="source-row">
+          <div class="name">VentureBeat</div>
+          <div class="view">Google 发布 Agentic Data Cloud</div>
+        </div>
+        
+        <div class="source-row">
+          <div class="name">TechCrunch AI</div>
+          <div class="view">Thinking Machines Lab 获 Google 数十亿美元算力协议</div>
+        </div>
+        
+        <div class="source-row">
+          <div class="name">VentureBeat</div>
+          <div class="view">Gemini 可断网单机运行，断电即清除</div>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+    <div class="multi-source-event">
+      <h3 class="event-headline">AI 安全报告涌入"高质量混乱"时代</h3>
+      <div class="event-meta">
+        <span class="grade a">A 级</span>
+        <span class="meta-sep"></span>
+        <span>合并自 1 个来源</span>
+      </div>
+      
+      <div class="source-table">
+        
+        <div class="source-row">
+          <div class="name">Hacker News AI</div>
+          <div class="view">AI 安全报告涌入让审核团队不堪重负</div>
+        </div>
+        
+        <div class="source-row">
+          <div class="name">Hacker News AI</div>
+          <div class="view">LLM 安全报告误报致内核代码被错误移除</div>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+  </section>
+  
+
+  
+  <section>
+    <div class="section-label">Storyline · 关键话题持续追踪</div>
+    <div class="placeholder">
+      <div class="placeholder-title">话题主线追踪</div>
+      <div class="placeholder-desc">
+        本模块将持续追踪 AI Agent、模型发布、芯片硬件、监管政策等关键主线的演进。
+        判断每条新事件是"全新主线"还是"已有主线的新进展"，并展示主线的发展轨迹。
+        <br><br>
+        需要至少 7 天历史数据积累，Week 2 启用。
+      </div>
+      <span class="placeholder-eta">Week 2 启用</span>
+    </div>
+  </section>
+
+  
+  
+  <section>
+    <div class="section-label">Scan · 一句话扫描区 · B / C 级</div>
+    <h2 class="section-title">其余 11 条 · 知道有就行</h2>
+
+    <ul class="scan-list">
+      
+      <li class="scan-item">
+        <span class="scan-grade b">B 级</span>
+        <span class="scan-title">Netflix AI 合作协议威胁全球 VFX 从业者生计</span>
+        <span class="scan-source">Hacker News AI</span>
+      </li>
+      
+      <li class="scan-item">
+        <span class="scan-grade b">B 级</span>
+        <span class="scan-title">AI 反弹浪潮渗入美国选举政治，60% 选民要求政府监管</span>
+        <span class="scan-source">The Verge AI</span>
+      </li>
+      
+      <li class="scan-item">
+        <span class="scan-grade b">B 级</span>
+        <span class="scan-title">Every 全员 AI agent 实验：当每位员工都有专属 AI 分身</span>
+        <span class="scan-source">GitHub Feeds / Every</span>
+      </li>
+      
+      <li class="scan-item">
+        <span class="scan-grade b">B 级</span>
+        <span class="scan-title">Clarifai 删除 300 万张 OkCupid 用户照片，涉 FTC 和解</span>
+        <span class="scan-source">TechCrunch AI</span>
+      </li>
+      
+      <li class="scan-item">
+        <span class="scan-grade b">B 级</span>
+        <span class="scan-title">伊朗利用 AI 生成低质量内容精准触达不关注新闻的人群</span>
+        <span class="scan-source">Hacker News AI</span>
+      </li>
+      
+      <li class="scan-item">
+        <span class="scan-grade b">B 级</span>
+        <span class="scan-title">顶级律所因 AI 幻觉向破产法官道歉</span>
+        <span class="scan-source">Hacker News AI</span>
+      </li>
+      
+      <li class="scan-item">
+        <span class="scan-grade c">C 级</span>
+        <span class="scan-title">Starbucks ChatGPT 点单集成体验糟糕</span>
+        <span class="scan-source">The Verge AI</span>
+      </li>
+      
+      <li class="scan-item">
+        <span class="scan-grade c">C 级</span>
+        <span class="scan-title">SpaceX 称太空 AI 数据中心商业可行性尚待验证</span>
+        <span class="scan-source">Hacker News AI</span>
+      </li>
+      
+      <li class="scan-item">
+        <span class="scan-grade c">C 级</span>
+        <span class="scan-title">Bond 新社交平台用 AI 鼓励用户放下手机</span>
+        <span class="scan-source">TechCrunch AI</span>
+      </li>
+      
+      <li class="scan-item">
+        <span class="scan-grade c">C 级</span>
+        <span class="scan-title">AI Dungeon 开发商推出 Voyage AI RPG 创作平台</span>
+        <span class="scan-source">TechCrunch AI</span>
+      </li>
+      
+      <li class="scan-item">
+        <span class="scan-grade c">C 级</span>
+        <span class="scan-title">行业观点集锦：企业 AI 落地的人力因素与工具边界</span>
+        <span class="scan-source">GitHub Feeds / Aaron Levie, Hacker News AI</span>
+      </li>
+      
+    </ul>
+  </section>
+  
+
+  
+  
+  <div class="closing">
+    <div class="closing-mark">— 主编寄语 —</div>
+    <div class="closing-text">今天的新闻场上有三个词反复出现：未授权、追踪、收购。Mythos 被未授权访问，Meta 追踪员工行为，SpaceX 要收购 Cursor。
+表面上是三个独立事件，底层是同一个逻辑：当 AI 的能力边界不断扩张时，控制权的争夺——谁控制模型、谁控制数据、谁控制工具——才是这场变革中真正的主战场。</div>
+    <div class="closing-sig">明天见 · 编辑部</div>
+  </div>
+  
+
+  <footer class="footer">
+    <span>AI 主编日报 · 2026-04-22</span>
+    <span>主笔 / Claude Editorial</span>
+  </footer>
+
+</div>
+
+</body>
+</html>

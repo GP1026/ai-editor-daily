@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 主编日报 · 往期存档</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..900,0..100&family=Noto+Serif+SC:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f4ede0;
+    --bg-deep: #ebe2d0;
+    --ink: #1c1814;
+    --ink-soft: #3a342c;
+    --gray: #756a5c;
+    --gray-light: #a59b8c;
+    --line: #c9bfac;
+    --line-soft: #ddd2bd;
+    --accent: #9a2828;
+    --accent-deep: #6e1d1d;
+    --font-display: 'Fraunces', 'Noto Serif SC', serif;
+    --font-serif: 'Noto Serif SC', 'Fraunces', serif;
+    --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    background: var(--bg); color: var(--ink);
+    font-family: var(--font-serif); font-weight: 400;
+    line-height: 1.7; -webkit-font-smoothing: antialiased;
+  }
+  .page { max-width: 880px; margin: 0 auto; padding: 56px 48px 96px; }
+
+  .masthead { border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 40px; }
+  .masthead h1 {
+    font-family: var(--font-display); font-weight: 600;
+    font-size: 64px; line-height: 0.95; letter-spacing: -0.025em;
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+  }
+  .masthead h1 .en {
+    font-style: italic; font-weight: 400; font-size: 0.42em;
+    color: var(--gray); margin-left: 14px;
+    font-variation-settings: "opsz" 14, "SOFT" 100;
+  }
+  .masthead .tagline {
+    font-size: 13px; color: var(--gray); margin-top: 12px; letter-spacing: 0.04em;
+  }
+
+  .archive-list { list-style: none; margin-top: 32px; }
+  .archive-item {
+    display: grid; grid-template-columns: 160px 1fr auto; gap: 24px;
+    padding: 20px 0; border-bottom: 1px solid var(--line-soft); align-items: baseline;
+  }
+  .archive-item:first-child { border-top: 1px solid var(--line); padding-top: 24px; }
+  .archive-item:last-child { border-bottom: 2px solid var(--ink); }
+
+  .archive-date {
+    font-family: var(--font-display); font-weight: 500; font-size: 22px;
+    color: var(--ink); font-variation-settings: "opsz" 48;
+  }
+  .archive-date a {
+    color: var(--ink); text-decoration: none;
+    transition: color 0.15s;
+  }
+  .archive-date a:hover { color: var(--accent); }
+
+  .archive-summary { font-size: 14px; color: var(--ink-soft); line-height: 1.6; }
+  .archive-summary .highlight {
+    color: var(--accent); font-weight: 600;
+  }
+
+  .archive-stats {
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--gray); white-space: nowrap;
+    text-align: right;
+  }
+  .archive-stats span { display: block; margin-bottom: 2px; }
+
+  .footer {
+    margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--line);
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--gray-light);
+    display: flex; justify-content: space-between;
+  }
+
+  @media (max-width: 720px) {
+    .page { padding: 32px 22px 64px; }
+    .masthead h1 { font-size: 42px; }
+    .masthead h1 .en { display: block; margin-left: 0; margin-top: 6px; }
+    .archive-item { grid-template-columns: 1fr; gap: 6px; }
+    .archive-stats { text-align: left; margin-top: 4px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <header class="masthead">
+    <h1>AI 主编日报<span class="en">The Editor's Brief — Archive</span></h1>
+    <div class="tagline">每天五分钟，读懂 AI 世界今天真正重要的事。不堆砌信息，只提供判断。</div>
+  </header>
+
+  <ul class="archive-list">
+    <li class="archive-item">
+      <div class="archive-date"><a href="2026-04-25.html">04.25 Fri</a></div>
+      <div class="archive-summary">
+        <span class="highlight">DeepSeek-V4 开源逼近闭源顶级</span>，定价仅六分之一；Google 拟 400 亿投资 Anthropic；Musk 拟 600 亿收购 Cursor
+      </div>
+      <div class="archive-stats">
+        <span>10 news</span>
+        <span>8 events</span>
+        <span>S:2 A:3</span>
+      </div>
+    </li>
+    <li class="archive-item">
+      <div class="archive-date"><a href="2026-04-24.html">04.24 Thu</a></div>
+      <div class="archive-summary">
+        <span class="highlight">GPT-5.5 正式发布</span>，Terminal-Bench 微弱超越 Mythos；Anthropic 复盘 Claude 性能下滑根因；Claude Managed Agents Memory 发布；DeepSeek V4 预览
+      </div>
+      <div class="archive-stats">
+        <span>47 news</span>
+        <span>events</span>
+        <span>S:3 A:8</span>
+      </div>
+    </li>
+    <li class="archive-item">
+      <div class="archive-date"><a href="2026-04-23.html">04.23 Wed</a></div>
+      <div class="archive-summary">
+        <span class="highlight">OpenAI Workspace Agents 发布</span>；Google 第八代 TPU 训推分芯；Google Cloud Next 全面发力 Agent 平台
+      </div>
+      <div class="archive-stats">
+        <span>49 news</span>
+        <span>18 events</span>
+        <span>S:3 A:6</span>
+      </div>
+    </li>
+    <li class="archive-item">
+      <div class="archive-date"><a href="2026-04-22.html">04.22 Tue</a></div>
+      <div class="archive-summary">
+        <span class="highlight">SpaceX 拟 600 亿收购 Cursor</span>；Anthropic Mythos 模型泄露；Meta MCI 追踪员工行为训练 AI
+      </div>
+      <div class="archive-stats">
+        <span>58 news</span>
+        <span>21 events</span>
+        <span>S:3 A:7</span>
+      </div>
+    </li>
+    <li class="archive-item">
+      <div class="archive-date"><a href="2026-04-21.html">04.21 Mon</a></div>
+      <div class="archive-summary">
+        <span class="highlight">Amazon-Anthropic 50 亿投资</span> + 1000 亿 AWS 云支出承诺；AI 安全攻防全面升级；Apple CEO 换帅
+      </div>
+      <div class="archive-stats">
+        <span>29 news</span>
+        <span>14 events</span>
+        <span>S:3 A:4</span>
+      </div>
+    </li>
+  </ul>
+
+  <footer class="footer">
+    <span>AI 主编日报 · 往期存档</span>
+    <span>Powered by Claude Code</span>
+  </footer>
+</div>
+
+</body>
+</html>

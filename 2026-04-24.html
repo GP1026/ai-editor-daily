@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 主编日报 · 2026-04-24</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..900,0..100&family=Noto+Serif+SC:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f4ede0;
+    --bg-deep: #ebe2d0;
+    --ink: #1c1814;
+    --ink-soft: #3a342c;
+    --gray: #756a5c;
+    --gray-light: #a59b8c;
+    --line: #c9bfac;
+    --line-soft: #ddd2bd;
+    --accent: #9a2828;
+    --accent-deep: #6e1d1d;
+    --gold: #8b6914;
+    --green: #3d5a3a;
+    --font-display: 'Fraunces', 'Noto Serif SC', serif;
+    --font-serif: 'Noto Serif SC', 'Fraunces', serif;
+    --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    background: var(--bg); color: var(--ink);
+    font-family: var(--font-serif); font-weight: 400;
+    line-height: 1.7; -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  .page { max-width: 880px; margin: 0 auto; padding: 56px 48px 96px; position: relative; }
+
+  /* 刊头 */
+  .masthead { border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 8px; }
+  .masthead-top {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--gray); margin-bottom: 14px;
+  }
+  .masthead-top .left { display: flex; gap: 18px; flex-wrap: wrap; }
+  .masthead-top .left span { display: flex; align-items: center; gap: 6px; }
+  .masthead-top .dot { display: inline-block; width: 5px; height: 5px; background: var(--accent); border-radius: 50%; }
+  .masthead h1 {
+    font-family: var(--font-display); font-weight: 600;
+    font-size: 76px; line-height: 0.95; letter-spacing: -0.025em;
+    font-variation-settings: "opsz" 144, "SOFT" 30; color: var(--ink);
+  }
+  .masthead h1 .en {
+    font-style: italic; font-weight: 400; font-size: 0.42em;
+    color: var(--gray); margin-left: 14px; letter-spacing: 0.01em;
+    vertical-align: middle; font-variation-settings: "opsz" 14, "SOFT" 100;
+  }
+  .masthead .tagline { font-size: 13px; color: var(--gray); margin-top: 12px; letter-spacing: 0.04em; }
+  .masthead-meta {
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    margin-top: 4px; font-family: var(--font-mono); font-size: 10.5px;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray);
+    padding-top: 10px; border-top: 1px solid var(--line);
+  }
+  .masthead-meta .stats { display: flex; gap: 24px; flex-wrap: wrap; }
+  .masthead-meta .stats b { color: var(--ink); font-weight: 500; margin-left: 4px; }
+
+  /* 通用 section */
+  section { margin-top: 56px; }
+  .section-label {
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--line); }
+  .section-title {
+    font-family: var(--font-display); font-weight: 500; font-size: 32px;
+    line-height: 1.15; letter-spacing: -0.015em; color: var(--ink);
+    margin-bottom: 24px; font-variation-settings: "opsz" 60;
+  }
+
+  /* 主编叙事 */
+  .editorial {
+    margin-top: 32px; padding: 32px 0;
+    border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  }
+  .editorial-eyebrow {
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 16px;
+  }
+  .editorial-body { font-size: 17px; line-height: 1.85; color: var(--ink-soft); }
+  .editorial-body p { margin-bottom: 18px; }
+  .editorial-body p:last-child { margin-bottom: 0; }
+  .editorial-body p:first-child::first-letter {
+    font-family: var(--font-display); font-weight: 600; font-size: 64px;
+    float: left; line-height: 0.85; margin: 8px 10px 0 0;
+    color: var(--accent); font-variation-settings: "opsz" 144;
+  }
+  .editorial-body strong {
+    font-weight: 600; color: var(--ink);
+    background: linear-gradient(to top, rgba(154,40,40,0.12) 0%, rgba(154,40,40,0.12) 30%, transparent 30%);
+    padding: 0 2px;
+  }
+  .editorial-sign {
+    margin-top: 24px; font-family: var(--font-mono); font-size: 11px;
+    letter-spacing: 0.12em; color: var(--gray); text-transform: uppercase;
+  }
+
+  /* Top Events */
+  .event {
+    padding: 36px 0; border-bottom: 1px solid var(--line-soft);
+    display: grid; grid-template-columns: 64px 1fr; gap: 32px;
+  }
+  .event:last-child { border-bottom: none; }
+  .event-num {
+    font-family: var(--font-display); font-weight: 300; font-size: 56px;
+    line-height: 1; color: var(--accent);
+    font-variation-settings: "opsz" 144; letter-spacing: -0.04em;
+  }
+  .event-num .slash { color: var(--gray-light); font-size: 0.5em; margin: 0 2px; }
+  .event-num .total { color: var(--gray-light); font-size: 0.5em; }
+  .event-body { min-width: 0; }
+  .event-headline {
+    font-family: var(--font-display); font-weight: 500; font-size: 26px;
+    line-height: 1.25; letter-spacing: -0.01em; color: var(--ink);
+    margin-bottom: 10px; font-variation-settings: "opsz" 48;
+  }
+  .event-meta {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 10px;
+    margin-bottom: 18px; font-family: var(--font-mono); font-size: 10.5px;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray);
+  }
+  .grade {
+    display: inline-flex; align-items: center; gap: 5px;
+    padding: 3px 8px 2px; font-family: var(--font-mono); font-size: 10px;
+    font-weight: 500; letter-spacing: 0.15em; border: 1px solid;
+    text-transform: uppercase;
+  }
+  .grade.s { color: var(--accent); border-color: var(--accent); background: rgba(154,40,40,0.06); }
+  .grade.a { color: var(--gold); border-color: var(--gold); background: rgba(139,105,20,0.06); }
+  .grade.b { color: var(--green); border-color: var(--green); background: rgba(61,90,58,0.06); }
+  .grade.c { color: var(--gray); border-color: var(--gray-light); }
+  .meta-sep { width: 3px; height: 3px; background: var(--gray-light); border-radius: 50%; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 24px; }
+  .tag {
+    font-size: 12px; color: var(--ink-soft); padding: 2px 10px;
+    background: var(--bg-deep); border: 1px solid var(--line-soft);
+    border-radius: 2px; letter-spacing: 0.02em;
+  }
+  .tag.tech { color: var(--accent-deep); border-color: rgba(154,40,40,0.25); background: rgba(154,40,40,0.05); }
+
+  /* 四段式深读 */
+  .deep-row {
+    display: grid; grid-template-columns: 100px 1fr; gap: 24px;
+    padding: 14px 0; border-top: 1px dotted var(--line);
+  }
+  .deep-row:first-child { border-top: none; padding-top: 4px; }
+  .deep-label {
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--accent); padding-top: 4px; font-weight: 500;
+  }
+  .deep-content { font-size: 15px; line-height: 1.75; color: var(--ink-soft); }
+  .deep-content p { margin-bottom: 8px; }
+  .deep-content p:last-child { margin-bottom: 0; }
+  .deep-content strong { color: var(--ink); font-weight: 600; }
+
+  /* 多来源观点 */
+  .source-views { display: grid; gap: 12px; }
+  .source-view {
+    display: grid; grid-template-columns: 110px 1fr; gap: 16px;
+    padding: 4px 0; align-items: baseline;
+  }
+  .source-name {
+    font-family: var(--font-display); font-weight: 500; font-style: italic;
+    font-size: 13px; color: var(--ink); text-align: right;
+    border-right: 2px solid var(--line); padding-right: 14px; line-height: 1.4;
+    font-variation-settings: "opsz" 14;
+  }
+  .source-name .stype {
+    display: block; font-style: normal; font-family: var(--font-mono);
+    font-size: 9px; color: var(--gray-light); letter-spacing: 0.12em;
+    text-transform: uppercase; margin-top: 2px; font-weight: 400;
+  }
+  .source-text { font-size: 14px; color: var(--ink-soft); line-height: 1.6; }
+
+  /* 主编判断框 */
+  .judgment {
+    margin-top: 18px; padding: 16px 20px; background: var(--bg-deep);
+    border-left: 3px solid var(--accent); font-size: 15px; line-height: 1.7; color: var(--ink);
+  }
+  .judgment::before {
+    content: '主编判断'; display: block; font-family: var(--font-mono);
+    font-size: 9.5px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--accent); font-weight: 500; margin-bottom: 6px;
+  }
+
+  /* 同事件多来源对比 */
+  .multi-source-event {
+    border: 1px solid var(--line); background: rgba(255,253,248,0.5);
+    padding: 24px 28px; margin-bottom: 16px;
+  }
+  .multi-source-event .event-headline { font-size: 20px; margin-bottom: 8px; }
+  .source-table { margin-top: 14px; font-size: 13.5px; line-height: 1.55; }
+  .source-row {
+    display: grid; grid-template-columns: 130px 1fr; gap: 18px;
+    padding: 8px 0; border-top: 1px dotted var(--line-soft);
+  }
+  .source-row:first-of-type { border-top: 1px solid var(--line); padding-top: 12px; }
+  .source-row .name {
+    font-weight: 600; color: var(--ink); font-family: var(--font-display);
+    font-style: italic; font-variation-settings: "opsz" 14;
+  }
+  .source-row .view { color: var(--ink-soft); }
+
+  /* Week 2 占位 */
+  .placeholder {
+    border: 1.5px dashed var(--line); padding: 28px 32px;
+    background: rgba(0,0,0,0.015); text-align: center;
+  }
+  .placeholder-title {
+    font-family: var(--font-display); font-weight: 500; font-size: 18px;
+    color: var(--ink-soft); margin-bottom: 6px;
+  }
+  .placeholder-desc {
+    font-size: 13.5px; color: var(--gray); line-height: 1.6;
+    max-width: 480px; margin: 0 auto;
+  }
+  .placeholder-eta {
+    margin-top: 12px; display: inline-block; font-family: var(--font-mono);
+    font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--accent); border: 1px solid var(--accent); padding: 3px 10px;
+  }
+
+  /* 扫描列表 */
+  .scan-list { list-style: none; }
+  .scan-item {
+    display: grid; grid-template-columns: 50px 1fr auto; gap: 18px;
+    padding: 12px 0; border-bottom: 1px solid var(--line-soft); align-items: baseline;
+  }
+  .scan-item:last-child { border-bottom: none; }
+  .scan-grade {
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em;
+    color: var(--gray); font-weight: 500;
+  }
+  .scan-grade.b { color: var(--green); }
+  .scan-grade.c { color: var(--gray-light); }
+  .scan-title { font-size: 15px; color: var(--ink); line-height: 1.5; }
+  .scan-source {
+    font-family: var(--font-mono); font-size: 10.5px; color: var(--gray);
+    letter-spacing: 0.04em; white-space: nowrap;
+  }
+
+  /* 主编寄语 */
+  .closing {
+    margin-top: 80px; padding: 36px 0 32px;
+    border-top: 2px solid var(--ink); text-align: center;
+  }
+  .closing-mark {
+    font-family: var(--font-display); font-style: italic; font-size: 14px;
+    letter-spacing: 0.12em; color: var(--accent); text-transform: uppercase;
+    margin-bottom: 18px; font-variation-settings: "opsz" 14, "SOFT" 100;
+  }
+  .closing-text {
+    font-family: var(--font-display); font-weight: 400; font-style: italic;
+    font-size: 19px; line-height: 1.7; color: var(--ink);
+    max-width: 640px; margin: 0 auto; white-space: pre-line;
+    font-variation-settings: "opsz" 60, "SOFT" 80;
+  }
+  .closing-sig {
+    margin-top: 24px; font-family: var(--font-mono); font-size: 11px;
+    letter-spacing: 0.18em; color: var(--gray); text-transform: uppercase;
+  }
+
+  /* 页脚 */
+  .footer {
+    margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--line);
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--gray-light);
+  }
+
+  /* 响应式 */
+  @media (max-width: 720px) {
+    .page { padding: 32px 22px 64px; }
+    .masthead h1 { font-size: 48px; }
+    .masthead h1 .en { display: block; margin-left: 0; margin-top: 6px; }
+    .event { grid-template-columns: 1fr; gap: 12px; }
+    .event-num { font-size: 36px; }
+    .deep-row { grid-template-columns: 1fr; gap: 6px; }
+    .deep-label { padding-top: 0; }
+    .source-view { grid-template-columns: 1fr; gap: 4px; }
+    .source-name {
+      text-align: left; border-right: none; border-left: 2px solid var(--line);
+      padding-right: 0; padding-left: 10px;
+    }
+    .source-row { grid-template-columns: 1fr; gap: 4px; }
+    .scan-item { grid-template-columns: 40px 1fr; }
+    .scan-source { grid-column: 2; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <header class="masthead">
+    <div class="masthead-top">
+      <div class="left">
+        <span><span class="dot"></span>2026 年 04 月 24 日</span>
+        <span>星期五</span>
+      </div>
+      <div>AI 主编日报</div>
+    </div>
+
+    <h1>AI 主编日报<span class="en">The Editor's Brief</span></h1>
+
+    <div class="tagline">每天五分钟,读懂 AI 世界今天真正重要的事。不堆砌信息,只提供判断。</div>
+
+    <div class="masthead-meta">
+      <div class="stats">
+        <span>原始新闻 <b>38</b></span>
+        <span>合并事件 <b>22</b></span>
+        <span>S 级 <b>3</b></span>
+        <span>A 级 <b>8</b></span>
+      </div>
+      <div>主笔 / Claude Editorial</div>
+    </div>
+  </header>
+
+  
+  <article class="editorial">
+    <div class="editorial-eyebrow">— 今日叙事 / Today's Narrative</div>
+    <div class="editorial-body">
+      
+      <p>今天的 AI 世界被一场正面对决定义：<strong>OpenAI 发布 GPT-5.5，Anthropic 公开自我解剖，DeepSeek 预览 V4</strong>——三家前沿实验室在同一天各自亮出底牌，但打法截然不同。</p>
+      
+      <p>OpenAI 选择了最直接的方式：用 GPT-5.5 在 Terminal-Bench 2.0 上以 82.7% 的准确率重夺榜首，超越 Claude Mythos Preview（82.0%），并在 ARC-AGI-2 等多项 agentic 基准上拉开差距。Sam Altman 和 Greg Brockman 高调宣传，行业 KOL 从 Aaron Levie 到 Dan Shipper 集体背书"执行力"是最大提升。但定价也同样激进——GPT-5.5 Pro 高达每百万 token $30/$180，约为上代的十二倍。Anthropic 则选择了一条反直觉的路径：发布详尽技术复盘，承认 Claude Code 近期性能下滑并非模型退化，而是三个产品层面的独立 bug 叠加所致，包括推理强度被调低、缓存优化引入的"健忘"bug、以及系统提示中过度限制输出长度。这种级别的透明度在行业中极为罕见。与此同时，DeepSeek 预览 V4，公开声称性能接近顶级闭源模型，且强调了华为昇腾芯片兼容性——开源阵营的追赶没有放慢。</p>
+      
+      <p>三条线之外，今天还有几个值得注意的信号：Anthropic 的 Mythos 模型在发布当天就遭遇未授权访问，对其安全品牌形象造成打击；Meta 宣布裁员 10% 约 8000 人，同时与亚马逊签署大批量 AI CPU 采购协议，显示出"压缩人力、加注算力"的战略取向；Tim Cook 正式卸任 Apple CEO，AI 时代的 Apple 将由硬件出身的 John Ternus 掌舵。</p>
+      
+    </div>
+    <div class="editorial-sign">— 编辑部 · 04 月 24 日</div>
+  </article>
+
+  
+  
+  <section>
+    <div class="section-label">Top Stories · 今日 11 件最重要的事</div>
+
+    <div class="top-events">
+      
+      <article class="event">
+        <div class="event-num">01<span class="slash">/</span><span class="total">11</span></div>
+        <div class="event-body">
+          <h3 class="event-headline">OpenAI 发布 GPT-5.5：重夺 agentic 基准榜首，定价激进</h3>
+          <div class="event-meta">
+            <span class="grade s">S 级 · 必须关注</span>
+            <span class="meta-sep"></span>
+            <span>7 个来源</span>
+            <span class="meta-sep"></span>
+            <span>7 条新闻</span>
+          </div>
+
+          <div class="tags">
+            <span class="tag tech">大模型/LLM</span><span class="tag tech">Agent</span>
+            <span class="tag">通用/跨领域</span><span class="tag">编程/Coding</span>
+            <span class="tag">产品发布</span>
+            <span class="tag">突破性</span><span class="tag">生态性</span>
+          </div>
+
+          
+          <div class="deep-block">
+            <div class="deep-row">
+              <div class="deep-label">是什么</div>
+              <div class="deep-content"><p>OpenAI 正式发布 GPT-5.5，在 Terminal-Bench 2.0 上以 82.7% 的准确率微弱超越 Claude Mythos Preview（82.0%），在 ARC-AGI-2（85.0% vs 75.8%）和 FrontierMath Tier 4（35.4% vs 22.9%）等多项 agentic 基准上领先。但在无工具纯推理测试 Humanity's Last Exam 上，GPT-5.5 Pro（43.1%）仍落后于 Opus 4.7（46.9%）和 Mythos Preview（56.8%）。定价方面，GPT-5.5 为 $5/$30，Pro 版高达 $30/$180，约为上代的 2-12 倍。同日，Altman 宣布与 NVIDIA 合作将 Codex 全面推广至企业。</p></div>
+            </div>
+            <div class="deep-row">
+              <div class="deep-label">为什么重要</div>
+              <div class="deep-content"><p>GPT-5.5 的意义不仅在于基准分数的微弱领先，更在于 OpenAI 正在从"最强模型"竞赛转向"最强生态"竞赛。Codex 从开发者工具升级为企业级平台（Swyx 称其界面重塑近乎更名为"Atlas"），与 NVIDIA 合作推广至全员部署——这是一套"模型+工具+渠道"的组合拳。定价的激进（Pro 版 $30/$180）也表明 OpenAI 正在测试高端市场的价格弹性，赌的是企业客户愿意为"直觉性极强"的执行力买单。</p></div>
+            </div>
+            
+            <div class="deep-row">
+              <div class="deep-label">不同来源</div>
+              <div class="deep-content">
+                <div class="source-views">
+                  
+                  <div class="source-view">
+                    <div class="source-name">VentureBeat<span class="stype">科技媒体</span></div>
+                    <div class="source-text">详尽对比各项基准数据，突出 GPT-5.5 在 agentic 测试上的全面领先，同时诚实指出纯推理测试上的落后。</div>
+                  </div>
+                  
+                  <div class="source-view">
+                    <div class="source-name">Aaron Levie (Box CEO)<span class="stype">企业用户</span></div>
+                    <div class="source-text">用 Box 在金融、医疗、公共部门的真实场景数据验证提升，提出"AI 催生增量工作"的洞察。</div>
+                  </div>
+                  
+                  <div class="source-view">
+                    <div class="source-name">Swyx (Cognition)<span class="stype">技术评论</span></div>
+                    <div class="source-text">认为模型本身不是最值得关注的，Codex 产品重塑才是被低估的信号。</div>
+                  </div>
+                  
+                  <div class="source-view">
+                    <div class="source-name">Dan Shipper (Every.io)<span class="stype">产品评论</span></div>
+                    <div class="source-text">用一句话点出核心差异：GPT-5.5 不写计划然后退缩，而是直接执行。</div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          
+          <div class="judgment">基准分数上的微弱领先（82.7% vs 82.0%）本身并不构成决定性优势，但 OpenAI 今天展现的是一个完整战略：模型发布 + Codex 升级 + NVIDIA 企业合作，三件事同步落地。真正的竞争已经不在"谁的模型更强"，而在"谁的生态更完整"。值得警惕的是定价——Pro 版涨了 12 倍，如果企业客户不买单，这套战略的经济模型就站不住。</div>
+          
+          
+        </div>
+      </article>
+      
+      <article class="event">
+        <div class="event-num">02<span class="slash">/</span><span class="total">11</span></div>
+        <div class="event-body">
+          <h3 class="event-headline">Anthropic 公开复盘 Claude 性能下滑：三个产品层面 bug 叠加，非模型退化</h3>
+          <div class="event-meta">
+            <span class="grade s">S 级 · 必须关注</span>
+            <span class="meta-sep"></span>
+            <span>2 个来源</span>
+            <span class="meta-sep"></span>
+            <span>2 条新闻</span>
+          </div>
+
+          <div class="tags">
+            <span class="tag tech">大模型/LLM</span><span class="tag tech">Agent</span>
+            <span class="tag">编程/Coding</span>
+            <span class="tag">行业动态</span>
+            <span class="tag">争议性</span><span class="tag">信号性</span>
+          </div>
+
+          
+          <div class="deep-block">
+            <div class="deep-row">
+              <div class="deep-label">是什么</div>
+              <div class="deep-content"><p>Anthropic 发布技术复盘，确认 Claude Opus 4.6 近期性能下滑并非模型权重退化，而是三个独立的产品层面改动叠加所致：3 月 4 日将 Claude Code 默认推理强度从 high 调为 medium（降低延迟之举），3 月 26 日缓存优化引入 bug（本应仅在空闲超一小时后清除一次旧推理，却变成每轮都丢弃历史上下文），4 月 16 日系统提示中加入过度限制输出长度的指令。第三方 BridgeMind 曾报告准确率从 83.3% 骤降至 68.3%。所有问题已于 4 月 20 日全部修复。</p></div>
+            </div>
+            <div class="deep-row">
+              <div class="deep-label">为什么重要</div>
+              <div class="deep-content"><p>这份复盘的价值远超事件本身。它揭示了一个新的行业风险类别：模型性能退化的根因可能不在模型，而在围绕模型的"harness"——系统提示、推理参数、缓存策略等产品层面的配置。这些改动单独看都合理（降延迟、优化缓存、控制输出），叠加后却造成了灾难性退化。这对所有部署大模型的企业都是警示。</p></div>
+            </div>
+            
+            <div class="deep-row">
+              <div class="deep-label">不同来源</div>
+              <div class="deep-content">
+                <div class="source-views">
+                  
+                  <div class="source-view">
+                    <div class="source-name">VentureBeat<span class="stype">科技媒体</span></div>
+                    <div class="source-text">聚焦第三方测评数据（准确率从 83.3% 降至 68.3%，排名从第 2 跌至第 10），强调问题的严重程度和对用户信任的影响。</div>
+                  </div>
+                  
+                  <div class="source-view">
+                    <div class="source-name">Anthropic Engineering<span class="stype">官方工程博客</span></div>
+                    <div class="source-text">以完整的 incident report 格式逐一拆解三个 bug 的时间线、根因和修复方案，承诺改进 per-model eval 套件、延长浸泡期、逐步灰度发布。</div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          
+          <div class="judgment">Anthropic 选择在竞争对手发布新模型的同一天公开自揭伤疤，这本身就是一种品牌策略——用透明度对抗基准分数的劣势。从技术层面看，"harness bug"这个概念值得全行业重视：当模型能力的边界越来越由 prompt、参数和缓存策略决定时，传统的"模型评测"已经不够了，需要"系统评测"。这份复盘可能比任何一个基准分数都更有长期价值。</div>
+          
+          
+        </div>
+      </article>
+      
+      <article class="event">
+        <div class="event-num">03<span class="slash">/</span><span class="total">11</span></div>
+        <div class="event-body">
+          <h3 class="event-headline">DeepSeek 预览 V4 模型：性能逼近闭源顶级，强调华为芯片兼容</h3>
+          <div class="event-meta">
+            <span class="grade s">S 级 · 必须关注</span>
+            <span class="meta-sep"></span>
+            <span>3 个来源</span>
+            <span class="meta-sep"></span>
+            <span>3 条新闻</span>
+          </div>
+
+          <div class="tags">
+            <span class="tag tech">大模型/LLM</span><span class="tag tech">开源模型</span><span class="tag tech">芯片/硬件</span>
+            <span class="tag">通用/跨领域</span><span class="tag">编程/Coding</span>
+            <span class="tag">产品发布</span><span class="tag">开源发布</span>
+            <span class="tag">突破性</span><span class="tag">生态性</span>
+          </div>
+
+          
+          <div class="deep-block">
+            <div class="deep-row">
+              <div class="deep-label">是什么</div>
+              <div class="deep-content"><p>DeepSeek 预览 V4 模型，声称性能接近 Anthropic、Google 和 OpenAI 的顶级闭源系统。V4 在代码能力上取得重大突破——这一能力已成为 AI agent 的核心。发布同时明确强调了与华为昇腾芯片的兼容性，距 DeepSeek 一年前震惊美国 AI 行业恰好一周年。TechCrunch 补充报道称预览了两款新模型，架构改进使效率和性能均优于 DeepSeek V3.2。</p></div>
+            </div>
+            <div class="deep-row">
+              <div class="deep-label">为什么重要</div>
+              <div class="deep-content"><p>V4 的战略意义有三层：第一，开源模型再次逼近闭源顶级，巩固了"开源追赶周期正在缩短"的趋势；第二，代码能力的突破直接对标 ChatGPT Codex 和 Claude Code，威胁两家公司最核心的商业化赛道；第三，华为芯片兼容性从技术 demo 走向产品级声明，为中国 AI 基础设施的去 Nvidia 化提供了又一个实证。</p></div>
+            </div>
+            
+            <div class="deep-row">
+              <div class="deep-label">不同来源</div>
+              <div class="deep-content">
+                <div class="source-views">
+                  
+                  <div class="source-view">
+                    <div class="source-name">The Verge AI<span class="stype">科技媒体</span></div>
+                    <div class="source-text">将 V4 定位为"一周年再度挑战"的叙事框架，重点突出华为芯片兼容的地缘政治含义。</div>
+                  </div>
+                  
+                  <div class="source-view">
+                    <div class="source-name">TechCrunch AI<span class="stype">科技媒体</span></div>
+                    <div class="source-text">更聚焦技术层面，报道两款模型的架构改进和基准测试表现，措辞更审慎（"接近"而非"超越"）。</div>
+                  </div>
+                  
+                  <div class="source-view">
+                    <div class="source-name">Amjad Masad (Replit CEO)<span class="stype">技术领袖</span></div>
+                    <div class="source-text">从地缘政治角度切入，批评"中国蒸馏"威胁论，认为开放研究对全球 AI 社区有益。</div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          
+          <div class="judgment">V4 选择在 GPT-5.5 发布的同一天预览，时机绝非巧合。DeepSeek 的策略很清楚：你发你的闭源旗舰，我发我的开源追平，让市场自己做成本计算。但"预览"二字需要注意——这不是正式发布，性能声明有待第三方验证。真正的考验是：当 V4 正式开放 API 时，闭源模型的定价体系还能不能撑住。</div>
+          
+          
+        </div>
+      </article>
+      
+      <article class="event">
+        <div class="event-num">04<span class="slash">/</span><span class="total">11</span></div>
+        <div class="event-body">
+          <h3 class="event-headline">Claude Managed Agents 内置跨会话 Memory 功能进入公测</h3>
+          <div class="event-meta">
+            <span class="grade a">A 级 · 值得细读</span>
+            <span class="meta-sep"></span>
+            <span>2 个来源</span>
+            <span class="meta-sep"></span>
+            <span>2 条新闻</span>
+          </div>
+
+          <div class="tags">
+            <span class="tag tech">Agent</span><span class="tag tech">基础设施/MLOps</span>
+            <span class="tag">通用/跨领域</span>
+            <span class="tag">产品发布</span>
+            <span class="tag">突破性</span><span class="tag">实用性</span>
+          </div>
+
+          
+          <div class="deep-block">
+            <div class="deep-row">
+              <div class="deep-label">是什么</div>
+              <div class="deep-content"><p>Anthropic 推出 Claude Managed Agents 的跨会话 Memory 功能（公测），记忆基于文件系统构建，支持多 agent 并发读写同一记忆库而不产生覆盖冲突，提供完整审计日志和版本回滚能力。</p></div>
+            </div>
+            <div class="deep-row">
+              <div class="deep-label">为什么重要</div>
+              <div class="deep-content"><p>Agent 的"健忘"问题是当前企业级部署的最大障碍之一。Rakuten 的长时任务 agent 错误率降低 97%，Wisedocs 提速 30%，Netflix 不再需要手动更新 prompt——这些数据表明记忆功能正在解锁 agent 从"临时工"到"长期员工"的转变。更深层的设计选择值得注意：用文件系统而非向量库存储记忆，保证了可审计性和版本控制，这是企业合规的硬需求。</p></div>
+            </div>
+            
+            <div class="deep-row">
+              <div class="deep-label">不同来源</div>
+              <div class="deep-content">
+                <div class="source-views">
+                  
+                  <div class="source-view">
+                    <div class="source-name">Claude Blog<span class="stype">官方博客</span></div>
+                    <div class="source-text">以完整技术文档形式发布，详述架构选择（文件系统 vs 向量库），附多家企业客户的量化效果数据。</div>
+                  </div>
+                  
+                  <div class="source-view">
+                    <div class="source-name">Claude (Anthropic 官方推特)<span class="stype">官方社交</span></div>
+                    <div class="source-text">简洁宣布公测上线，强调"持续学习"和"API 完整管理"两个核心卖点。</div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          
+          <div class="judgment">"文件系统存储记忆"这个设计选择看似简单，实则深思熟虑——文件可以 git 管理、可以人工审查、可以版本回滚，这些都是向量库做不到的。在 agent 信任度仍然是最大瓶颈的当下，可审计性比智能性更重要。</div>
+          
+          
+        </div>
+      </article>
+      
+      <article class="event">
+        <div class="event-num">05<span class="slash">/</span><span class="total">11</span></div>
+        <div class="event-body">
+          <h3 class="event-headline">Claude 新增 15 个日常生活类 App 连接器，目录总数超 200</h3>
+          <div class="event-meta">
+            <span class="grade a">A 级 · 值得细读</span>
+            <span class="meta-sep"></span>
+            <span>2 个来源</span>
+            <span class="meta-sep"></span>
+            <span>2 条新闻</span>
+          </div>
+
+          <div class="tags">
+            <span class="tag tech">Agent</span>
+            <span class="tag">通用/跨领域</span>
+            <span class="tag">产品发布</span>
+            <span class="tag">规模性</span><span class="tag">生态性</span>
+          </div>
+
+          
+          <div class="deep-block">
+            <div class="deep-row">
+              <div class="deep-label">是什么</div>
+              <div class="deep-content"><p>Anthropic 为 Claude 新增 15 个面向日常生活的连接器，包括 AllTrails、Instacart、Audible、TripAdvisor、TurboTax、Uber、Spotify、Booking.com 等，目录总数超过 200。Claude 会在对话中主动建议相关连接器，并在用户确认后代为执行订购、预订等操作。</p></div>
+            </div>
+            <div class="deep-row">
+              <div class="deep-label">为什么重要</div>
+              <div class="deep-content"><p>200 个连接器本身是量变，但从"办公"到"生活"的跨越是质变。当 AI 助手能帮你报税（TurboTax）、订外卖（Instacart）、叫车（Uber）、订酒店（Booking.com），它就不再是"工作工具"而是"生活入口"。Anthropic 同时承诺无广告植入、数据不用于训练——这是在用隐私承诺换取用户信任，也是对 Google 模式的隐性批评。</p></div>
+            </div>
+            
+            <div class="deep-row">
+              <div class="deep-label">不同来源</div>
+              <div class="deep-content">
+                <div class="source-views">
+                  
+                  <div class="source-view">
+                    <div class="source-name">The Verge AI<span class="stype">科技媒体</span></div>
+                    <div class="source-text">关注从办公到消费场景的扩展方向，指出此前已支持 Microsoft 等企业应用。</div>
+                  </div>
+                  
+                  <div class="source-view">
+                    <div class="source-name">Claude Blog<span class="stype">官方博客</span></div>
+                    <div class="source-text">详列所有新增应用，强调"无广告、数据不训练"的隐私承诺。</div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          
+          <div class="judgment">连接器数量的竞赛已经开始了，但数量不是关键——关键是用户愿不愿意把"帮我订外卖"这种需要付款的操作交给 AI。信任门槛从"读信息"到"花钱"是一个巨大跳跃。Anthropic 用隐私承诺来降低这个门槛，方向正确，但消费者行为的改变需要时间。</div>
+          
+          
+        </div>
+      </article>
+      
+      <article class="event">
+        <div class="event-num">06<span class="slash">/</span><span class="total">11</span></div>
+        <div class="event-body">
+          <h3 class="event-headline">Meta 裁员 10% 约 8000 人，同步大幅加注 AI 基础设施投入</h3>
+          <div class="event-meta">
+            <span class="grade a">A 级 · 值得细读</span>
+            <span class="meta-sep"></span>
+            <span>1 个来源</span>
+            <span class="meta-sep"></span>
+            <span>1 条新闻</span>
+          </div>
+
+          <div class="tags">
+            <span class="tag tech">基础设施/MLOps</span>
+            <span class="tag">通用/跨领域</span>
+            <span class="tag">人事变动</span><span class="tag">行业动态</span>
+            <span class="tag">规模性</span><span class="tag">信号性</span>
+          </div>
+
+          
+          <div class="deep-block">
+            <div class="deep-row">
+              <div class="deep-label">是什么</div>
+              <div class="deep-content"><p>Meta 将于 2026 年 5 月裁减约 10% 员工（约 8000 人），同时关闭约 6000 个开放职位。与此同时，公司 2026 年资本支出预计将达 1150-1350 亿美元，较 2025 年的 722 亿美元大幅提升。</p></div>
+            </div>
+            <div class="deep-row">
+              <div class="deep-label">为什么重要</div>
+              <div class="deep-content"><p>8000 人离开，千亿美元涌入算力——这两个数字放在一起，勾勒出科技巨头在 AI 时代的人力策略：减少人头、增加机器。这不是一次普通的成本优化，而是一个组织形态转型的信号。当一家 8 万人的公司说"我需要更少的人和更多的 GPU"时，其他科技公司必须思考同样的问题。</p></div>
+            </div>
+            
+            <div class="deep-row">
+              <div class="deep-label">不同来源</div>
+              <div class="deep-content">
+                <div class="source-views">
+                  
+                  <div class="source-view">
+                    <div class="source-name">The Verge AI<span class="stype">科技媒体</span></div>
+                    <div class="source-text">将裁员与 AI 投入直接关联，指出这是"在 AI 基础设施高投入压力下优化人员结构的举措"。</div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          
+          <div class="judgment">Zuckerberg 一直在讲"效率年"的故事，但 2026 年的版本比前几年更赤裸：不是"减少低效"，而是"用算力替代人力"。当 Meta 把资本支出从 722 亿拉到 1350 亿的同时裁掉 8000 人，说明管理层算过一笔账——这 8000 人的工作，一部分将被 AI 吃掉。这对所有科技从业者都是需要正视的信号。</div>
+          
+          
+        </div>
+      </article>
+      
+      <article class="event">
+        <div class="event-num">07<span class="slash">/</span><span class="total">11</span></div>
+        <div class="event-body">
+          <h3 class="event-headline">Anthropic Mythos 模型遭未授权访问，安全品牌形象受损</h3>
+          <div class="event-meta">
+            <span class="grade a">A 级 · 值得细读</span>
+            <span class="meta-sep"></span>
+            <span>1 个来源</span>
+            <span class="meta-sep"></span>
+            <span>1 条新闻</span>
+          </div>
+
+          <div class="tags">
+            <span class="tag tech">安全/对齐</span><span class="tag tech">大模型/LLM</span>
+            <span class="tag">通用/跨领域</span>
+            <span class="tag">安全事件</span>
+            <span class="tag">争议性</span><span class="tag">信号性</span>
+          </div>
+
+          
+          <div class="deep-block">
+            <div class="deep-row">
+              <div class="deep-label">是什么</div>
+              <div class="deep-content"><p>Anthropic 以"网络安全能力过强、风险过高"为由对 Claude Mythos 实施严格管控，却在宣布向特定企业开放测试的当天，就有一小群未授权用户获取了访问权限。Bloomberg 报道该事件目前仍在调查中。</p></div>
+            </div>
+            <div class="deep-row">
+              <div class="deep-label">为什么重要</div>
+              <div class="deep-content"><p>这个事件的杀伤力不在于技术后果（目前无证据表明造成实质性损害），而在于叙事层面的致命矛盾：一家以"我们比谁都更重视 AI 安全"为品牌支点的公司，连自己最"危险"的模型的访问控制都没做好。这给了竞争对手和批评者一个现成的论点：如果你连自己的门都锁不好，凭什么教行业怎么做安全？</p></div>
+            </div>
+            
+            <div class="deep-row">
+              <div class="deep-label">不同来源</div>
+              <div class="deep-content">
+                <div class="source-views">
+                  
+                  <div class="source-view">
+                    <div class="source-name">The Verge AI<span class="stype">科技媒体</span></div>
+                    <div class="source-text">标题直接用"humiliation"（耻辱）一词，文章聚焦品牌叙事的讽刺性。</div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          
+          <div class="judgment">"锁匠家的锁被撬了"——这是最简洁的概括。技术上这可能是一个小事故，但叙事上这是一个大问题。Anthropic 需要在后续调查中展现足够的透明度（就像他们今天在 Claude Code 复盘中做的那样），否则"安全领导者"的品牌定位将持续受损。</div>
+          
+          
+        </div>
+      </article>
+      
+      <article class="event">
+        <div class="event-num">08<span class="slash">/</span><span class="total">11</span></div>
+        <div class="event-body">
+          <h3 class="event-headline">Meta 与亚马逊签署数百万颗 AI CPU 大单，芯片竞争格局生变</h3>
+          <div class="event-meta">
+            <span class="grade a">A 级 · 值得细读</span>
+            <span class="meta-sep"></span>
+            <span>1 个来源</span>
+            <span class="meta-sep"></span>
+            <span>1 条新闻</span>
+          </div>
+
+          <div class="tags">
+            <span class="tag tech">芯片/硬件</span><span class="tag tech">Agent</span>
+            <span class="tag">通用/跨领域</span>
+            <span class="tag">行业动态</span>
+            <span class="tag">生态性</span><span class="tag">信号性</span>
+          </div>
+
+          
+          <div class="deep-block">
+            <div class="deep-row">
+              <div class="deep-label">是什么</div>
+              <div class="deep-content"><p>Meta 与亚马逊达成协议，大批量采购亚马逊自研 CPU（而非 GPU）用于 AI agentic 工作负载。</p></div>
+            </div>
+            <div class="deep-row">
+              <div class="deep-label">为什么重要</div>
+              <div class="deep-content"><p>过去几年 AI 芯片的故事几乎等于 GPU 的故事（尤其是 NVIDIA 的故事）。但 agent 工作负载的特性不同——大量轻量级推理、频繁的 I/O 和工具调用、长时间运行的状态管理——这些场景下 CPU 的性价比可能优于 GPU。如果这一趋势成立，NVIDIA 的垄断优势将在 agent 时代被部分瓦解。</p></div>
+            </div>
+            
+            <div class="deep-row">
+              <div class="deep-label">不同来源</div>
+              <div class="deep-content">
+                <div class="source-views">
+                  
+                  <div class="source-view">
+                    <div class="source-name">TechCrunch AI<span class="stype">科技媒体</span></div>
+                    <div class="source-text">标题用"another wild turn"强调意外性，将此事定位为 AI 芯片竞争的新拐点。</div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          
+          <div class="judgment">"数百万颗 CPU"这个量级表明这不是实验性采购。Meta 的计算很明确：agent 时代的算力需求和训练时代不同，与其全押 GPU，不如在 CPU 端另辟蹊径。亚马逊自研芯片终于找到了大客户——这对 NVIDIA 不是致命威胁，但绝对是一个值得关注的裂缝。</div>
+          
+          
+        </div>
+      </article>
+      
+      <article class="event">
+        <div class="event-num">09<span class="slash">/</span><span class="total">11</span></div>
+        <div class="event-body">
+          <h3 class="event-headline">85% 企业试点 AI agent，仅 5% 敢投产：信任架构成最大瓶颈</h3>
+          <div class="event-meta">
+            <span class="grade a">A 级 · 值得细读</span>
+            <span class="meta-sep"></span>
+            <span>1 个来源</span>
+            <span class="meta-sep"></span>
+            <span>1 条新闻</span>
+          </div>
+
+          <div class="tags">
+            <span class="tag tech">Agent</span><span class="tag tech">安全/对齐</span>
+            <span class="tag">通用/跨领域</span>
+            <span class="tag">行业动态</span>
+            <span class="tag">信号性</span><span class="tag">实用性</span>
+          </div>
+
+          
+          <div class="deep-block">
+            <div class="deep-row">
+              <div class="deep-label">是什么</div>
+              <div class="deep-content"><p>Cisco 总裁 Jeetu Patel 在 RSA Conference 2026 上指出，85% 的企业正在试点 AI agent，但仅有 5% 信任度足够高到将其投入生产。他将 agent 比作"极度聪明却毫无后果意识的青少年"，并推出开源安全框架 Defense Claw。</p></div>
+            </div>
+            <div class="deep-row">
+              <div class="deep-label">为什么重要</div>
+              <div class="deep-content"><p>85% vs 5% 这组数据比任何技术基准都更真实地描述了 AI agent 的产业现状：技术上已经够用，信任上远远不够。"被委托"与"被信任地委托"的差距，可能意味着 agent 安全和可观测性将成为下一个百亿级赛道。</p></div>
+            </div>
+            
+            <div class="deep-row">
+              <div class="deep-label">不同来源</div>
+              <div class="deep-content">
+                <div class="source-views">
+                  
+                  <div class="source-view">
+                    <div class="source-name">VentureBeat<span class="stype">科技媒体</span></div>
+                    <div class="source-text">以 Cisco 高管采访为主线，重点突出"信任架构"概念和 85/5 的数据对比，同时报道了 Defense Claw 框架的发布。</div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          
+          <div class="judgment">Patel 把 agent 比作青少年——聪明但缺乏后果意识——这个比喻精准得可怕。当前 agent 的问题不是"能不能做"，而是"出了事谁负责"。谁先解决这个信任方程式（不只是技术，还包括法律、保险、治理），谁就拿到了 agent 时代的入场券。</div>
+          
+          
+        </div>
+      </article>
+      
+      <article class="event">
+        <div class="event-num">10<span class="slash">/</span><span class="total">11</span></div>
+        <div class="event-body">
+          <h3 class="event-headline">AI agent 仅凭 219 字规格说明在 12 小时内设计完整 RISC-V CPU</h3>
+          <div class="event-meta">
+            <span class="grade a">A 级 · 值得细读</span>
+            <span class="meta-sep"></span>
+            <span>1 个来源</span>
+            <span class="meta-sep"></span>
+            <span>1 条新闻</span>
+          </div>
+
+          <div class="tags">
+            <span class="tag tech">Agent</span><span class="tag tech">芯片/硬件</span>
+            <span class="tag">制造/工业</span><span class="tag">科学研究</span>
+            <span class="tag">研究成果</span>
+            <span class="tag">突破性</span><span class="tag">信号性</span>
+          </div>
+
+          
+          <div class="deep-block">
+            <div class="deep-row">
+              <div class="deep-label">是什么</div>
+              <div class="deep-content"><p>一个 AI agent 从一份仅有 219 个单词的规格说明出发，在 12 小时内独立完成了一颗完整 RISC-V CPU 的设计。</p></div>
+            </div>
+            <div class="deep-row">
+              <div class="deep-label">为什么重要</div>
+              <div class="deep-content"><p>这个案例的震撼不在于"AI 能设计芯片"（此前已有前例），而在于输入的极简性——219 个单词，大约一条长推文的篇幅。如果 AI 能从如此稀疏的规格说明中推断出完整的硬件架构，这意味着硬件设计的门槛正在从"需要数十年经验的专家"降至"能写一段清晰需求描述的工程师"。</p></div>
+            </div>
+            
+            <div class="deep-row">
+              <div class="deep-label">不同来源</div>
+              <div class="deep-content">
+                <div class="source-views">
+                  
+                  <div class="source-view">
+                    <div class="source-name">Hacker News AI<span class="stype">技术社区</span></div>
+                    <div class="source-text">社区讨论聚焦于实际可用性——设计出的 CPU 是否能通过验证和流片，还是仅停留在 RTL 层面。</div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          
+          <div class="judgment">12 小时和 219 个单词——这两个数字的冲击力远大于任何基准测试分数。但需要冷静看待："设计出"和"能流片"之间的距离可能比看起来大得多。真正的验证标准不是"能生成 RTL 代码"，而是"能通过时序收敛和物理验证"。不过作为方向，这条路已经不可逆了。</div>
+          
+          
+        </div>
+      </article>
+      
+      <article class="event">
+        <div class="event-num">11<span class="slash">/</span><span class="total">11</span></div>
+        <div class="event-body">
+          <h3 class="event-headline">Tim Cook 卸任 Apple CEO，John Ternus 接棒掌舵 AI 时代的 Apple</h3>
+          <div class="event-meta">
+            <span class="grade a">A 级 · 值得细读</span>
+            <span class="meta-sep"></span>
+            <span>1 个来源</span>
+            <span class="meta-sep"></span>
+            <span>1 条新闻</span>
+          </div>
+
+          <div class="tags">
+            <span class="tag tech">芯片/硬件</span>
+            <span class="tag">通用/跨领域</span>
+            <span class="tag">人事变动</span>
+            <span class="tag">规模性</span><span class="tag">信号性</span>
+          </div>
+
+          
+          <div class="deep-block">
+            <div class="deep-row">
+              <div class="deep-label">是什么</div>
+              <div class="deep-content"><p>Tim Cook 本周正式宣布卸任 Apple CEO，由硬件主管 John Ternus 接棒。尽管 Ternus 一直被视为最可能的接班人，但时机仍令业界意外。</p></div>
+            </div>
+            <div class="deep-row">
+              <div class="deep-label">为什么重要</div>
+              <div class="deep-content"><p>在 AI 战场上，Apple 一直是"沉默的巨人"——拥有最大的设备装机量、自研芯片能力和隐私品牌，但在 AI 产品层面明显落后于 OpenAI、Google 和 Anthropic。Ternus 的硬件背景暗示 Apple 可能会将赌注押在设备端 AI 而非云端 AI 上——这与 Apple Silicon 的既有优势一脉相承，也与其隐私承诺自洽。</p></div>
+            </div>
+            
+            <div class="deep-row">
+              <div class="deep-label">不同来源</div>
+              <div class="deep-content">
+                <div class="source-views">
+                  
+                  <div class="source-view">
+                    <div class="source-name">The Verge AI<span class="stype">科技媒体</span></div>
+                    <div class="source-text">邀请 John Gruber 共同分析权力交接的深层含义，讨论对产品方向的潜在影响。</div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          
+          <div class="judgment">Cook 时代的 Apple 在 AI 上欠了太多功课，Ternus 的第一要务必然是补课。硬件出身的 CEO 掌舵 AI 转型，既是风险（可能过度偏向设备端），也是机会（如果能把端侧 AI 做到极致，Apple 有条件定义一个完全不同于 OpenAI/Google 的 AI 范式）。这是一个值得持续追踪的战略变量。</div>
+          
+          
+        </div>
+      </article>
+      
+    </div>
+  </section>
+  
+
+  
+  
+  <section>
+    <div class="section-label">Cross-Source · 同事件 · 不同视角</div>
+    <h2 class="section-title">同一件事,不同说法</h2>
+
+    
+    <div class="multi-source-event">
+      <h3 class="event-headline">OpenAI 发布 GPT-5.5：重夺 agentic 基准榜首，定价激进</h3>
+      <div class="event-meta">
+        <span class="grade s">S 级</span>
+        <span class="meta-sep"></span>
+        <span>合并自 7 个来源</span>
+      </div>
+      
+      <div class="source-table">
+        
+        <div class="source-row">
+          <div class="name">VentureBeat</div>
+          <div class="view">GPT-5.5 重夺 agentic 基准榜首</div>
+        </div>
+        
+        <div class="source-row">
+          <div class="name">OpenAI</div>
+          <div class="view">OpenAI 官方发布 GPT-5.5</div>
+        </div>
+        
+        <div class="source-row">
+          <div class="name">Aaron Levie (Box CEO)</div>
+          <div class="view">Box CEO 实测 GPT-5.5 多行业提升约 10 个百分点</div>
+        </div>
+        
+        <div class="source-row">
+          <div class="name">Sam Altman (OpenAI CEO)</div>
+          <div class="view">Altman 与 NVIDIA 合作推广 Codex 企业全员部署</div>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+    <div class="multi-source-event">
+      <h3 class="event-headline">Anthropic 公开复盘 Claude 性能下滑：三个产品层面 bug 叠加，非模型退化</h3>
+      <div class="event-meta">
+        <span class="grade s">S 级</span>
+        <span class="meta-sep"></span>
+        <span>合并自 2 个来源</span>
+      </div>
+      
+      <div class="source-table">
+        
+        <div class="source-row">
+          <div class="name">VentureBeat</div>
+          <div class="view">Claude 性能下滑根因揭晓：三个产品 bug 叠加</div>
+        </div>
+        
+        <div class="source-row">
+          <div class="name">Anthropic Engineering</div>
+          <div class="view">Anthropic 官方复盘三个独立 bug 的完整时间线</div>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+    <div class="multi-source-event">
+      <h3 class="event-headline">DeepSeek 预览 V4 模型：性能逼近闭源顶级，强调华为芯片兼容</h3>
+      <div class="event-meta">
+        <span class="grade s">S 级</span>
+        <span class="meta-sep"></span>
+        <span>合并自 3 个来源</span>
+      </div>
+      
+      <div class="source-table">
+        
+        <div class="source-row">
+          <div class="name">The Verge AI</div>
+          <div class="view">V4 代码能力突破，兼容华为芯片</div>
+        </div>
+        
+        <div class="source-row">
+          <div class="name">TechCrunch AI</div>
+          <div class="view">预览两款新模型，效率和性能双提升</div>
+        </div>
+        
+        <div class="source-row">
+          <div class="name">Amjad Masad (Replit CEO)</div>
+          <div class="view">中国 AI 开放研究对全球有益</div>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+    <div class="multi-source-event">
+      <h3 class="event-headline">Claude Managed Agents 内置跨会话 Memory 功能进入公测</h3>
+      <div class="event-meta">
+        <span class="grade a">A 级</span>
+        <span class="meta-sep"></span>
+        <span>合并自 2 个来源</span>
+      </div>
+      
+      <div class="source-table">
+        
+        <div class="source-row">
+          <div class="name">Claude Blog</div>
+          <div class="view">Agent Memory 公测：Rakuten 错误率降 97%</div>
+        </div>
+        
+        <div class="source-row">
+          <div class="name">Claude (Anthropic)</div>
+          <div class="view">Agent 可跨会话持续学习和记忆</div>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+    <div class="multi-source-event">
+      <h3 class="event-headline">Claude 新增 15 个日常生活类 App 连接器，目录总数超 200</h3>
+      <div class="event-meta">
+        <span class="grade a">A 级</span>
+        <span class="meta-sep"></span>
+        <span>合并自 2 个来源</span>
+      </div>
+      
+      <div class="source-table">
+        
+        <div class="source-row">
+          <div class="name">The Verge AI</div>
+          <div class="view">Claude 连接器从办公扩展到日常消费场景</div>
+        </div>
+        
+        <div class="source-row">
+          <div class="name">Claude Blog</div>
+          <div class="view">连接器目录超 200，覆盖日常消费全场景</div>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+    <div class="multi-source-event">
+      <h3 class="event-headline">医疗 AI 大规模部署，但疗效评估严重缺失</h3>
+      <div class="event-meta">
+        <span class="grade b">B 级</span>
+        <span class="meta-sep"></span>
+        <span>合并自 1 个来源</span>
+      </div>
+      
+      <div class="source-table">
+        
+        <div class="source-row">
+          <div class="name">MIT Technology Review</div>
+          <div class="view">65% 美国医院用 AI 预测工具，疗效评估严重缺失</div>
+        </div>
+        
+        <div class="source-row">
+          <div class="name">MIT Technology Review</div>
+          <div class="view">AI 重塑网络犯罪与医疗 AI 疗效双重议题</div>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+  </section>
+  
+
+  
+  <section>
+    <div class="section-label">Storyline · 关键话题持续追踪</div>
+    <div class="placeholder">
+      <div class="placeholder-title">话题主线追踪</div>
+      <div class="placeholder-desc">
+        本模块将持续追踪 AI Agent、模型发布、芯片硬件、监管政策等关键主线的演进。
+        判断每条新事件是"全新主线"还是"已有主线的新进展"，并展示主线的发展轨迹。
+        <br><br>
+        需要至少 7 天历史数据积累，Week 2 启用。
+      </div>
+      <span class="placeholder-eta">Week 2 启用</span>
+    </div>
+  </section>
+
+  
+  
+  <section>
+    <div class="section-label">Scan · 一句话扫描区 · B / C 级</div>
+    <h2 class="section-title">其余 12 条 · 知道有就行</h2>
+
+    <ul class="scan-list">
+      
+      <li class="scan-item">
+        <span class="scan-grade b">B 级</span>
+        <span class="scan-title">医疗 AI 大规模部署，但疗效评估严重缺失</span>
+        <span class="scan-source">MIT Technology Review</span>
+      </li>
+      
+      <li class="scan-item">
+        <span class="scan-grade b">B 级</span>
+        <span class="scan-title">Tesla 250 亿美元 AI 支出计划遭投资者质疑</span>
+        <span class="scan-source">Hacker News AI</span>
+      </li>
+      
+      <li class="scan-item">
+        <span class="scan-grade b">B 级</span>
+        <span class="scan-title">软件股因 ServiceNow、IBM 财报不及预期集体下挫</span>
+        <span class="scan-source">Hacker News AI</span>
+      </li>
+      
+      <li class="scan-item">
+        <span class="scan-grade b">B 级</span>
+        <span class="scan-title">Cohere 收购德国 Aleph Alpha，加速欧洲企业 AI 布局</span>
+        <span class="scan-source">Hacker News AI</span>
+      </li>
+      
+      <li class="scan-item">
+        <span class="scan-grade b">B 级</span>
+        <span class="scan-title">BAND 融资 1700 万美元，推出 AI agent 间通信的"通用编排器"</span>
+        <span class="scan-source">VentureBeat</span>
+      </li>
+      
+      <li class="scan-item">
+        <span class="scan-grade b">B 级</span>
+        <span class="scan-title">MirrorNeuron：面向本地 AI agent 的开源可靠运行时</span>
+        <span class="scan-source">Hacker News AI</span>
+      </li>
+      
+      <li class="scan-item">
+        <span class="scan-grade b">B 级</span>
+        <span class="scan-title">Google Workspace 将 Gemini AI 功能默认开启</span>
+        <span class="scan-source">Hacker News AI</span>
+      </li>
+      
+      <li class="scan-item">
+        <span class="scan-grade b">B 级</span>
+        <span class="scan-title">供应链裂缝制约 AI 扩张：地缘政治因素浮现</span>
+        <span class="scan-source">Hacker News AI</span>
+      </li>
+      
+      <li class="scan-item">
+        <span class="scan-grade b">B 级</span>
+        <span class="scan-title">Unsupervised Learning 播客：AI Infra 稳定性与 Coding Agents 下一步</span>
+        <span class="scan-source">Unsupervised Learning</span>
+      </li>
+      
+      <li class="scan-item">
+        <span class="scan-grade c">C 级</span>
+        <span class="scan-title">Era 融资 1100 万美元打造多形态 AI 可穿戴设备平台</span>
+        <span class="scan-source">TechCrunch AI</span>
+      </li>
+      
+      <li class="scan-item">
+        <span class="scan-grade c">C 级</span>
+        <span class="scan-title">Sierra 收购法国 AI 初创 Fragment、AI 托管门店暴露偏见等零散事件</span>
+        <span class="scan-source">TechCrunch AI, Hacker News AI, The Verge AI</span>
+      </li>
+      
+      <li class="scan-item">
+        <span class="scan-grade c">C 级</span>
+        <span class="scan-title">其他零散消息：Nothing 语音听写、Sinceerly 去 AI 化工具、GIMP 禁 AI 政策等</span>
+        <span class="scan-source">TechCrunch AI, Hacker News AI, The Verge AI, 各 KOL</span>
+      </li>
+      
+    </ul>
+  </section>
+  
+
+  
+  
+  <div class="closing">
+    <div class="closing-mark">— 主编寄语 —</div>
+    <div class="closing-text">今天三家前沿实验室在同一天各出了一张牌：OpenAI 亮基准分数，Anthropic 亮伤疤，DeepSeek 亮华为芯片。
+三种截然不同的打法，折射出同一个事实：AI 竞争已经不只是比模型强不强，而是比谁的叙事更诚实、谁的生态更完整、谁的供应链更独立。
+比起谁今天多了零点几个百分点的准确率，这种竞争维度的分化本身，才是今天最值得记住的事。</div>
+    <div class="closing-sig">明天见 · 编辑部</div>
+  </div>
+  
+
+  <footer class="footer">
+    <span>AI 主编日报 · 2026-04-24</span>
+    <span>主笔 / Claude Editorial</span>
+  </footer>
+
+</div>
+
+</body>
+</html>
