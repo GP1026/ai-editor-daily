@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 主编周刊 · 2026 第 17 周 · 04.21–04.25</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..900,0..100&family=Noto+Serif+SC:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f4ede0; --bg-deep: #ebe2d0; --ink: #1c1814; --ink-soft: #3a342c;
+    --gray: #756a5c; --gray-light: #a59b8c; --line: #c9bfac; --line-soft: #ddd2bd;
+    --accent: #9a2828; --accent-deep: #6e1d1d; --gold: #8b6914; --green: #3d5a3a;
+    --font-display: 'Fraunces', 'Noto Serif SC', serif;
+    --font-serif: 'Noto Serif SC', 'Fraunces', serif;
+    --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--bg); color: var(--ink); font-family: var(--font-serif); font-weight: 400; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .page { max-width: 920px; margin: 0 auto; padding: 56px 48px 96px; }
+
+  /* 刊头 */
+  .masthead { border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 8px; }
+  .masthead-top { display: flex; justify-content: space-between; align-items: flex-end; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray); margin-bottom: 14px; }
+  .masthead h1 { font-family: var(--font-display); font-weight: 600; font-size: 64px; line-height: 0.95; letter-spacing: -0.025em; font-variation-settings: "opsz" 144, "SOFT" 30; }
+  .masthead h1 .en { font-style: italic; font-weight: 400; font-size: 0.42em; color: var(--gray); margin-left: 14px; font-variation-settings: "opsz" 14, "SOFT" 100; }
+  .masthead .tagline { font-size: 13px; color: var(--gray); margin-top: 12px; letter-spacing: 0.04em; }
+  .masthead-meta { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-top: 4px; font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray); padding-top: 10px; border-top: 1px solid var(--line); }
+  .masthead-meta .stats { display: flex; gap: 24px; flex-wrap: wrap; }
+  .masthead-meta .stats b { color: var(--ink); font-weight: 500; margin-left: 4px; }
+
+  /* 通用 section */
+  section { margin-top: 56px; }
+  .section-label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 12px; }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--line); }
+  .section-title { font-family: var(--font-display); font-weight: 500; font-size: 30px; line-height: 1.15; letter-spacing: -0.015em; color: var(--ink); margin-bottom: 24px; font-variation-settings: "opsz" 60; }
+
+  /* 周观察 */
+  .editorial { margin-top: 32px; padding: 32px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .editorial-eyebrow { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+  .editorial-body { font-size: 17px; line-height: 1.85; color: var(--ink-soft); }
+  .editorial-body p { margin-bottom: 18px; }
+  .editorial-body p:last-child { margin-bottom: 0; }
+  .editorial-body p:first-child::first-letter { font-family: var(--font-display); font-weight: 600; font-size: 64px; float: left; line-height: 0.85; margin: 8px 10px 0 0; color: var(--accent); font-variation-settings: "opsz" 144; }
+  .editorial-body strong { font-weight: 600; color: var(--ink); background: linear-gradient(to top, rgba(154,40,40,0.12) 0%, rgba(154,40,40,0.12) 30%, transparent 30%); padding: 0 2px; }
+  .editorial-sign { margin-top: 24px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; color: var(--gray); text-transform: uppercase; }
+
+  /* 主线追踪 */
+  .storyline { padding: 24px 28px; border: 1px solid var(--line); background: rgba(255,253,248,0.5); margin-bottom: 20px; }
+  .storyline-title { font-family: var(--font-display); font-weight: 500; font-size: 20px; line-height: 1.3; margin-bottom: 12px; font-variation-settings: "opsz" 48; }
+  .storyline-timeline { list-style: none; padding-left: 0; }
+  .storyline-timeline li { display: grid; grid-template-columns: 70px 1fr; gap: 14px; padding: 8px 0; border-top: 1px dotted var(--line-soft); font-size: 14px; line-height: 1.55; }
+  .storyline-timeline li:first-child { border-top: none; }
+  .storyline-date { font-family: var(--font-mono); font-size: 11px; color: var(--gray); letter-spacing: 0.06em; padding-top: 2px; }
+  .storyline-text { color: var(--ink-soft); }
+  .storyline-text a { color: var(--accent-deep); }
+  .grade-badge { display: inline-block; font-family: var(--font-mono); font-size: 9px; font-weight: 500; letter-spacing: 0.12em; padding: 1px 5px; border: 1px solid; margin-right: 6px; vertical-align: 1px; }
+  .grade-badge.s { color: var(--accent); border-color: var(--accent); }
+  .grade-badge.a { color: var(--gold); border-color: var(--gold); }
+
+  /* 热力标签 */
+  .tag-cloud { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+  .tag-pill { font-size: 13px; padding: 4px 14px; border-radius: 2px; border: 1px solid var(--line-soft); background: var(--bg-deep); color: var(--ink-soft); letter-spacing: 0.02em; }
+  .tag-pill.hot { color: var(--accent-deep); border-color: rgba(154,40,40,0.3); background: rgba(154,40,40,0.06); font-weight: 500; }
+  .tag-pill .count { font-family: var(--font-mono); font-size: 10px; color: var(--gray); margin-left: 4px; }
+
+  /* 每日摘要行 */
+  .daily-row { display: grid; grid-template-columns: 80px 1fr; gap: 24px; padding: 20px 0; border-bottom: 1px solid var(--line-soft); }
+  .daily-row:last-child { border-bottom: none; }
+  .daily-date { font-family: var(--font-display); font-weight: 500; font-size: 18px; color: var(--ink); font-variation-settings: "opsz" 36; }
+  .daily-date a { color: var(--ink); }
+  .daily-date a:hover { color: var(--accent); }
+  .daily-date .weekday { display: block; font-family: var(--font-mono); font-size: 10px; color: var(--gray); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 2px; }
+  .daily-highlights { font-size: 14px; color: var(--ink-soft); line-height: 1.65; }
+  .daily-highlights .event-line { margin-bottom: 4px; }
+  .daily-stat { font-family: var(--font-mono); font-size: 10px; color: var(--gray); margin-top: 6px; letter-spacing: 0.06em; }
+
+  /* 数据面板 */
+  .data-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 20px; }
+  .data-card { padding: 20px 24px; border: 1px solid var(--line); background: rgba(255,253,248,0.5); }
+  .data-card-title { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; font-weight: 500; }
+  .bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; font-size: 13px; }
+  .bar-label { width: 110px; color: var(--ink-soft); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .bar-track { flex: 1; height: 14px; background: var(--bg-deep); border: 1px solid var(--line-soft); position: relative; }
+  .bar-fill { height: 100%; background: var(--accent); opacity: 0.2; }
+  .bar-fill.hot { opacity: 0.5; }
+  .bar-count { font-family: var(--font-mono); font-size: 10px; color: var(--gray); width: 24px; text-align: right; }
+
+  /* 寄语 */
+  .closing { margin-top: 80px; padding: 36px 0 32px; border-top: 2px solid var(--ink); text-align: center; }
+  .closing-mark { font-family: var(--font-display); font-style: italic; font-size: 14px; letter-spacing: 0.12em; color: var(--accent); text-transform: uppercase; margin-bottom: 18px; font-variation-settings: "opsz" 14, "SOFT" 100; }
+  .closing-text { font-family: var(--font-display); font-weight: 400; font-style: italic; font-size: 19px; line-height: 1.7; color: var(--ink); max-width: 640px; margin: 0 auto; white-space: pre-line; font-variation-settings: "opsz" 60, "SOFT" 80; }
+  .closing-sig { margin-top: 24px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; color: var(--gray); text-transform: uppercase; }
+
+  .footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray-light); }
+
+  @media (max-width: 720px) {
+    .page { padding: 32px 22px 64px; }
+    .masthead h1 { font-size: 42px; }
+    .masthead h1 .en { display: block; margin-left: 0; margin-top: 6px; }
+    .data-grid { grid-template-columns: 1fr; }
+    .storyline-timeline li { grid-template-columns: 1fr; gap: 2px; }
+    .daily-row { grid-template-columns: 1fr; gap: 8px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- 刊头 -->
+  <header class="masthead">
+    <div class="masthead-top">
+      <div>2026 · 第 17 周 · 04.21 — 04.25</div>
+      <div>AI 主编周刊</div>
+    </div>
+    <h1>AI 主编周刊<span class="en">The Editor's Weekly</span></h1>
+    <div class="tagline">一周回望，看清 AI 世界的真实脉搏。不追热点，只追主线。</div>
+    <div class="masthead-meta">
+      <div class="stats">
+        <span>原始新闻 <b>162</b></span>
+        <span>合并事件 <b>83</b></span>
+        <span>S 级 <b>14</b></span>
+        <span>A 级 <b>28</b></span>
+        <span>覆盖 <b>5</b> 天</span>
+      </div>
+      <div>主笔 / Claude Editorial</div>
+    </div>
+  </header>
+
+  <!-- 周观察 -->
+  <article class="editorial">
+    <div class="editorial-eyebrow">— 本周观察 / Weekly Narrative</div>
+    <div class="editorial-body">
+      <p>这一周的 AI 行业，用一个词概括是<strong>"重装对峙"</strong>。三股力量同时亮牌：开源阵营以 DeepSeek-V4 的六分之一定价发起成本冲击；闭源阵营以 Google 400 亿投 Anthropic、Amazon 50 亿注资的规模筑起资本护城河；而 OpenAI 在周四投下 GPT-5.5，试图以 agentic 能力重新定义前沿。没有一方能单独定义这个时代，但每一方都在逼迫其他人加速。</p>
+      <p>与此同时，<strong>Agent 从概念走向基础设施</strong>的信号密集到无法忽视。OpenAI Workspace Agents、Google Cloud Next 的企业 Agent 平台、Microsoft Office Agent Mode、Salesforce Agentforce 2.0——一周之内四大平台同时发力 Agent 产品化。然而 Stanford 的研究冷静地指出，单 agent 往往不输多 agent，85% 的企业试点了 agent 却只有 5% 敢投产。热闹之下，信任架构的缺失才是真正的瓶颈。</p>
+      <p>第三条暗线是<strong>安全与失控的拉锯</strong>。Anthropic Mythos 模型泄露、Claude 性能下滑复盘、Meta MCI 追踪员工行为——这些事件串联起来，指向一个不舒服的现实：AI 公司在安全问题上的表现，远未达到它们自己宣称的标准。这条主线在下周的 Musk-Altman 庭审中还会继续发酵。</p>
+    </div>
+    <div class="editorial-sign">— 编辑部 · 2026 第 17 周</div>
+  </article>
+
+  <!-- 本周主线追踪 -->
+  <section>
+    <div class="section-label">Storylines · 本周主线追踪</div>
+    <h2 class="section-title">五条主线，贯穿整周</h2>
+
+    <div class="storyline">
+      <div class="storyline-title">主线一：前沿模型竞赛 — 闭源 vs 开源的终极对峙</div>
+      <ul class="storyline-timeline">
+        <li><span class="storyline-date">04.22</span><span class="storyline-text"><span class="grade-badge a">A</span>Kimi K2.6 在 agent 编码表现亮眼，暴露行业短板</span></li>
+        <li><span class="storyline-date">04.23</span><span class="storyline-text"><span class="grade-badge s">S</span>Google 第八代 TPU 发布，训推分芯，推理性能跃升近 10 倍</span></li>
+        <li><span class="storyline-date">04.24</span><span class="storyline-text"><span class="grade-badge s">S</span><a href="2026-04-24.html">OpenAI 发布 GPT-5.5</a>，Terminal-Bench 2.0 上 82.7% 微弱超越 Mythos</span></li>
+        <li><span class="storyline-date">04.24</span><span class="storyline-text"><span class="grade-badge s">S</span>DeepSeek 预览 V4，性能逼近闭源顶级，强调华为芯片兼容</span></li>
+        <li><span class="storyline-date">04.25</span><span class="storyline-text"><span class="grade-badge s">S</span><a href="2026-04-25.html">DeepSeek-V4 正式发布</a>，1.6 万亿参数开源，定价仅闭源六分之一</span></li>
+      </ul>
+    </div>
+
+    <div class="storyline">
+      <div class="storyline-title">主线二：资本重注 AI — 百亿美元级别的军备竞赛</div>
+      <ul class="storyline-timeline">
+        <li><span class="storyline-date">04.21</span><span class="storyline-text"><span class="grade-badge s">S</span><a href="2026-04-21.html">Amazon 向 Anthropic 注资 50 亿</a> + 1000 亿 AWS 云支出承诺</span></li>
+        <li><span class="storyline-date">04.22</span><span class="storyline-text"><span class="grade-badge s">S</span>SpaceX 拟 600 亿收购 Cursor，Musk AI 版图急速扩张</span></li>
+        <li><span class="storyline-date">04.24</span><span class="storyline-text"><span class="grade-badge a">A</span>Meta 裁员 10%（8000 人），同时 AI 基础设施投入 1150-1350 亿</span></li>
+        <li><span class="storyline-date">04.25</span><span class="storyline-text"><span class="grade-badge s">S</span><a href="2026-04-25.html">Google 拟 400 亿投资 Anthropic</a>（现金+算力），锁定战略级算力</span></li>
+        <li><span class="storyline-date">04.25</span><span class="storyline-text"><span class="grade-badge a">A</span>Tesla 季报悄然披露 20 亿 AI 硬件收购</span></li>
+      </ul>
+    </div>
+
+    <div class="storyline">
+      <div class="storyline-title">主线三：Agent 产品化浪潮 — 从概念到企业级基础设施</div>
+      <ul class="storyline-timeline">
+        <li><span class="storyline-date">04.21</span><span class="storyline-text"><span class="grade-badge a">A</span>Circle CEO 发布 AI agent 经济基础设施蓝图</span></li>
+        <li><span class="storyline-date">04.23</span><span class="storyline-text"><span class="grade-badge s">S</span><a href="2026-04-23.html">OpenAI 推出 Workspace Agents</a>，Custom GPTs 继任者</span></li>
+        <li><span class="storyline-date">04.23</span><span class="storyline-text"><span class="grade-badge a">A</span>Microsoft Office Agent Mode ("vibe working") 上线</span></li>
+        <li><span class="storyline-date">04.23</span><span class="storyline-text"><span class="grade-badge a">A</span>Salesforce Agentforce Vibes 2.0 治理上下文过载</span></li>
+        <li><span class="storyline-date">04.24</span><span class="storyline-text"><span class="grade-badge a">A</span>85% 企业试点 AI agent，仅 5% 投产，信任架构是瓶颈</span></li>
+        <li><span class="storyline-date">04.24</span><span class="storyline-text"><span class="grade-badge a">A</span>Claude Managed Agents 跨会话 Memory 功能发布</span></li>
+      </ul>
+    </div>
+
+    <div class="storyline">
+      <div class="storyline-title">主线四：安全与失控 — AI 公司的言行差距</div>
+      <ul class="storyline-timeline">
+        <li><span class="storyline-date">04.21</span><span class="storyline-text"><span class="grade-badge s">S</span><a href="2026-04-21.html">AI 安全攻防三线齐发</a>：Anthropic 防御指南 + agent 密钥泄露 + 90+ 机构被劫持</span></li>
+        <li><span class="storyline-date">04.22</span><span class="storyline-text"><span class="grade-badge s">S</span>Anthropic Mythos 模型遭未授权访问，安全品牌形象受损</span></li>
+        <li><span class="storyline-date">04.22</span><span class="storyline-text"><span class="grade-badge s">S</span>Meta 部署 MCI 追踪员工行为训练 AI，伦理争议</span></li>
+        <li><span class="storyline-date">04.24</span><span class="storyline-text"><span class="grade-badge s">S</span><a href="2026-04-24.html">Anthropic 复盘 Claude 性能下滑</a>：三个产品层 bug 叠加，非模型退化</span></li>
+      </ul>
+    </div>
+
+    <div class="storyline">
+      <div class="storyline-title">主线五：科技巨头领导层变动</div>
+      <ul class="storyline-timeline">
+        <li><span class="storyline-date">04.21</span><span class="storyline-text"><span class="grade-badge s">S</span>Apple CEO 换帅：Ternus 接棒 Cook，AI 困局成首要挑战</span></li>
+        <li><span class="storyline-date">04.24</span><span class="storyline-text"><span class="grade-badge a">A</span>Tim Cook 正式确认卸任时间表，Gruber 复盘权力交接</span></li>
+        <li><span class="storyline-date">04.25</span><span class="storyline-text"><span class="grade-badge a">A</span>后续：Musk 同时推进 Cursor 收购 + Tesla AI 硬件收购</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 话题热力图 -->
+  <section>
+    <div class="section-label">Heatmap · 本周话题热度</div>
+    <h2 class="section-title">哪些领域最热</h2>
+
+    <div class="data-grid">
+      <div class="data-card">
+        <div class="data-card-title">技术领域 Top 6</div>
+        <div class="bar-row"><span class="bar-label">大模型/LLM</span><span class="bar-track"><span class="bar-fill hot" style="width:100%"></span></span><span class="bar-count">47</span></div>
+        <div class="bar-row"><span class="bar-label">Agent</span><span class="bar-track"><span class="bar-fill hot" style="width:74%"></span></span><span class="bar-count">35</span></div>
+        <div class="bar-row"><span class="bar-label">基础设施/MLOps</span><span class="bar-track"><span class="bar-fill" style="width:47%"></span></span><span class="bar-count">22</span></div>
+        <div class="bar-row"><span class="bar-label">安全/对齐</span><span class="bar-track"><span class="bar-fill" style="width:28%"></span></span><span class="bar-count">13</span></div>
+        <div class="bar-row"><span class="bar-label">芯片/硬件</span><span class="bar-track"><span class="bar-fill" style="width:19%"></span></span><span class="bar-count">9</span></div>
+        <div class="bar-row"><span class="bar-label">开源模型</span><span class="bar-track"><span class="bar-fill" style="width:9%"></span></span><span class="bar-count">4</span></div>
+      </div>
+      <div class="data-card">
+        <div class="data-card-title">事件类型分布</div>
+        <div class="bar-row"><span class="bar-label">产品发布</span><span class="bar-track"><span class="bar-fill hot" style="width:100%"></span></span><span class="bar-count">24</span></div>
+        <div class="bar-row"><span class="bar-label">行业动态</span><span class="bar-track"><span class="bar-fill" style="width:71%"></span></span><span class="bar-count">17</span></div>
+        <div class="bar-row"><span class="bar-label">观点/评论</span><span class="bar-track"><span class="bar-fill" style="width:63%"></span></span><span class="bar-count">15</span></div>
+        <div class="bar-row"><span class="bar-label">融资/收购</span><span class="bar-track"><span class="bar-fill" style="width:50%"></span></span><span class="bar-count">12</span></div>
+        <div class="bar-row"><span class="bar-label">安全事件</span><span class="bar-track"><span class="bar-fill" style="width:38%"></span></span><span class="bar-count">9</span></div>
+        <div class="bar-row"><span class="bar-label">研究成果</span><span class="bar-track"><span class="bar-fill" style="width:38%"></span></span><span class="bar-count">9</span></div>
+      </div>
+    </div>
+
+    <div style="margin-top: 24px;">
+      <div class="data-card-title" style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; font-weight: 500;">影响力维度</div>
+      <div class="tag-cloud">
+        <span class="tag-pill hot">信号性 <span class="count">43</span></span>
+        <span class="tag-pill hot">实用性 <span class="count">25</span></span>
+        <span class="tag-pill">规模性 <span class="count">17</span></span>
+        <span class="tag-pill">突破性 <span class="count">17</span></span>
+        <span class="tag-pill">生态性 <span class="count">15</span></span>
+        <span class="tag-pill">争议性 <span class="count">11</span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 每日摘要 -->
+  <section>
+    <div class="section-label">Daily Recap · 每日速览</div>
+    <h2 class="section-title">五天，一天一句话</h2>
+
+    <div class="daily-row">
+      <div class="daily-date"><a href="2026-04-25.html">04.25</a><span class="weekday">Fri</span></div>
+      <div class="daily-highlights">
+        <div class="event-line"><span class="grade-badge s">S</span> DeepSeek-V4 正式发布，开源逼近闭源顶级，定价仅六分之一</div>
+        <div class="event-line"><span class="grade-badge s">S</span> Google 拟 400 亿投资 Anthropic（现金+算力）</div>
+        <div class="event-line"><span class="grade-badge a">A</span> Musk 拟 600 亿收购 Cursor · Tesla 20 亿 AI 硬件收购 · ComfyUI 5 亿估值</div>
+        <div class="daily-stat">10 条新闻 → 8 个事件 · S:2 A:3</div>
+      </div>
+    </div>
+
+    <div class="daily-row">
+      <div class="daily-date"><a href="2026-04-24.html">04.24</a><span class="weekday">Thu</span></div>
+      <div class="daily-highlights">
+        <div class="event-line"><span class="grade-badge s">S</span> GPT-5.5 正式发布，Terminal-Bench 2.0 微弱超越 Mythos Preview</div>
+        <div class="event-line"><span class="grade-badge s">S</span> Anthropic 复盘 Claude 性能下滑：三个产品层 bug 叠加</div>
+        <div class="event-line"><span class="grade-badge s">S</span> DeepSeek 预览 V4 · Claude Agents Memory · Meta 裁员 10%</div>
+        <div class="daily-stat">38 条新闻 → 22 个事件 · S:3 A:8</div>
+      </div>
+    </div>
+
+    <div class="daily-row">
+      <div class="daily-date"><a href="2026-04-23.html">04.23</a><span class="weekday">Wed</span></div>
+      <div class="daily-highlights">
+        <div class="event-line"><span class="grade-badge s">S</span> OpenAI Workspace Agents 发布，企业 AI 无人值守时代</div>
+        <div class="event-line"><span class="grade-badge s">S</span> Google 第八代 TPU · Cloud Next 全面发力 Agent 平台</div>
+        <div class="event-line"><span class="grade-badge a">A</span> MS Office Agent Mode · Salesforce Vibes 2.0 · Stanford 单/多 agent 研究</div>
+        <div class="daily-stat">40 条新闻 → 18 个事件 · S:3 A:6</div>
+      </div>
+    </div>
+
+    <div class="daily-row">
+      <div class="daily-date"><a href="2026-04-22.html">04.22</a><span class="weekday">Tue</span></div>
+      <div class="daily-highlights">
+        <div class="event-line"><span class="grade-badge s">S</span> SpaceX 拟 600 亿收购 Cursor，Musk AI 版图扩张</div>
+        <div class="event-line"><span class="grade-badge s">S</span> Anthropic Mythos 泄露 · Meta MCI 追踪员工行为</div>
+        <div class="event-line"><span class="grade-badge a">A</span> ChatGPT Images 2.0 · AI 安全审计加速 · Kimi K2.6 亮眼</div>
+        <div class="daily-stat">46 条新闻 → 21 个事件 · S:3 A:7</div>
+      </div>
+    </div>
+
+    <div class="daily-row">
+      <div class="daily-date"><a href="2026-04-21.html">04.21</a><span class="weekday">Mon</span></div>
+      <div class="daily-highlights">
+        <div class="event-line"><span class="grade-badge s">S</span> Amazon-Anthropic 50 亿 + 1000 亿 AWS 云支出承诺</div>
+        <div class="event-line"><span class="grade-badge s">S</span> AI 安全攻防全面升级：三线齐发</div>
+        <div class="event-line"><span class="grade-badge s">S</span> Apple CEO 换帅：Ternus 接棒 Cook</div>
+        <div class="daily-stat">28 条新闻 → 14 个事件 · S:3 A:4</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 主编寄语 -->
+  <div class="closing">
+    <div class="closing-mark">— 周末寄语 —</div>
+    <div class="closing-text">这周 162 条新闻压缩成五条主线后，留下一个值得周末想想的问题：
+当开源把价格打到六分之一，而闭源把投资加到四百亿——
+这场军备竞赛的终局，到底是谁在为谁买单？</div>
+    <div class="closing-sig">下周见 · 编辑部</div>
+  </div>
+
+  <footer class="footer">
+    <span>AI 主编周刊 · 2026 第 17 周</span>
+    <span><a href="index.html" style="color: var(--gray-light);">返回存档</a></span>
+  </footer>
+
+</div>
+</body>
+</html>
