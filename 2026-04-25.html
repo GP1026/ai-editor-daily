@@ -182,6 +182,21 @@
   }
   .source-text { font-size: 14px; color: var(--ink-soft); line-height: 1.6; }
 
+  /* 原文链接 */
+  .source-links { margin-top: 16px; padding-top: 12px; border-top: 1px dotted var(--line); }
+  .source-link-item {
+    display: flex; align-items: baseline; gap: 8px; margin-bottom: 6px;
+    font-size: 13px; line-height: 1.5;
+  }
+  .source-link-item .src-name {
+    font-family: var(--font-mono); font-size: 10px; color: var(--gray);
+    letter-spacing: 0.06em; white-space: nowrap; min-width: 80px;
+  }
+  .source-link-item a {
+    color: var(--accent-deep); text-decoration: none; word-break: break-all;
+  }
+  .source-link-item a:hover { text-decoration: underline; }
+
   /* 主编判断框 */
   .judgment {
     margin-top: 18px; padding: 16px 20px; background: var(--bg-deep);
@@ -348,7 +363,7 @@
 
     <div class="top-events">
       
-      <article class="event">
+      <article class="event" id="evt_001">
         <div class="event-num">01<span class="slash">/</span><span class="total">05</span></div>
         <div class="event-body">
           <h3 class="event-headline">DeepSeek-V4 发布：1.6 万亿参数开源模型逼近顶级闭源性能，定价仅为六分之一</h3>
@@ -402,10 +417,29 @@
           <div class="judgment">V4 的性能数据需要独立验证，但即便打个折扣，开源模型的追赶速度也已经快到让闭源阵营不舒服。昇腾优化这步棋才是真正值得长期关注的变量——如果成功规模化，整个 AI 算力供应链的权力格局都会松动。</div>
           
           
+
+          
+          
+          
+          
+          <div class="source-links">
+            
+            <div class="source-link-item">
+              <span class="src-name">VentureBeat</span>
+              <a href="https://venturebeat.com/technology/deepseek-v4-arrives-with-near-state-of-the-art-intelligence-at-1-6th-the-cost-of-opus-4-7-gpt-5-5" target="_blank" rel="noopener">DeepSeek-V4 发布：接近顶级闭源模型性能，API 定价仅为 Opus 4.7 的六分之一</a>
+            </div>
+            
+            <div class="source-link-item">
+              <span class="src-name">MIT Technology Review</span>
+              <a href="https://www.technologyreview.com/2026/04/24/1136422/why-deepseeks-v4-matters/" target="_blank" rel="noopener">Three reasons why DeepSeek's new model matters</a>
+            </div>
+            
+          </div>
+          
         </div>
       </article>
       
-      <article class="event">
+      <article class="event" id="evt_002">
         <div class="event-num">02<span class="slash">/</span><span class="total">05</span></div>
         <div class="event-body">
           <h3 class="event-headline">Google 计划向 Anthropic 投资最高 400 亿美元现金与算力</h3>
@@ -454,10 +488,24 @@
           <div class="judgment">400 亿是一个让人必须停下来想一想的数字。Google 在自研 Gemini 的同时重注 Anthropic，说明即便是最大的玩家也不敢只赌一条路。这笔钱的真正含义不是"看好 Anthropic"，而是"算力就是军火，必须提前锁定"。</div>
           
           
+
+          
+          
+          
+          
+          <div class="source-links">
+            
+            <div class="source-link-item">
+              <span class="src-name">TechCrunch AI</span>
+              <a href="https://techcrunch.com/2026/04/24/google-to-invest-up-to-40b-in-anthropic-in-cash-and-compute/" target="_blank" rel="noopener">Google 计划向 Anthropic 投资最高 400 亿美元现金与算力</a>
+            </div>
+            
+          </div>
+          
         </div>
       </article>
       
-      <article class="event">
+      <article class="event" id="evt_003">
         <div class="event-num">03<span class="slash">/</span><span class="total">05</span></div>
         <div class="event-body">
           <h3 class="event-headline">Elon Musk 拟 600 亿美元收购 Cursor，Tim Cook 计划卸任 Apple CEO</h3>
@@ -506,10 +554,24 @@
           <div class="judgment">600 亿的报价听起来夸张，但考虑到 Cursor 的增长速度和 AI 编程赛道的战略地位，这个数字更多反映的是 Musk 的焦虑而非 Cursor 的估值。值得跟踪但不宜过度解读——Musk 放风收购的频率远高于实际成交。</div>
           
           
+
+          
+          
+          
+          
+          <div class="source-links">
+            
+            <div class="source-link-item">
+              <span class="src-name">TechCrunch AI</span>
+              <a href="https://techcrunch.com/podcast/apples-new-ceo-and-why-elon-musk-wants-to-buy-cursor-for-60b/" target="_blank" rel="noopener">Apple CEO 交棒，Elon Musk 拟 600 亿美元收购 Cursor</a>
+            </div>
+            
+          </div>
+          
         </div>
       </article>
       
-      <article class="event">
+      <article class="event" id="evt_004">
         <div class="event-num">04<span class="slash">/</span><span class="total">05</span></div>
         <div class="event-body">
           <h3 class="event-headline">Tesla 在季报中低调披露 20 亿美元 AI 硬件公司收购</h3>
@@ -558,10 +620,24 @@
           <div class="judgment">与同日 Cursor 收购传闻叠加来看，Musk 在 AI 硬件和软件两端同时下重注。但"悄然"二字值得警惕——通常意味着有不方便说的理由。</div>
           
           
+
+          
+          
+          
+          
+          <div class="source-links">
+            
+            <div class="source-link-item">
+              <span class="src-name">Hacker News AI</span>
+              <a href="https://electrek.co/2026/04/23/tesla-tsla-quietly-discloses-2-billion-ai-hardware-acquisition-10q/" target="_blank" rel="noopener">Tesla 在 10-Q 中悄然披露 20 亿美元 AI 硬件公司收购</a>
+            </div>
+            
+          </div>
+          
         </div>
       </article>
       
-      <article class="event">
+      <article class="event" id="evt_005">
         <div class="event-num">05<span class="slash">/</span><span class="total">05</span></div>
         <div class="event-body">
           <h3 class="event-headline">ComfyUI 完成 3000 万美元融资，估值达 5 亿美元</h3>
@@ -610,6 +686,20 @@
           <div class="judgment">ComfyUI 证明了"给专业用户更多控制权"比"让小白也能用"更有商业价值——至少在当前阶段。5 亿估值合不合理另说，但这个方向是对的。</div>
           
           
+
+          
+          
+          
+          
+          <div class="source-links">
+            
+            <div class="source-link-item">
+              <span class="src-name">TechCrunch AI</span>
+              <a href="https://techcrunch.com/2026/04/24/comfyui-hits-500m-valuation-as-creators-seek-more-control-over-ai-generated-media/" target="_blank" rel="noopener">ComfyUI 估值达 5 亿美元，创作者对 AI 生成媒体的精细控制需求持续升温</a>
+            </div>
+            
+          </div>
+          
         </div>
       </article>
       
@@ -624,7 +714,7 @@
     <h2 class="section-title">同一件事,不同说法</h2>
 
     
-    <div class="multi-source-event">
+    <div class="multi-source-event" id="ms-evt_001">
       <h3 class="event-headline">DeepSeek-V4 发布：1.6 万亿参数开源模型逼近顶级闭源性能，定价仅为六分之一</h3>
       <div class="event-meta">
         <span class="grade s">S 级</span>
@@ -674,25 +764,25 @@
 
     <ul class="scan-list">
       
-      <li class="scan-item">
+      <li class="scan-item" id="evt_006">
         <span class="scan-grade b">B 级</span>
         <span class="scan-title">Project Maven：军事 AI 如何重塑现代战争目标筛选效率</span>
         <span class="scan-source">The Verge AI</span>
       </li>
       
-      <li class="scan-item">
+      <li class="scan-item" id="evt_007">
         <span class="scan-grade b">B 级</span>
         <span class="scan-title">Mac mini 因本地 AI 模型需求激增遭抢购，eBay 大量溢价转卖</span>
         <span class="scan-source">TechCrunch AI</span>
       </li>
       
-      <li class="scan-item">
+      <li class="scan-item" id="evt_008">
         <span class="scan-grade c">C 级</span>
         <span class="scan-title">Palo Alto 两个中低危漏洞组合利用致 13000 台设备遭入侵</span>
         <span class="scan-source">VentureBeat</span>
       </li>
       
-      <li class="scan-item">
+      <li class="scan-item" id="evt_009">
         <span class="scan-grade c">C 级</span>
         <span class="scan-title">Meta 与 Thinking Machines Lab 之间的 AI 人才双向流动</span>
         <span class="scan-source">TechCrunch AI</span>

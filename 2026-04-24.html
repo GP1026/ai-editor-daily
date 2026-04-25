@@ -182,6 +182,21 @@
   }
   .source-text { font-size: 14px; color: var(--ink-soft); line-height: 1.6; }
 
+  /* 原文链接 */
+  .source-links { margin-top: 16px; padding-top: 12px; border-top: 1px dotted var(--line); }
+  .source-link-item {
+    display: flex; align-items: baseline; gap: 8px; margin-bottom: 6px;
+    font-size: 13px; line-height: 1.5;
+  }
+  .source-link-item .src-name {
+    font-family: var(--font-mono); font-size: 10px; color: var(--gray);
+    letter-spacing: 0.06em; white-space: nowrap; min-width: 80px;
+  }
+  .source-link-item a {
+    color: var(--accent-deep); text-decoration: none; word-break: break-all;
+  }
+  .source-link-item a:hover { text-decoration: underline; }
+
   /* 主编判断框 */
   .judgment {
     margin-top: 18px; padding: 16px 20px; background: var(--bg-deep);
@@ -348,7 +363,7 @@
 
     <div class="top-events">
       
-      <article class="event">
+      <article class="event" id="evt_001">
         <div class="event-num">01<span class="slash">/</span><span class="total">11</span></div>
         <div class="event-body">
           <h3 class="event-headline">OpenAI 发布 GPT-5.5：重夺 agentic 基准榜首，定价激进</h3>
@@ -412,10 +427,54 @@
           <div class="judgment">基准分数上的微弱领先（82.7% vs 82.0%）本身并不构成决定性优势，但 OpenAI 今天展现的是一个完整战略：模型发布 + Codex 升级 + NVIDIA 企业合作，三件事同步落地。真正的竞争已经不在"谁的模型更强"，而在"谁的生态更完整"。值得警惕的是定价——Pro 版涨了 12 倍，如果企业客户不买单，这套战略的经济模型就站不住。</div>
           
           
+
+          
+          
+          
+          
+          <div class="source-links">
+            
+            <div class="source-link-item">
+              <span class="src-name">VentureBeat</span>
+              <a href="https://venturebeat.com/technology/openais-gpt-5-5-is-here-and-its-no-potato-narrowly-beats-anthropics-claude-mythos-preview-on-terminal-bench-2-0" target="_blank" rel="noopener">OpenAI 发布 GPT-5.5，在 Terminal-Bench 2.0 上以微弱优势超越 Claude Mythos Preview</a>
+            </div>
+            
+            <div class="source-link-item">
+              <span class="src-name">OpenAI</span>
+              <a href="https://openai.com/index/introducing-gpt-5-5/" target="_blank" rel="noopener">Introducing GPT-5.5</a>
+            </div>
+            
+            <div class="source-link-item">
+              <span class="src-name">Aaron Levie (Box CEO)</span>
+              <a href="https://x.com/levie/status/2047387742951313910" target="_blank" rel="noopener">Aaron Levie 分享 Box 在多行业场景下的 GPT-5.5 测试数据</a>
+            </div>
+            
+            <div class="source-link-item">
+              <span class="src-name">Dan Shipper (Every.io CEO)</span>
+              <a href="https://x.com/danshipper/status/2047388883823087633" target="_blank" rel="noopener">Dan Shipper 评价 GPT-5.5：执行力是最大提升</a>
+            </div>
+            
+            <div class="source-link-item">
+              <span class="src-name">Peter Yang (Roblox PM)</span>
+              <a href="https://x.com/petergyang/status/2047502885710410159" target="_blank" rel="noopener">Peter Yang 用 F-Zero 测试验证 GPT-5.5 + Codex 组合</a>
+            </div>
+            
+            <div class="source-link-item">
+              <span class="src-name">Swyx (Cognition)</span>
+              <a href="https://x.com/swyx/status/2047536499999346812" target="_blank" rel="noopener">Swyx 评论 OpenAI 发布：最值得关注的不是 GPT-5.5 本身</a>
+            </div>
+            
+            <div class="source-link-item">
+              <span class="src-name">Sam Altman (OpenAI CEO)</span>
+              <a href="https://x.com/sama/status/2047395562501411058" target="_blank" rel="noopener">Sam Altman 宣布与 NVIDIA 合作将 Codex 全面推广至整家公司</a>
+            </div>
+            
+          </div>
+          
         </div>
       </article>
       
-      <article class="event">
+      <article class="event" id="evt_002">
         <div class="event-num">02<span class="slash">/</span><span class="total">11</span></div>
         <div class="event-body">
           <h3 class="event-headline">Anthropic 公开复盘 Claude 性能下滑：三个产品层面 bug 叠加，非模型退化</h3>
@@ -469,10 +528,29 @@
           <div class="judgment">Anthropic 选择在竞争对手发布新模型的同一天公开自揭伤疤，这本身就是一种品牌策略——用透明度对抗基准分数的劣势。从技术层面看，"harness bug"这个概念值得全行业重视：当模型能力的边界越来越由 prompt、参数和缓存策略决定时，传统的"模型评测"已经不够了，需要"系统评测"。这份复盘可能比任何一个基准分数都更有长期价值。</div>
           
           
+
+          
+          
+          
+          
+          <div class="source-links">
+            
+            <div class="source-link-item">
+              <span class="src-name">VentureBeat</span>
+              <a href="https://venturebeat.com/technology/mystery-solved-anthropic-reveals-changes-to-claudes-harnesses-and-operating-instructions-likely-caused-degradation" target="_blank" rel="noopener">谜底揭晓：Anthropic 公布 Claude 性能下滑的三项根本原因</a>
+            </div>
+            
+            <div class="source-link-item">
+              <span class="src-name">Anthropic Engineering</span>
+              <a href="https://www.anthropic.com/engineering/april-23-postmortem" target="_blank" rel="noopener">Anthropic Engineering 发布 Claude Code 质量问题事后分析</a>
+            </div>
+            
+          </div>
+          
         </div>
       </article>
       
-      <article class="event">
+      <article class="event" id="evt_003">
         <div class="event-num">03<span class="slash">/</span><span class="total">11</span></div>
         <div class="event-body">
           <h3 class="event-headline">DeepSeek 预览 V4 模型：性能逼近闭源顶级，强调华为芯片兼容</h3>
@@ -531,10 +609,34 @@
           <div class="judgment">V4 选择在 GPT-5.5 发布的同一天预览，时机绝非巧合。DeepSeek 的策略很清楚：你发你的闭源旗舰，我发我的开源追平，让市场自己做成本计算。但"预览"二字需要注意——这不是正式发布，性能声明有待第三方验证。真正的考验是：当 V4 正式开放 API 时，闭源模型的定价体系还能不能撑住。</div>
           
           
+
+          
+          
+          
+          
+          <div class="source-links">
+            
+            <div class="source-link-item">
+              <span class="src-name">The Verge AI</span>
+              <a href="https://www.theverge.com/ai-artificial-intelligence/918035/deepseek-preview-v4-ai-model" target="_blank" rel="noopener">DeepSeek 预览下一代 AI 模型 V4，发布一年后再度挑战美国竞争对手</a>
+            </div>
+            
+            <div class="source-link-item">
+              <span class="src-name">TechCrunch AI</span>
+              <a href="https://techcrunch.com/2026/04/24/deepseek-previews-new-ai-model-that-closes-the-gap-with-frontier-models/" target="_blank" rel="noopener">DeepSeek 预览新 AI 模型，声称已接近前沿模型水平</a>
+            </div>
+            
+            <div class="source-link-item">
+              <span class="src-name">Amjad Masad (Replit CEO)</span>
+              <a href="https://x.com/amasad/status/2047547275682214384" target="_blank" rel="noopener">Amjad Masad 评论中国 AI 开放研究与 DeepSeek V4</a>
+            </div>
+            
+          </div>
+          
         </div>
       </article>
       
-      <article class="event">
+      <article class="event" id="evt_004">
         <div class="event-num">04<span class="slash">/</span><span class="total">11</span></div>
         <div class="event-body">
           <h3 class="event-headline">Claude Managed Agents 内置跨会话 Memory 功能进入公测</h3>
@@ -588,10 +690,29 @@
           <div class="judgment">"文件系统存储记忆"这个设计选择看似简单，实则深思熟虑——文件可以 git 管理、可以人工审查、可以版本回滚，这些都是向量库做不到的。在 agent 信任度仍然是最大瓶颈的当下，可审计性比智能性更重要。</div>
           
           
+
+          
+          
+          
+          
+          <div class="source-links">
+            
+            <div class="source-link-item">
+              <span class="src-name">Claude Blog</span>
+              <a href="https://claude.com/blog/claude-managed-agents-memory" target="_blank" rel="noopener">Claude Managed Agents 内置 Memory 功能正式发布</a>
+            </div>
+            
+            <div class="source-link-item">
+              <span class="src-name">Claude (Anthropic 官方账号)</span>
+              <a href="https://x.com/claudeai/status/2047421844311949513" target="_blank" rel="noopener">Anthropic 宣布 Claude Managed Agents Memory 进入公测</a>
+            </div>
+            
+          </div>
+          
         </div>
       </article>
       
-      <article class="event">
+      <article class="event" id="evt_005">
         <div class="event-num">05<span class="slash">/</span><span class="total">11</span></div>
         <div class="event-body">
           <h3 class="event-headline">Claude 新增 15 个日常生活类 App 连接器，目录总数超 200</h3>
@@ -645,10 +766,29 @@
           <div class="judgment">连接器数量的竞赛已经开始了，但数量不是关键——关键是用户愿不愿意把"帮我订外卖"这种需要付款的操作交给 AI。信任门槛从"读信息"到"花钱"是一个巨大跳跃。Anthropic 用隐私承诺来降低这个门槛，方向正确，但消费者行为的改变需要时间。</div>
           
           
+
+          
+          
+          
+          
+          <div class="source-links">
+            
+            <div class="source-link-item">
+              <span class="src-name">The Verge AI</span>
+              <a href="https://www.theverge.com/ai-artificial-intelligence/917871/anthropic-claude-personal-app-connectors" target="_blank" rel="noopener">Claude 新增个人 App 连接器，覆盖 Spotify、Uber Eats、TurboTax 等</a>
+            </div>
+            
+            <div class="source-link-item">
+              <span class="src-name">Claude Blog</span>
+              <a href="https://claude.com/blog/connectors-for-everyday-life" target="_blank" rel="noopener">Claude 新增 15 个日常生活类 Connector</a>
+            </div>
+            
+          </div>
+          
         </div>
       </article>
       
-      <article class="event">
+      <article class="event" id="evt_006">
         <div class="event-num">06<span class="slash">/</span><span class="total">11</span></div>
         <div class="event-body">
           <h3 class="event-headline">Meta 裁员 10% 约 8000 人，同步大幅加注 AI 基础设施投入</h3>
@@ -697,10 +837,24 @@
           <div class="judgment">Zuckerberg 一直在讲"效率年"的故事，但 2026 年的版本比前几年更赤裸：不是"减少低效"，而是"用算力替代人力"。当 Meta 把资本支出从 722 亿拉到 1350 亿的同时裁掉 8000 人，说明管理层算过一笔账——这 8000 人的工作，一部分将被 AI 吃掉。这对所有科技从业者都是需要正视的信号。</div>
           
           
+
+          
+          
+          
+          
+          <div class="source-links">
+            
+            <div class="source-link-item">
+              <span class="src-name">The Verge AI</span>
+              <a href="https://www.theverge.com/tech/917690/meta-is-laying-off-10-percent-of-its-staff" target="_blank" rel="noopener">Meta 裁员 10%，约 8000 人受影响</a>
+            </div>
+            
+          </div>
+          
         </div>
       </article>
       
-      <article class="event">
+      <article class="event" id="evt_007">
         <div class="event-num">07<span class="slash">/</span><span class="total">11</span></div>
         <div class="event-body">
           <h3 class="event-headline">Anthropic Mythos 模型遭未授权访问，安全品牌形象受损</h3>
@@ -749,10 +903,24 @@
           <div class="judgment">"锁匠家的锁被撬了"——这是最简洁的概括。技术上这可能是一个小事故，但叙事上这是一个大问题。Anthropic 需要在后续调查中展现足够的透明度（就像他们今天在 Claude Code 复盘中做的那样），否则"安全领导者"的品牌定位将持续受损。</div>
           
           
+
+          
+          
+          
+          
+          <div class="source-links">
+            
+            <div class="source-link-item">
+              <span class="src-name">The Verge AI</span>
+              <a href="https://www.theverge.com/ai-artificial-intelligence/917644/anthropic-claude-mythos-breach-humiliation" target="_blank" rel="noopener">Anthropic Mythos 模型遭未授权访问，安全品牌形象受损</a>
+            </div>
+            
+          </div>
+          
         </div>
       </article>
       
-      <article class="event">
+      <article class="event" id="evt_008">
         <div class="event-num">08<span class="slash">/</span><span class="total">11</span></div>
         <div class="event-body">
           <h3 class="event-headline">Meta 与亚马逊签署数百万颗 AI CPU 大单，芯片竞争格局生变</h3>
@@ -801,10 +969,24 @@
           <div class="judgment">"数百万颗 CPU"这个量级表明这不是实验性采购。Meta 的计算很明确：agent 时代的算力需求和训练时代不同，与其全押 GPU，不如在 CPU 端另辟蹊径。亚马逊自研芯片终于找到了大客户——这对 NVIDIA 不是致命威胁，但绝对是一个值得关注的裂缝。</div>
           
           
+
+          
+          
+          
+          
+          <div class="source-links">
+            
+            <div class="source-link-item">
+              <span class="src-name">TechCrunch AI</span>
+              <a href="https://techcrunch.com/2026/04/24/in-another-wild-turn-for-ai-chips-meta-signs-deal-for-millions-of-amazon-ai-cpus/" target="_blank" rel="noopener">Meta 与亚马逊签署数百万颗 AI CPU 大单，agent 时代芯片竞争生变</a>
+            </div>
+            
+          </div>
+          
         </div>
       </article>
       
-      <article class="event">
+      <article class="event" id="evt_009">
         <div class="event-num">09<span class="slash">/</span><span class="total">11</span></div>
         <div class="event-body">
           <h3 class="event-headline">85% 企业试点 AI agent，仅 5% 敢投产：信任架构成最大瓶颈</h3>
@@ -853,10 +1035,24 @@
           <div class="judgment">Patel 把 agent 比作青少年——聪明但缺乏后果意识——这个比喻精准得可怕。当前 agent 的问题不是"能不能做"，而是"出了事谁负责"。谁先解决这个信任方程式（不只是技术，还包括法律、保险、治理），谁就拿到了 agent 时代的入场券。</div>
           
           
+
+          
+          
+          
+          
+          <div class="source-links">
+            
+            <div class="source-link-item">
+              <span class="src-name">VentureBeat</span>
+              <a href="https://venturebeat.com/security/85-of-enterprises-are-running-ai-agents-only-5-trust-them-enough-to-ship" target="_blank" rel="noopener">85% 企业正在试点 AI agent，仅 5% 敢于投入生产</a>
+            </div>
+            
+          </div>
+          
         </div>
       </article>
       
-      <article class="event">
+      <article class="event" id="evt_010">
         <div class="event-num">10<span class="slash">/</span><span class="total">11</span></div>
         <div class="event-body">
           <h3 class="event-headline">AI agent 仅凭 219 字规格说明在 12 小时内设计完整 RISC-V CPU</h3>
@@ -905,10 +1101,24 @@
           <div class="judgment">12 小时和 219 个单词——这两个数字的冲击力远大于任何基准测试分数。但需要冷静看待："设计出"和"能流片"之间的距离可能比看起来大得多。真正的验证标准不是"能生成 RTL 代码"，而是"能通过时序收敛和物理验证"。不过作为方向，这条路已经不可逆了。</div>
           
           
+
+          
+          
+          
+          
+          <div class="source-links">
+            
+            <div class="source-link-item">
+              <span class="src-name">Hacker News AI</span>
+              <a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/ai-agent-designs-a-complete-risc-v-cpu-from-a-219-word-spec-in-just-12-hours" target="_blank" rel="noopener">AI agent 仅凭 219 字规格说明在 12 小时内设计出完整 RISC-V CPU</a>
+            </div>
+            
+          </div>
+          
         </div>
       </article>
       
-      <article class="event">
+      <article class="event" id="evt_011">
         <div class="event-num">11<span class="slash">/</span><span class="total">11</span></div>
         <div class="event-body">
           <h3 class="event-headline">Tim Cook 卸任 Apple CEO，John Ternus 接棒掌舵 AI 时代的 Apple</h3>
@@ -957,6 +1167,20 @@
           <div class="judgment">Cook 时代的 Apple 在 AI 上欠了太多功课，Ternus 的第一要务必然是补课。硬件出身的 CEO 掌舵 AI 转型，既是风险（可能过度偏向设备端），也是机会（如果能把端侧 AI 做到极致，Apple 有条件定义一个完全不同于 OpenAI/Google 的 AI 范式）。这是一个值得持续追踪的战略变量。</div>
           
           
+
+          
+          
+          
+          
+          <div class="source-links">
+            
+            <div class="source-link-item">
+              <span class="src-name">The Verge AI</span>
+              <a href="https://www.theverge.com/podcast/917965/apple-ceo-cook-ternus-transition" target="_blank" rel="noopener">Tim Cook 卸任 Apple CEO，John Ternus 接棒</a>
+            </div>
+            
+          </div>
+          
         </div>
       </article>
       
@@ -971,7 +1195,7 @@
     <h2 class="section-title">同一件事,不同说法</h2>
 
     
-    <div class="multi-source-event">
+    <div class="multi-source-event" id="ms-evt_001">
       <h3 class="event-headline">OpenAI 发布 GPT-5.5：重夺 agentic 基准榜首，定价激进</h3>
       <div class="event-meta">
         <span class="grade s">S 级</span>
@@ -1005,7 +1229,7 @@
       
     </div>
     
-    <div class="multi-source-event">
+    <div class="multi-source-event" id="ms-evt_002">
       <h3 class="event-headline">Anthropic 公开复盘 Claude 性能下滑：三个产品层面 bug 叠加，非模型退化</h3>
       <div class="event-meta">
         <span class="grade s">S 级</span>
@@ -1029,7 +1253,7 @@
       
     </div>
     
-    <div class="multi-source-event">
+    <div class="multi-source-event" id="ms-evt_003">
       <h3 class="event-headline">DeepSeek 预览 V4 模型：性能逼近闭源顶级，强调华为芯片兼容</h3>
       <div class="event-meta">
         <span class="grade s">S 级</span>
@@ -1058,7 +1282,7 @@
       
     </div>
     
-    <div class="multi-source-event">
+    <div class="multi-source-event" id="ms-evt_004">
       <h3 class="event-headline">Claude Managed Agents 内置跨会话 Memory 功能进入公测</h3>
       <div class="event-meta">
         <span class="grade a">A 级</span>
@@ -1082,7 +1306,7 @@
       
     </div>
     
-    <div class="multi-source-event">
+    <div class="multi-source-event" id="ms-evt_005">
       <h3 class="event-headline">Claude 新增 15 个日常生活类 App 连接器，目录总数超 200</h3>
       <div class="event-meta">
         <span class="grade a">A 级</span>
@@ -1106,7 +1330,7 @@
       
     </div>
     
-    <div class="multi-source-event">
+    <div class="multi-source-event" id="ms-evt_012">
       <h3 class="event-headline">医疗 AI 大规模部署，但疗效评估严重缺失</h3>
       <div class="event-meta">
         <span class="grade b">B 级</span>
@@ -1156,73 +1380,73 @@
 
     <ul class="scan-list">
       
-      <li class="scan-item">
+      <li class="scan-item" id="evt_012">
         <span class="scan-grade b">B 级</span>
         <span class="scan-title">医疗 AI 大规模部署，但疗效评估严重缺失</span>
         <span class="scan-source">MIT Technology Review</span>
       </li>
       
-      <li class="scan-item">
+      <li class="scan-item" id="evt_013">
         <span class="scan-grade b">B 级</span>
         <span class="scan-title">Tesla 250 亿美元 AI 支出计划遭投资者质疑</span>
         <span class="scan-source">Hacker News AI</span>
       </li>
       
-      <li class="scan-item">
+      <li class="scan-item" id="evt_014">
         <span class="scan-grade b">B 级</span>
         <span class="scan-title">软件股因 ServiceNow、IBM 财报不及预期集体下挫</span>
         <span class="scan-source">Hacker News AI</span>
       </li>
       
-      <li class="scan-item">
+      <li class="scan-item" id="evt_015">
         <span class="scan-grade b">B 级</span>
         <span class="scan-title">Cohere 收购德国 Aleph Alpha，加速欧洲企业 AI 布局</span>
         <span class="scan-source">Hacker News AI</span>
       </li>
       
-      <li class="scan-item">
+      <li class="scan-item" id="evt_016">
         <span class="scan-grade b">B 级</span>
         <span class="scan-title">BAND 融资 1700 万美元，推出 AI agent 间通信的"通用编排器"</span>
         <span class="scan-source">VentureBeat</span>
       </li>
       
-      <li class="scan-item">
+      <li class="scan-item" id="evt_017">
         <span class="scan-grade b">B 级</span>
         <span class="scan-title">MirrorNeuron：面向本地 AI agent 的开源可靠运行时</span>
         <span class="scan-source">Hacker News AI</span>
       </li>
       
-      <li class="scan-item">
+      <li class="scan-item" id="evt_018">
         <span class="scan-grade b">B 级</span>
         <span class="scan-title">Google Workspace 将 Gemini AI 功能默认开启</span>
         <span class="scan-source">Hacker News AI</span>
       </li>
       
-      <li class="scan-item">
+      <li class="scan-item" id="evt_019">
         <span class="scan-grade b">B 级</span>
         <span class="scan-title">供应链裂缝制约 AI 扩张：地缘政治因素浮现</span>
         <span class="scan-source">Hacker News AI</span>
       </li>
       
-      <li class="scan-item">
+      <li class="scan-item" id="evt_020">
         <span class="scan-grade b">B 级</span>
         <span class="scan-title">Unsupervised Learning 播客：AI Infra 稳定性与 Coding Agents 下一步</span>
         <span class="scan-source">Unsupervised Learning</span>
       </li>
       
-      <li class="scan-item">
+      <li class="scan-item" id="evt_021">
         <span class="scan-grade c">C 级</span>
         <span class="scan-title">Era 融资 1100 万美元打造多形态 AI 可穿戴设备平台</span>
         <span class="scan-source">TechCrunch AI</span>
       </li>
       
-      <li class="scan-item">
+      <li class="scan-item" id="evt_022">
         <span class="scan-grade c">C 级</span>
         <span class="scan-title">Sierra 收购法国 AI 初创 Fragment、AI 托管门店暴露偏见等零散事件</span>
         <span class="scan-source">TechCrunch AI, Hacker News AI, The Verge AI</span>
       </li>
       
-      <li class="scan-item">
+      <li class="scan-item" id="evt_023">
         <span class="scan-grade c">C 级</span>
         <span class="scan-title">其他零散消息：Nothing 语音听写、Sinceerly 去 AI 化工具、GIMP 禁 AI 政策等</span>
         <span class="scan-source">TechCrunch AI, Hacker News AI, The Verge AI, 各 KOL</span>

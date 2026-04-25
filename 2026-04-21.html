@@ -182,6 +182,21 @@
   }
   .source-text { font-size: 14px; color: var(--ink-soft); line-height: 1.6; }
 
+  /* 原文链接 */
+  .source-links { margin-top: 16px; padding-top: 12px; border-top: 1px dotted var(--line); }
+  .source-link-item {
+    display: flex; align-items: baseline; gap: 8px; margin-bottom: 6px;
+    font-size: 13px; line-height: 1.5;
+  }
+  .source-link-item .src-name {
+    font-family: var(--font-mono); font-size: 10px; color: var(--gray);
+    letter-spacing: 0.06em; white-space: nowrap; min-width: 80px;
+  }
+  .source-link-item a {
+    color: var(--accent-deep); text-decoration: none; word-break: break-all;
+  }
+  .source-link-item a:hover { text-decoration: underline; }
+
   /* 主编判断框 */
   .judgment {
     margin-top: 18px; padding: 16px 20px; background: var(--bg-deep);
@@ -348,7 +363,7 @@
 
     <div class="top-events">
       
-      <article class="event">
+      <article class="event" id="evt_001">
         <div class="event-num">01<span class="slash">/</span><span class="total">06</span></div>
         <div class="event-body">
           <h3 class="event-headline">Amazon 再注资 Anthropic 50 亿美元，Anthropic 承诺回馈 1000 亿美元 AWS 云支出</h3>
@@ -402,10 +417,29 @@
           <div class="judgment">50 亿换 1000 亿，这笔账的数学很简单：Amazon 用 5% 的"前期投入"锁定了 100% 的"后续消费"。对 Anthropic 来说，这是一个优雅的陷阱——拿到了急需的现金，但也把自己绑上了一列无法下车的火车。更值得思考的问题是：当每一家前沿 AI 实验室都被某个云巨头"认领"之后，所谓的模型竞争，是否本质上变成了云厂商之间的代理战争？</div>
           
           
+
+          
+          
+          
+          
+          <div class="source-links">
+            
+            <div class="source-link-item">
+              <span class="src-name">TechCrunch AI</span>
+              <a href="https://techcrunch.com/2026/04/20/anthropic-takes-5b-from-amazon-and-pledges-100b-in-cloud-spending-in-return/" target="_blank" rel="noopener">Anthropic 获 Amazon 50 亿美元投资，承诺回馈 1000 亿美元云支出</a>
+            </div>
+            
+            <div class="source-link-item">
+              <span class="src-name">MIT Technology Review</span>
+              <a href="https://www.technologyreview.com/2026/04/21/1136246/the-download-human-noise-la-subway-upgrade/" target="_blank" rel="noopener">The Download：Anthropic 与 Amazon 签署超 1000 亿美元算力协议</a>
+            </div>
+            
+          </div>
+          
         </div>
       </article>
       
-      <article class="event">
+      <article class="event" id="evt_002">
         <div class="event-num">02<span class="slash">/</span><span class="total">06</span></div>
         <div class="event-body">
           <h3 class="event-headline">AI 安全攻防全面升级：前沿模型加速漏洞发现，编程 Agent 密钥泄露漏洞曝光，90+ 机构 AI 工具遭劫持</h3>
@@ -464,10 +498,34 @@
           <div class="judgment">Anthropic 这份安全指南的发布时机耐人寻味——在自家 Mythos 模型即将大规模部署之际发出"AI 将加速攻击"的预警，既是负责任的安全实践，也是一种预期管理。但更值得关注的是结构性问题：我们正在给 AI agent 越来越大的权限（从读到写，从代码到防火墙），却没有建立与权限匹配的治理体系。86% 的企业对 AI 身份不执行访问策略——这个数字才是今天最大的新闻。</div>
           
           
+
+          
+          
+          
+          
+          <div class="source-links">
+            
+            <div class="source-link-item">
+              <span class="src-name">Claude Blog</span>
+              <a href="https://claude.com/blog/preparing-your-security-program-for-ai-accelerated-offense" target="_blank" rel="noopener">Anthropic 安全团队发布 AI 加速攻击防御指南</a>
+            </div>
+            
+            <div class="source-link-item">
+              <span class="src-name">VentureBeat</span>
+              <a href="https://venturebeat.com/security/ai-agent-runtime-security-system-card-audit-comment-and-control-2026" target="_blank" rel="noopener">三款 AI 编程 agent 因同一 prompt injection 泄露密钥</a>
+            </div>
+            
+            <div class="source-link-item">
+              <span class="src-name">VentureBeat</span>
+              <a href="https://venturebeat.com/security/adversaries-hijacked-ai-security-tools-at-90-organizations-the-next-wave-has-write-access-to-the-firewall" target="_blank" rel="noopener">对手劫持逾 90 家机构的 AI 安全工具，新一波攻击已可直写防火墙规则</a>
+            </div>
+            
+          </div>
+          
         </div>
       </article>
       
-      <article class="event">
+      <article class="event" id="evt_003">
         <div class="event-num">03<span class="slash">/</span><span class="total">06</span></div>
         <div class="event-body">
           <h3 class="event-headline">Apple CEO 换帅：John Ternus 接棒 Tim Cook，AI 困局成首要挑战</h3>
@@ -521,10 +579,29 @@
           <div class="judgment">公告不提 AI，恰恰说明 AI 是房间里的大象。Ternus 的硬件背景既是优势（Apple 最终靠硬件-软件一体化取胜）也是风险（硬件思维可能低估纯软件能力的紧迫性）。但最值得关注的是 Altman 的"telepathy"暗示——如果 Apple 的 AI 战略最终是"把 OpenAI 深度整合进 iOS"，这对整个行业格局的影响可能比换帅本身更大。</div>
           
           
+
+          
+          
+          
+          
+          <div class="source-links">
+            
+            <div class="source-link-item">
+              <span class="src-name">The Verge AI</span>
+              <a href="https://www.theverge.com/ai-artificial-intelligence/915662/john-ternus-apple-ceo-tim-cook-ai-problem-siri" target="_blank" rel="noopener">John Ternus 接任 Apple CEO，AI 困局成首要挑战</a>
+            </div>
+            
+            <div class="source-link-item">
+              <span class="src-name">Sam Altman (OpenAI CEO)</span>
+              <a href="https://x.com/sama/status/2046330825265086712" target="_blank" rel="noopener">Sam Altman 称赞 Tim Cook 为"传奇"，暗示 OpenAI 与 Apple 更深合作</a>
+            </div>
+            
+          </div>
+          
         </div>
       </article>
       
-      <article class="event">
+      <article class="event" id="evt_004">
         <div class="event-num">04<span class="slash">/</span><span class="total">06</span></div>
         <div class="event-body">
           <h3 class="event-headline">Claude 推出 Live Artifacts：实时连接用户应用与文件的持久化构建能力</h3>
@@ -573,10 +650,24 @@
           <div class="judgment">Live Artifacts 的真正意义不在于"又多了一个功能"，而在于它改变了 AI 产品的时间维度——从"一次性对话"变成"持续运转的应用"。这是 Anthropic 对"AI 到底应该是什么"这个问题给出的最新回答：不是聊天机器人，而是你的个人软件工厂。</div>
           
           
+
+          
+          
+          
+          
+          <div class="source-links">
+            
+            <div class="source-link-item">
+              <span class="src-name">Claude (Anthropic AI)</span>
+              <a href="https://x.com/claudeai/status/2046328619249684989" target="_blank" rel="noopener">Claude Cowork 推出 Live Artifacts，支持构建实时连接应用的持久化仪表盘</a>
+            </div>
+            
+          </div>
+          
         </div>
       </article>
       
-      <article class="event">
+      <article class="event" id="evt_005">
         <div class="event-num">05<span class="slash">/</span><span class="total">06</span></div>
         <div class="event-body">
           <h3 class="event-headline">Circle CEO 描绘 AI agent 经济的金融结算基础设施蓝图</h3>
@@ -625,10 +716,24 @@
           <div class="judgment">Allaire 的叙事很有说服力，但需要保持警醒：他是稳定币公司的 CEO，这套"AI agent 需要稳定币"的论述本质上是为自己的业务辩护。真正值得关注的不是他的结论，而是他描述的前提——AI agent 之间已经在用 USDC 互相支付——如果这是事实，那金融基础设施的范式转移确实已经开始了。</div>
           
           
+
+          
+          
+          
+          
+          <div class="source-links">
+            
+            <div class="source-link-item">
+              <span class="src-name">No Priors Podcast</span>
+              <a href="https://www.youtube.com/watch?v=eyobeqMdbeI" target="_blank" rel="noopener">No Priors 播客：Circle CEO Jeremy Allaire 谈 AI agent 如何重塑金融体系</a>
+            </div>
+            
+          </div>
+          
         </div>
       </article>
       
-      <article class="event">
+      <article class="event" id="evt_006">
         <div class="event-num">06<span class="slash">/</span><span class="total">06</span></div>
         <div class="event-body">
           <h3 class="event-headline">Google 将 Gemini 嵌入 Chrome，覆盖亚太七国市场</h3>
@@ -677,6 +782,20 @@
           <div class="judgment">浏览器嵌入 AI 是分发战争的降维打击。当你的竞品需要用户"打开 ChatGPT"，而你的产品在用户"打开浏览器"时就已经在了——这不是功能之争，是入口之争。亚太七国的选择也很聪明：这些市场的 AI 习惯尚未固化，先入者有机会定义用户对"AI 应该长什么样"的预期。</div>
           
           
+
+          
+          
+          
+          
+          <div class="source-links">
+            
+            <div class="source-link-item">
+              <span class="src-name">TechCrunch AI</span>
+              <a href="https://techcrunch.com/2026/04/20/google-rolls-out-gemini-in-chrome-in-seven-new-countries/" target="_blank" rel="noopener">Google 将 Gemini 引入 Chrome，覆盖 7 个新市场</a>
+            </div>
+            
+          </div>
+          
         </div>
       </article>
       
@@ -691,7 +810,7 @@
     <h2 class="section-title">同一件事,不同说法</h2>
 
     
-    <div class="multi-source-event">
+    <div class="multi-source-event" id="ms-evt_001">
       <h3 class="event-headline">Amazon 再注资 Anthropic 50 亿美元，Anthropic 承诺回馈 1000 亿美元 AWS 云支出</h3>
       <div class="event-meta">
         <span class="grade s">S 级</span>
@@ -715,7 +834,7 @@
       
     </div>
     
-    <div class="multi-source-event">
+    <div class="multi-source-event" id="ms-evt_002">
       <h3 class="event-headline">AI 安全攻防全面升级：前沿模型加速漏洞发现，编程 Agent 密钥泄露漏洞曝光，90+ 机构 AI 工具遭劫持</h3>
       <div class="event-meta">
         <span class="grade s">S 级</span>
@@ -739,7 +858,7 @@
       
     </div>
     
-    <div class="multi-source-event">
+    <div class="multi-source-event" id="ms-evt_003">
       <h3 class="event-headline">Apple CEO 换帅：John Ternus 接棒 Tim Cook，AI 困局成首要挑战</h3>
       <div class="event-meta">
         <span class="grade s">S 级</span>
@@ -789,49 +908,49 @@
 
     <ul class="scan-list">
       
-      <li class="scan-item">
+      <li class="scan-item" id="evt_007">
         <span class="scan-grade b">B 级</span>
         <span class="scan-title">Aaron Levie：企业需要专职 Agent 部署岗位，未来将大规模增长</span>
         <span class="scan-source">Aaron Levie (Box CEO)</span>
       </li>
       
-      <li class="scan-item">
+      <li class="scan-item" id="evt_008">
         <span class="scan-grade b">B 级</span>
         <span class="scan-title">Matt Turck 质疑"AI TAM 等于劳动力市场总规模"的流行叙事</span>
         <span class="scan-source">Matt Turck (FirstMark Capital)</span>
       </li>
       
-      <li class="scan-item">
+      <li class="scan-item" id="evt_009">
         <span class="scan-grade b">B 级</span>
         <span class="scan-title">Vercel 安全事件后续：CEO 亲自澄清密钥轮换误区，推出 20+ 项安全改进</span>
         <span class="scan-source">Guillermo Rauch (Vercel CEO)</span>
       </li>
       
-      <li class="scan-item">
+      <li class="scan-item" id="evt_010">
         <span class="scan-grade b">B 级</span>
         <span class="scan-title">Yelp 大幅升级 AI 助手：从问答到预约的一站式数字礼宾体验</span>
         <span class="scan-source">The Verge AI</span>
       </li>
       
-      <li class="scan-item">
+      <li class="scan-item" id="evt_011">
         <span class="scan-grade b">B 级</span>
         <span class="scan-title">Von：多模型混合驱动的收入智能平台，八周收入超 50 万美元</span>
         <span class="scan-source">VentureBeat</span>
       </li>
       
-      <li class="scan-item">
+      <li class="scan-item" id="evt_012">
         <span class="scan-grade c">C 级</span>
         <span class="scan-title">AI 行业碎片观察：双 agent 协作、AI 写作识别、硅谷认知茧房</span>
         <span class="scan-source">TechCrunch AI, The Verge AI, Dan Shipper (Every CEO)</span>
       </li>
       
-      <li class="scan-item">
+      <li class="scan-item" id="evt_013">
         <span class="scan-grade c">C 级</span>
         <span class="scan-title">开发者工具更新：OpenClaw/wacli/gog 密集发版，AI 设计工具 Pencil 获推荐</span>
         <span class="scan-source">Peter Steinberger (OpenClaw), Peter Yang (Roblox), Swyx, Garry Tan (YC), Zara Zhang</span>
       </li>
       
-      <li class="scan-item">
+      <li class="scan-item" id="evt_014">
         <span class="scan-grade c">C 级</span>
         <span class="scan-title">其他：GRAI AI 音乐社交化、HuggingFace 技术博客、北极科考</span>
         <span class="scan-source">TechCrunch AI, HuggingFace Blog, Hacker News AI, MIT Technology Review</span>

@@ -182,6 +182,21 @@
   }
   .source-text { font-size: 14px; color: var(--ink-soft); line-height: 1.6; }
 
+  /* 原文链接 */
+  .source-links { margin-top: 16px; padding-top: 12px; border-top: 1px dotted var(--line); }
+  .source-link-item {
+    display: flex; align-items: baseline; gap: 8px; margin-bottom: 6px;
+    font-size: 13px; line-height: 1.5;
+  }
+  .source-link-item .src-name {
+    font-family: var(--font-mono); font-size: 10px; color: var(--gray);
+    letter-spacing: 0.06em; white-space: nowrap; min-width: 80px;
+  }
+  .source-link-item a {
+    color: var(--accent-deep); text-decoration: none; word-break: break-all;
+  }
+  .source-link-item a:hover { text-decoration: underline; }
+
   /* 主编判断框 */
   .judgment {
     margin-top: 18px; padding: 16px 20px; background: var(--bg-deep);
@@ -348,7 +363,7 @@
 
     <div class="top-events">
       
-      <article class="event">
+      <article class="event" id="evt_001">
         <div class="event-num">01<span class="slash">/</span><span class="total">08</span></div>
         <div class="event-body">
           <h3 class="event-headline">OpenAI 推出 Workspace Agents：Custom GPTs 继任者，企业 AI 进入无人值守时代</h3>
@@ -407,10 +422,39 @@
           <div class="judgment">Workspace Agents 的战略意图非常清晰：OpenAI 不再满足于做"最聪明的聊天伙伴"，而是要成为企业自动化的操作系统。免费试用期截至 5 月 6 日的设计颇有心思——先让企业产生依赖，再开始收费。真正的考验在于：当 agent 在后台自动操作企业数据时，出错了谁负责？这个问题目前没有答案。</div>
           
           
+
+          
+          
+          
+          
+          <div class="source-links">
+            
+            <div class="source-link-item">
+              <span class="src-name">The Verge AI</span>
+              <a href="https://www.theverge.com/ai-artificial-intelligence/917065/openai-chatgpt-workspace-agents-custom-teams-bots" target="_blank" rel="noopener">OpenAI 推出 Workspace Agents，企业团队可创建自主运行的 AI bot</a>
+            </div>
+            
+            <div class="source-link-item">
+              <span class="src-name">VentureBeat</span>
+              <a href="https://venturebeat.com/orchestration/openai-unveils-workspace-agents-a-successor-to-custom-gpts-for-enterprises-that-can-plug-directly-into-slack-salesforce-and-more" target="_blank" rel="noopener">OpenAI Workspace Agents 深度解析：Custom GPTs 的继任者正式登场</a>
+            </div>
+            
+            <div class="source-link-item">
+              <span class="src-name">GitHub Feeds</span>
+              <a href="https://x.com/sama/status/2047017964105597009" target="_blank" rel="noopener">Sam Altman 公开背书 ChatGPT agents</a>
+            </div>
+            
+            <div class="source-link-item">
+              <span class="src-name">GitHub Feeds</span>
+              <a href="https://x.com/levie/status/2047028112626749645" target="_blank" rel="noopener">Aaron Levie 将 ChatGPT agents 定性为软件无头化的最重要里程碑</a>
+            </div>
+            
+          </div>
+          
         </div>
       </article>
       
-      <article class="event">
+      <article class="event" id="evt_002">
         <div class="event-num">02<span class="slash">/</span><span class="total">08</span></div>
         <div class="event-body">
           <h3 class="event-headline">Google 发布第八代 TPU：训练推理分芯，推理性能跃升近 10 倍，不交 Nvidia 税</h3>
@@ -464,10 +508,29 @@
           <div class="judgment">"一年一块芯片不够了"这句话道出了 AI 算力竞赛的本质——摩尔定律的节奏已经跟不上模型需求的增速。Google 选择训练推理分芯是一个务实且有远见的决定：agent 时代的推理需求会爆炸性增长，专用芯片的效率优势会被放大。但要真正撼动 Nvidia，还需要看第三方开发者的迁移意愿——这不是单纯的硬件问题，而是生态问题。</div>
           
           
+
+          
+          
+          
+          
+          <div class="source-links">
+            
+            <div class="source-link-item">
+              <span class="src-name">VentureBeat</span>
+              <a href="https://venturebeat.com/orchestration/google-doesnt-pay-the-nvidia-tax-its-new-tpus-explain-why" target="_blank" rel="noopener">Google 不交 Nvidia 税：第八代 TPU 揭秘</a>
+            </div>
+            
+            <div class="source-link-item">
+              <span class="src-name">TechCrunch AI</span>
+              <a href="https://techcrunch.com/2026/04/22/google-cloud-next-new-tpu-ai-chips-compete-with-nvidia/" target="_blank" rel="noopener">Google Cloud 发布两款新 AI 芯片对标 Nvidia</a>
+            </div>
+            
+          </div>
+          
         </div>
       </article>
       
-      <article class="event">
+      <article class="event" id="evt_003">
         <div class="event-num">03<span class="slash">/</span><span class="total">08</span></div>
         <div class="event-body">
           <h3 class="event-headline">Google Cloud Next 全面发力：企业 Agent 平台、Chrome agent 化、Workspace AI 化同步推出</h3>
@@ -526,10 +589,54 @@
           <div class="judgment">Google 这次 Cloud Next 的密度令人印象深刻，但更值得注意的是其背后的逻辑一致性：每一个产品都在推动同一件事——让 AI 从"你来用"变成"它来做"。75% 的 AI 编码比例如果属实，说明 Google 在内部已经走完了 AI agent 化的第一程，现在轮到把这套体系卖给企业客户了。</div>
           
           
+
+          
+          
+          
+          
+          <div class="source-links">
+            
+            <div class="source-link-item">
+              <span class="src-name">TechCrunch AI</span>
+              <a href="https://techcrunch.com/2026/04/22/google-makes-an-interesting-choice-with-its-new-agent-building-tool-for-enterprises/" target="_blank" rel="noopener">Google 面向企业推出新 agent 构建工具</a>
+            </div>
+            
+            <div class="source-link-item">
+              <span class="src-name">TechCrunch AI</span>
+              <a href="https://techcrunch.com/2026/04/22/google-turns-chrome-into-an-ai-coworker-for-the-workplace/" target="_blank" rel="noopener">Google 将 Chrome 变成企业 AI 协作助手</a>
+            </div>
+            
+            <div class="source-link-item">
+              <span class="src-name">TechCrunch AI</span>
+              <a href="https://techcrunch.com/2026/04/22/google-updates-workspace-to-make-ai-your-new-office-intern/" target="_blank" rel="noopener">Google 升级 Workspace，AI 成为新的办公室实习生</a>
+            </div>
+            
+            <div class="source-link-item">
+              <span class="src-name">TechCrunch AI</span>
+              <a href="https://techcrunch.com/2026/04/22/ai-overviews-are-coming-to-your-gmail-at-work/" target="_blank" rel="noopener">AI Overviews 即将登陆企业版 Gmail</a>
+            </div>
+            
+            <div class="source-link-item">
+              <span class="src-name">The Verge AI</span>
+              <a href="https://www.theverge.com/tech/916779/google-meet-ai-notetaker-in-person-meetings" target="_blank" rel="noopener">Google Meet AI 记录功能扩展至线下会议及第三方平台</a>
+            </div>
+            
+            <div class="source-link-item">
+              <span class="src-name">VentureBeat</span>
+              <a href="https://venturebeat.com/orchestration/google-and-aws-split-the-ai-agent-stack-between-control-and-execution" target="_blank" rel="noopener">Google 与 AWS 在 AI agent 技术栈上走向分野</a>
+            </div>
+            
+            <div class="source-link-item">
+              <span class="src-name">Hacker News AI</span>
+              <a href="https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/cloud-next-2026-sundar-pichai/" target="_blank" rel="noopener">Google 75% 的新代码由 AI 编写</a>
+            </div>
+            
+          </div>
+          
         </div>
       </article>
       
-      <article class="event">
+      <article class="event" id="evt_004">
         <div class="event-num">04<span class="slash">/</span><span class="total">08</span></div>
         <div class="event-body">
           <h3 class="event-headline">Microsoft Office 推出 Agent Mode（"vibe working"），AI 从顾问升级为执行者</h3>
@@ -578,10 +685,24 @@
           <div class="judgment">Microsoft 的坦诚值得肯定——承认早期 Copilot"只能被动回答"等于公开承认了此前产品的不足。Agent Mode 能否兑现"执行者"的承诺是另一个问题：在 Excel 公式和 PPT 排版这种高度结构化的场景中，AI 犯错的成本远高于写一封邮件。用户信任需要时间建立。</div>
           
           
+
+          
+          
+          
+          
+          <div class="source-links">
+            
+            <div class="source-link-item">
+              <span class="src-name">The Verge AI</span>
+              <a href="https://www.theverge.com/news/917328/microsoft-agent-mode-vibe-working-office-word-excel-powerpoint" target="_blank" rel="noopener">Microsoft 在 Word、Excel、PowerPoint 推出 Agent Mode</a>
+            </div>
+            
+          </div>
+          
         </div>
       </article>
       
-      <article class="event">
+      <article class="event" id="evt_005">
         <div class="event-num">05<span class="slash">/</span><span class="total">08</span></div>
         <div class="event-body">
           <h3 class="event-headline">Salesforce Agentforce Vibes 2.0 瞄准企业 AI agent 的隐藏杀手：上下文过载</h3>
@@ -630,10 +751,24 @@
           <div class="judgment">这篇报道的价值不在于 Salesforce 的产品本身，而在于它提炼出的核心命题：企业 agent 的瓶颈不是"能做什么"，而是"该省略什么"。这与今天 Stanford 关于多 agent"群体税"的研究遥相呼应，共同指向一个被热潮掩盖的事实——更多 ≠ 更好。</div>
           
           
+
+          
+          
+          
+          
+          <div class="source-links">
+            
+            <div class="source-link-item">
+              <span class="src-name">VentureBeat</span>
+              <a href="https://venturebeat.com/orchestration/salesforces-agentforce-vibes-2-0-targets-a-hidden-failure-context-overload-in-ai-agents" target="_blank" rel="noopener">Salesforce Agentforce Vibes 2.0 瞄准上下文过载</a>
+            </div>
+            
+          </div>
+          
         </div>
       </article>
       
-      <article class="event">
+      <article class="event" id="evt_006">
         <div class="event-num">06<span class="slash">/</span><span class="total">08</span></div>
         <div class="event-body">
           <h3 class="event-headline">Stanford 研究：单 agent 往往不输多 agent，你可能在白交"群体税"</h3>
@@ -682,10 +817,24 @@
           <div class="judgment">这份研究的核心洞见其实不新——Occam's Razor 早就说过，不要引入不必要的复杂度。但在 agent 热潮中，它的价值在于用实验数据验证了这个直觉。我的建议：把这篇论文发给每一个正在画多 agent 架构图的工程师。</div>
           
           
+
+          
+          
+          
+          
+          <div class="source-links">
+            
+            <div class="source-link-item">
+              <span class="src-name">VentureBeat</span>
+              <a href="https://venturebeat.com/orchestration/are-you-paying-an-ai-swarm-tax-why-single-agents-often-beat-complex-systems" target="_blank" rel="noopener">Stanford 研究：你在为多 agent 系统白白缴纳群体税吗？</a>
+            </div>
+            
+          </div>
+          
         </div>
       </article>
       
-      <article class="event">
+      <article class="event" id="evt_007">
         <div class="event-num">07<span class="slash">/</span><span class="total">08</span></div>
         <div class="event-body">
           <h3 class="event-headline">OpenAI 开源 Privacy Filter：本地 PII 脱敏模型，15 亿参数仅激活 5000 万</h3>
@@ -734,10 +883,24 @@
           <div class="judgment">OpenAI 做开源通常是为了扩大生态而非做慈善。Privacy Filter 的战略意图很清晰：降低企业调用 GPT-5 的最后顾虑——"我的数据安全吗？"有了这个工具，答案变成"你可以先在本地脱敏"。这既是产品，也是销售漏斗的一环。不过，96% 的 F1 意味着每 25 条 PII 就有一条漏网，在金融和医疗场景中这个误差率是否可接受，还需要进一步验证。</div>
           
           
+
+          
+          
+          
+          
+          <div class="source-links">
+            
+            <div class="source-link-item">
+              <span class="src-name">VentureBeat</span>
+              <a href="https://venturebeat.com/data/openai-launches-privacy-filter-an-open-source-on-device-data-sanitization-model-that-removes-personal-information-from-enterprise-datasets" target="_blank" rel="noopener">OpenAI 发布开源隐私过滤模型 Privacy Filter</a>
+            </div>
+            
+          </div>
+          
         </div>
       </article>
       
-      <article class="event">
+      <article class="event" id="evt_008">
         <div class="event-num">08<span class="slash">/</span><span class="total">08</span></div>
         <div class="event-body">
           <h3 class="event-headline">Claude Code 桌面端重大重设计：多 agent 并行工作流与侧边栏会话管理</h3>
@@ -786,6 +949,25 @@
           <div class="judgment">Claude Code 的这次重设计表面上是功能升级，实质上是对开发者角色的重新定义。当多个 agent 可以并行写代码时，开发者的核心能力不再是"写得好"，而是"审得准"和"拆得对"——如何把一个大任务拆分成多个可并行的子任务，如何在 agent 产出中快速发现问题。这对 Cursor 等竞品构成直接压力。</div>
           
           
+
+          
+          
+          
+          
+          <div class="source-links">
+            
+            <div class="source-link-item">
+              <span class="src-name">GitHub Feeds</span>
+              <a href="https://claude.com/blog/claude-code-desktop-redesign" target="_blank" rel="noopener">Claude Code 桌面端重大重新设计，专为多 agent 并行工作流打造</a>
+            </div>
+            
+            <div class="source-link-item">
+              <span class="src-name">GitHub Feeds</span>
+              <a href="https://x.com/claudeai/status/2047047633416397076" target="_blank" rel="noopener">Claude Cowork 支持交互式图表和图形</a>
+            </div>
+            
+          </div>
+          
         </div>
       </article>
       
@@ -800,7 +982,7 @@
     <h2 class="section-title">同一件事,不同说法</h2>
 
     
-    <div class="multi-source-event">
+    <div class="multi-source-event" id="ms-evt_001">
       <h3 class="event-headline">OpenAI 推出 Workspace Agents：Custom GPTs 继任者，企业 AI 进入无人值守时代</h3>
       <div class="event-meta">
         <span class="grade s">S 级</span>
@@ -829,7 +1011,7 @@
       
     </div>
     
-    <div class="multi-source-event">
+    <div class="multi-source-event" id="ms-evt_002">
       <h3 class="event-headline">Google 发布第八代 TPU：训练推理分芯，推理性能跃升近 10 倍，不交 Nvidia 税</h3>
       <div class="event-meta">
         <span class="grade s">S 级</span>
@@ -853,7 +1035,7 @@
       
     </div>
     
-    <div class="multi-source-event">
+    <div class="multi-source-event" id="ms-evt_003">
       <h3 class="event-headline">Google Cloud Next 全面发力：企业 Agent 平台、Chrome agent 化、Workspace AI 化同步推出</h3>
       <div class="event-meta">
         <span class="grade s">S 级</span>
@@ -882,7 +1064,7 @@
       
     </div>
     
-    <div class="multi-source-event">
+    <div class="multi-source-event" id="ms-evt_008">
       <h3 class="event-headline">Claude Code 桌面端重大重设计：多 agent 并行工作流与侧边栏会话管理</h3>
       <div class="event-meta">
         <span class="grade a">A 级</span>
@@ -932,61 +1114,61 @@
 
     <ul class="scan-list">
       
-      <li class="scan-item">
+      <li class="scan-item" id="evt_009">
         <span class="scan-grade b">B 级</span>
         <span class="scan-title">Sony AI 乒乓球机器人 Ace 首次在 ITTF 规则下击败顶级人类选手</span>
         <span class="scan-source">The Verge AI</span>
       </li>
       
-      <li class="scan-item">
+      <li class="scan-item" id="evt_010">
         <span class="scan-grade b">B 级</span>
         <span class="scan-title">Anthropic Mythos 模型未向美国网络安全局（CISA）开放，分发策略引关注</span>
         <span class="scan-source">The Verge AI</span>
       </li>
       
-      <li class="scan-item">
+      <li class="scan-item" id="evt_011">
         <span class="scan-grade b">B 级</span>
         <span class="scan-title">NPM 与 PyPI 发现恶意包：植入后门将服务器变为中国 LLM 中继节点</span>
         <span class="scan-source">Hacker News AI</span>
       </li>
       
-      <li class="scan-item">
+      <li class="scan-item" id="evt_012">
         <span class="scan-grade b">B 级</span>
         <span class="scan-title">Elizabeth Warren 发出 AI 泡沫警告：支出增速远超营收，与 2008 年金融危机前相似</span>
         <span class="scan-source">The Verge AI</span>
       </li>
       
-      <li class="scan-item">
+      <li class="scan-item" id="evt_013">
         <span class="scan-grade b">B 级</span>
         <span class="scan-title">AI 货币化困境：Anthropic 限制第三方工具 OpenClaw，token 经济学成核心议题</span>
         <span class="scan-source">The Verge AI</span>
       </li>
       
-      <li class="scan-item">
+      <li class="scan-item" id="evt_014">
         <span class="scan-grade b">B 级</span>
         <span class="scan-title">Tesla 2026 年资本支出提至 250 亿美元，全年自由现金流将转负</span>
         <span class="scan-source">TechCrunch AI</span>
       </li>
       
-      <li class="scan-item">
+      <li class="scan-item" id="evt_015">
         <span class="scan-grade b">B 级</span>
         <span class="scan-title">AI 行业观察：人们并不渴望自动化，AI 健康回答错误率达 50%</span>
         <span class="scan-source">The Verge AI, Hacker News AI</span>
       </li>
       
-      <li class="scan-item">
+      <li class="scan-item" id="evt_016">
         <span class="scan-grade c">C 级</span>
         <span class="scan-title">AI 时代人类角色再思考："AI 三明治"理论与"overcooking"现象</span>
         <span class="scan-source">GitHub Feeds</span>
       </li>
       
-      <li class="scan-item">
+      <li class="scan-item" id="evt_017">
         <span class="scan-grade c">C 级</span>
         <span class="scan-title">行业碎片：X 推 AI 信息流、美国议员观看 AI 越狱演示、Vercel 安全事件持续、Context AI 安全事故</span>
         <span class="scan-source">TechCrunch AI, Hacker News AI, GitHub Feeds</span>
       </li>
       
-      <li class="scan-item">
+      <li class="scan-item" id="evt_018">
         <span class="scan-grade c">C 级</span>
         <span class="scan-title">小工具与小观察：Gemma 4 VLA 边缘部署、Dead Simple Email、Viscacha、Chrome 本地 LLM 等</span>
         <span class="scan-source">HuggingFace Blog, Hacker News AI, GitHub Feeds, TechCrunch AI, MIT Technology Review</span>

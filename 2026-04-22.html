@@ -182,6 +182,21 @@
   }
   .source-text { font-size: 14px; color: var(--ink-soft); line-height: 1.6; }
 
+  /* 原文链接 */
+  .source-links { margin-top: 16px; padding-top: 12px; border-top: 1px dotted var(--line); }
+  .source-link-item {
+    display: flex; align-items: baseline; gap: 8px; margin-bottom: 6px;
+    font-size: 13px; line-height: 1.5;
+  }
+  .source-link-item .src-name {
+    font-family: var(--font-mono); font-size: 10px; color: var(--gray);
+    letter-spacing: 0.06em; white-space: nowrap; min-width: 80px;
+  }
+  .source-link-item a {
+    color: var(--accent-deep); text-decoration: none; word-break: break-all;
+  }
+  .source-link-item a:hover { text-decoration: underline; }
+
   /* 主编判断框 */
   .judgment {
     margin-top: 18px; padding: 16px 20px; background: var(--bg-deep);
@@ -348,7 +363,7 @@
 
     <div class="top-events">
       
-      <article class="event">
+      <article class="event" id="evt_001">
         <div class="event-num">01<span class="slash">/</span><span class="total">10</span></div>
         <div class="event-body">
           <h3 class="event-headline">SpaceX 拟以 600 亿美元收购 AI 编程平台 Cursor，Musk AI 版图再扩张</h3>
@@ -407,10 +422,34 @@
           <div class="judgment">600 亿是一个需要打引号的数字——它是选择权而非已完成交易。但即便只是放出风声，也足以说明 Musk 在 AI 开发者生态上的焦虑程度。真正值得关注的不是价格，而是这笔交易背后的逻辑：当 AI 编码能力越来越强，控制开发者工具就等于控制了 AI 写代码的最后一公里。这场争夺才刚开始。</div>
           
           
+
+          
+          
+          
+          
+          <div class="source-links">
+            
+            <div class="source-link-item">
+              <span class="src-name">The Verge AI</span>
+              <a href="https://www.theverge.com/science/916427/spacex-cursor-potential-deal-acquisition" target="_blank" rel="noopener">SpaceX 拟以 600 亿美元收购 AI 编程平台 Cursor</a>
+            </div>
+            
+            <div class="source-link-item">
+              <span class="src-name">TechCrunch AI</span>
+              <a href="https://techcrunch.com/2026/04/21/spacex-is-working-with-cursor-and-has-an-option-to-buy-the-startup-for-60-billion/" target="_blank" rel="noopener">SpaceX 与 Cursor 展开合作，持有 600 亿美元收购选择权</a>
+            </div>
+            
+            <div class="source-link-item">
+              <span class="src-name">GitHub Feeds / Swyx</span>
+              <a href="https://x.com/swyx/status/2046791964759044504" target="_blank" rel="noopener">Swyx 回顾 Cursor 早期播客访谈</a>
+            </div>
+            
+          </div>
+          
         </div>
       </article>
       
-      <article class="event">
+      <article class="event" id="evt_002">
         <div class="event-num">02<span class="slash">/</span><span class="total">10</span></div>
         <div class="event-body">
           <h3 class="event-headline">Anthropic 网络安全模型 Mythos 疑遭未授权访问，Altman 抨击为"恐惧营销"</h3>
@@ -469,10 +508,39 @@
           <div class="judgment">最值得玩味的不是泄露本身，而是泄露路径：第三方承包商 → 私人论坛。这恰恰是所有 AI 安全讨论中最被低估的风险——不是模型被破解，而是人和流程出问题。Altman 的"恐惧营销"批评虽然有竞争意图，但也点出了一个真实问题：安全能力的商业化本身就充满悖论。</div>
           
           
+
+          
+          
+          
+          
+          <div class="source-links">
+            
+            <div class="source-link-item">
+              <span class="src-name">The Verge AI</span>
+              <a href="https://www.theverge.com/ai-artificial-intelligence/916501/anthropic-mythos-unauthorized-users-access-security" target="_blank" rel="noopener">Anthropic 最危险的 AI 模型落入未授权用户之手</a>
+            </div>
+            
+            <div class="source-link-item">
+              <span class="src-name">TechCrunch AI</span>
+              <a href="https://techcrunch.com/2026/04/21/unauthorized-group-has-gained-access-to-anthropics-exclusive-cyber-tool-mythos-report-claims/" target="_blank" rel="noopener">Anthropic 专属网络安全工具 Mythos 疑遭未授权访问</a>
+            </div>
+            
+            <div class="source-link-item">
+              <span class="src-name">TechCrunch AI</span>
+              <a href="https://techcrunch.com/2026/04/21/sam-altman-throws-shade-at-anthropics-cyber-model-mythos-fear-based-marketing/" target="_blank" rel="noopener">Sam Altman 批评 Anthropic 网络安全模型 Mythos：恐惧营销</a>
+            </div>
+            
+            <div class="source-link-item">
+              <span class="src-name">MIT Technology Review</span>
+              <a href="https://www.technologyreview.com/2026/04/22/1136310/the-download-10-things-that-matter-in-ai-right-now/" target="_blank" rel="noopener">MIT TR 提及 Mythos 泄露事件</a>
+            </div>
+            
+          </div>
+          
         </div>
       </article>
       
-      <article class="event">
+      <article class="event" id="evt_003">
         <div class="event-num">03<span class="slash">/</span><span class="total">10</span></div>
         <div class="event-body">
           <h3 class="event-headline">Meta 部署员工键鼠追踪工具 MCI，采集行为数据训练 AI agent</h3>
@@ -526,10 +594,29 @@
           <div class="judgment">"不用于绩效评估"这句免责声明，大概是今天所有新闻里最脆弱的承诺。数据一旦采集，用途的边界就不再完全由承诺决定。更值得思考的是：如果 AI agent 最终需要学会"像人一样操作电脑"，那么这类行为数据就是石油——问题只是谁先开采、谁有权开采。</div>
           
           
+
+          
+          
+          
+          
+          <div class="source-links">
+            
+            <div class="source-link-item">
+              <span class="src-name">TechCrunch AI</span>
+              <a href="https://techcrunch.com/2026/04/21/meta-will-record-employees-keystrokes-and-use-it-to-train-its-ai-models/" target="_blank" rel="noopener">Meta 将记录员工键鼠操作用于训练 AI 模型</a>
+            </div>
+            
+            <div class="source-link-item">
+              <span class="src-name">The Verge AI</span>
+              <a href="https://www.theverge.com/tech/916681/meta-ai-agents-employee-tracking" target="_blank" rel="noopener">Meta 将追踪员工电脑行为以训练 AI agent</a>
+            </div>
+            
+          </div>
+          
         </div>
       </article>
       
-      <article class="event">
+      <article class="event" id="evt_004">
         <div class="event-num">04<span class="slash">/</span><span class="total">10</span></div>
         <div class="event-body">
           <h3 class="event-headline">YouTube 将 AI 深度伪造检测扩展至名人群体</h3>
@@ -583,10 +670,29 @@
           <div class="judgment">方向正确，但"逐案审核"这个限制条件值得关注——当 AI 生成内容的速度以指数级增长时，逐案审核的效率能否跟上？真正的考验不在于检测能力，而在于审核规模化之后的误判率和公平性。</div>
           
           
+
+          
+          
+          
+          
+          <div class="source-links">
+            
+            <div class="source-link-item">
+              <span class="src-name">TechCrunch AI</span>
+              <a href="https://techcrunch.com/2026/04/21/youtube-expands-its-ai-likeness-detection-technology-to-celebrities/" target="_blank" rel="noopener">YouTube 将 AI 肖像检测技术扩展至名人群体</a>
+            </div>
+            
+            <div class="source-link-item">
+              <span class="src-name">The Verge AI</span>
+              <a href="https://www.theverge.com/ai-artificial-intelligence/915872/celebrities-will-be-able-to-find-and-request-removal-of-ai-deepfakes-on-youtube" target="_blank" rel="noopener">名人将可在 YouTube 上查找并申请删除 AI 深度伪造视频</a>
+            </div>
+            
+          </div>
+          
         </div>
       </article>
       
-      <article class="event">
+      <article class="event" id="evt_005">
         <div class="event-num">05<span class="slash">/</span><span class="total">10</span></div>
         <div class="event-body">
           <h3 class="event-headline">ChatGPT Images 2.0 发布：新增联网搜索辅助、文字渲染大幅提升</h3>
@@ -645,10 +751,34 @@
           <div class="judgment">技术进步是实在的，但 Peter Yang 发现的 bug 也很有代表性——模型"忘记自己会画画"恰恰说明多模态能力的集成仍不够稳健。产品力和稳定性之间的差距，才是决定这类工具能否从"惊艳 demo"走向"日常工具"的关键。</div>
           
           
+
+          
+          
+          
+          
+          <div class="source-links">
+            
+            <div class="source-link-item">
+              <span class="src-name">TechCrunch AI</span>
+              <a href="https://techcrunch.com/2026/04/21/chatgpts-new-images-2-0-model-is-surprisingly-good-at-generating-text/" target="_blank" rel="noopener">ChatGPT Images 2.0 在文字生成方面表现出色</a>
+            </div>
+            
+            <div class="source-link-item">
+              <span class="src-name">The Verge AI</span>
+              <a href="https://www.theverge.com/ai-artificial-intelligence/916166/openai-chatgpt-images-2" target="_blank" rel="noopener">OpenAI 图像生成器升级：可联网搜索辅助创作</a>
+            </div>
+            
+            <div class="source-link-item">
+              <span class="src-name">GitHub Feeds / Peter Yang</span>
+              <a href="https://x.com/petergyang/status/2046791457479201007" target="_blank" rel="noopener">ChatGPT Images 网页端存在 bug</a>
+            </div>
+            
+          </div>
+          
         </div>
       </article>
       
-      <article class="event">
+      <article class="event" id="evt_006">
         <div class="event-num">06<span class="slash">/</span><span class="total">10</span></div>
         <div class="event-body">
           <h3 class="event-headline">AI 治理幻觉：72% 企业高估自身管控能力，Agent 安全治理体系亟待建立</h3>
@@ -702,10 +832,34 @@
           <div class="judgment">两组数据放在一起看更有说服力：74% 要部署、21% 有治理、72% 误判自身能力。这三个数字拼出的画面是——大多数企业正在闭着眼睛往前冲。在 Vercel 的 OAuth 安全事件（见下）提供了活生生的案例之后，"先部署再治理"的路径依赖到底还能维持多久？</div>
           
           
+
+          
+          
+          
+          
+          <div class="source-links">
+            
+            <div class="source-link-item">
+              <span class="src-name">MIT Technology Review</span>
+              <a href="https://www.technologyreview.com/2026/04/21/1136158/building-agent-first-governance-and-security/" target="_blank" rel="noopener">构建以 agent 为核心的治理与安全体系</a>
+            </div>
+            
+            <div class="source-link-item">
+              <span class="src-name">VentureBeat</span>
+              <a href="https://venturebeat.com/orchestration/the-ai-governance-mirage-why-72-of-enterprises-dont-have-the-control-and-security-they-think-they-do" target="_blank" rel="noopener">AI 治理幻觉：72% 的企业对自身 AI 管控能力存在严重误判</a>
+            </div>
+            
+            <div class="source-link-item">
+              <span class="src-name">MIT Technology Review</span>
+              <a href="https://www.technologyreview.com/2026/04/22/1135295/ai-needs-a-strong-data-fabric-to-deliver-business-value/" target="_blank" rel="noopener">AI 需要强大的 data fabric 才能交付商业价值</a>
+            </div>
+            
+          </div>
+          
         </div>
       </article>
       
-      <article class="event">
+      <article class="event" id="evt_007">
         <div class="event-num">07<span class="slash">/</span><span class="total">10</span></div>
         <div class="event-body">
           <h3 class="event-headline">Google Cloud Next 密集发布：Deep Research 双版本、Agentic Data Cloud、Thinking Machines Lab 数十亿美元合作</h3>
@@ -759,10 +913,49 @@
           <div class="judgment">Google 这次 Cloud Next 的信息量很大，但最值得记住的是两个关键词：MCP 和"断电即消"。前者说明 Google 开始拥抱互操作性标准而非封闭围墙，后者则是对"我们不信任云"这类客户顾虑的最直接回应。至于与 Thinking Machines Lab 的合作——当你连前竞争对手的 CTO 都能拉进阵营，这场算力军备竞赛的烈度可见一斑。</div>
           
           
+
+          
+          
+          
+          
+          <div class="source-links">
+            
+            <div class="source-link-item">
+              <span class="src-name">VentureBeat</span>
+              <a href="https://venturebeat.com/technology/googles-new-deep-research-and-deep-research-max-agents-can-search-the-web-and-your-private-data" target="_blank" rel="noopener">Google 发布 Deep Research 和 Deep Research Max</a>
+            </div>
+            
+            <div class="source-link-item">
+              <span class="src-name">VentureBeat</span>
+              <a href="https://venturebeat.com/data/the-modern-data-stack-was-built-for-humans-asking-questions-google-just-rebuilt-its-for-agents-taking-action" target="_blank" rel="noopener">Google 将现代数据栈重构为 agent 时代的行动系统</a>
+            </div>
+            
+            <div class="source-link-item">
+              <span class="src-name">TechCrunch AI</span>
+              <a href="https://techcrunch.com/2026/04/22/exclusive-google-deepens-thinking-machines-lab-ties-with-new-multi-billion-dollar-deal/" target="_blank" rel="noopener">Google 与 Thinking Machines Lab 签署数十亿美元基础设施协议</a>
+            </div>
+            
+            <div class="source-link-item">
+              <span class="src-name">TechCrunch AI</span>
+              <a href="https://techcrunch.com/2026/04/22/google-maps-is-about-to-get-a-big-dose-of-ai/" target="_blank" rel="noopener">Google Maps 即将大规模引入 AI 能力</a>
+            </div>
+            
+            <div class="source-link-item">
+              <span class="src-name">TechCrunch AI</span>
+              <a href="https://techcrunch.com/2026/04/22/the-most-interesting-startups-showcased-at-google-cloud-next-2026/" target="_blank" rel="noopener">Google Cloud Next 2026 最值得关注的初创公司</a>
+            </div>
+            
+            <div class="source-link-item">
+              <span class="src-name">VentureBeat</span>
+              <a href="https://venturebeat.com/technology/googles-gemini-can-now-run-on-a-single-air-gapped-server-and-vanish-when-you-pull-the-plug" target="_blank" rel="noopener">Google Gemini 可在单台隔离服务器上运行，断电即消失</a>
+            </div>
+            
+          </div>
+          
         </div>
       </article>
       
-      <article class="event">
+      <article class="event" id="evt_008">
         <div class="event-num">08<span class="slash">/</span><span class="total">10</span></div>
         <div class="event-body">
           <h3 class="event-headline">Kimi K2.6 让 agent 连跑数天，暴露企业级编排框架的根本性缺陷</h3>
@@ -811,10 +1004,24 @@
           <div class="judgment">K2.6 本身是否最强并不重要，重要的是它把"agent 运行时间"从小时级推到了天级，而整个基础设施层还停留在"函数调用"的心智模型里。这个落差才是真正的新闻——当 agent 变成了需要运维的服务，谁来写它的 SRE 手册？</div>
           
           
+
+          
+          
+          
+          
+          <div class="source-links">
+            
+            <div class="source-link-item">
+              <span class="src-name">VentureBeat</span>
+              <a href="https://venturebeat.com/orchestration/kimi-k2-6-runs-agents-for-days-and-exposes-the-limits-of-enterprise-orchestration" target="_blank" rel="noopener">Kimi K2.6 让 agent 连跑数天，暴露企业级编排的深层局限</a>
+            </div>
+            
+          </div>
+          
         </div>
       </article>
       
-      <article class="event">
+      <article class="event" id="evt_009">
         <div class="event-num">09<span class="slash">/</span><span class="total">10</span></div>
         <div class="event-body">
           <h3 class="event-headline">Vercel 安全事件：OAuth 授权漏洞横跨四个组织边界完成渗透</h3>
@@ -863,10 +1070,24 @@
           <div class="judgment">Vercel CEO 说攻击者"显著借助 AI 加速"——这句话本身就值得关注。当攻击工具也在用 AI 提效时，防御侧的反应速度和自动化程度如果跟不上，安全态势只会越来越不对称。这个案例应该被每个使用 OAuth 授权 AI 工具的企业研读。</div>
           
           
+
+          
+          
+          
+          
+          <div class="source-links">
+            
+            <div class="source-link-item">
+              <span class="src-name">VentureBeat</span>
+              <a href="https://venturebeat.com/security/vercel-breach-exposes-the-oauth-gap-most-security-teams-cannot-detect-scope-or-contain" target="_blank" rel="noopener">Vercel 安全事件深度解析：OAuth 授权漏洞如何成为企业安全盲区</a>
+            </div>
+            
+          </div>
+          
         </div>
       </article>
       
-      <article class="event">
+      <article class="event" id="evt_010">
         <div class="event-num">10<span class="slash">/</span><span class="total">10</span></div>
         <div class="event-body">
           <h3 class="event-headline">AI 安全报告涌入"高质量混乱"时代：LLM 生成的报告推动 Linux 内核代码被批量移除</h3>
@@ -920,6 +1141,25 @@
           <div class="judgment">"高质量混乱"这个词用得精准——AI 生成的安全报告写得像模像样，但可能完全是错的。当 Linux 内核都在被 AI 误报推着删代码时，我们需要认真思考：AI 安全工具的准入门槛应该是什么？是不是该对"AI 生成"这个标签增加额外的审核层？</div>
           
           
+
+          
+          
+          
+          
+          <div class="source-links">
+            
+            <div class="source-link-item">
+              <span class="src-name">Hacker News AI</span>
+              <a href="https://daniel.haxx.se/blog/2026/04/22/high-quality-chaos/" target="_blank" rel="noopener">AI 安全报告进入"高质量混乱"时代</a>
+            </div>
+            
+            <div class="source-link-item">
+              <span class="src-name">Hacker News AI</span>
+              <a href="https://lwn.net/Articles/1068928/" target="_blank" rel="noopener">LLM 生成的安全报告推动 Linux 内核代码被批量移除</a>
+            </div>
+            
+          </div>
+          
         </div>
       </article>
       
@@ -934,7 +1174,7 @@
     <h2 class="section-title">同一件事,不同说法</h2>
 
     
-    <div class="multi-source-event">
+    <div class="multi-source-event" id="ms-evt_001">
       <h3 class="event-headline">SpaceX 拟以 600 亿美元收购 AI 编程平台 Cursor，Musk AI 版图再扩张</h3>
       <div class="event-meta">
         <span class="grade s">S 级</span>
@@ -963,7 +1203,7 @@
       
     </div>
     
-    <div class="multi-source-event">
+    <div class="multi-source-event" id="ms-evt_002">
       <h3 class="event-headline">Anthropic 网络安全模型 Mythos 疑遭未授权访问，Altman 抨击为"恐惧营销"</h3>
       <div class="event-meta">
         <span class="grade s">S 级</span>
@@ -997,7 +1237,7 @@
       
     </div>
     
-    <div class="multi-source-event">
+    <div class="multi-source-event" id="ms-evt_003">
       <h3 class="event-headline">Meta 部署员工键鼠追踪工具 MCI，采集行为数据训练 AI agent</h3>
       <div class="event-meta">
         <span class="grade s">S 级</span>
@@ -1021,7 +1261,7 @@
       
     </div>
     
-    <div class="multi-source-event">
+    <div class="multi-source-event" id="ms-evt_004">
       <h3 class="event-headline">YouTube 将 AI 深度伪造检测扩展至名人群体</h3>
       <div class="event-meta">
         <span class="grade a">A 级</span>
@@ -1045,7 +1285,7 @@
       
     </div>
     
-    <div class="multi-source-event">
+    <div class="multi-source-event" id="ms-evt_005">
       <h3 class="event-headline">ChatGPT Images 2.0 发布：联网搜索辅助、文字渲染大幅提升</h3>
       <div class="event-meta">
         <span class="grade a">A 级</span>
@@ -1074,7 +1314,7 @@
       
     </div>
     
-    <div class="multi-source-event">
+    <div class="multi-source-event" id="ms-evt_006">
       <h3 class="event-headline">AI 治理幻觉：72% 企业高估自身管控能力</h3>
       <div class="event-meta">
         <span class="grade a">A 级</span>
@@ -1103,7 +1343,7 @@
       
     </div>
     
-    <div class="multi-source-event">
+    <div class="multi-source-event" id="ms-evt_007">
       <h3 class="event-headline">Google Cloud Next 密集发布：Deep Research、Agentic Data Cloud、Thinking Machines Lab 合作</h3>
       <div class="event-meta">
         <span class="grade a">A 级</span>
@@ -1137,7 +1377,7 @@
       
     </div>
     
-    <div class="multi-source-event">
+    <div class="multi-source-event" id="ms-evt_010">
       <h3 class="event-headline">AI 安全报告涌入"高质量混乱"时代</h3>
       <div class="event-meta">
         <span class="grade a">A 级</span>
@@ -1187,67 +1427,67 @@
 
     <ul class="scan-list">
       
-      <li class="scan-item">
+      <li class="scan-item" id="evt_011">
         <span class="scan-grade b">B 级</span>
         <span class="scan-title">Netflix AI 合作协议威胁全球 VFX 从业者生计</span>
         <span class="scan-source">Hacker News AI</span>
       </li>
       
-      <li class="scan-item">
+      <li class="scan-item" id="evt_012">
         <span class="scan-grade b">B 级</span>
         <span class="scan-title">AI 反弹浪潮渗入美国选举政治，60% 选民要求政府监管</span>
         <span class="scan-source">The Verge AI</span>
       </li>
       
-      <li class="scan-item">
+      <li class="scan-item" id="evt_013">
         <span class="scan-grade b">B 级</span>
         <span class="scan-title">Every 全员 AI agent 实验：当每位员工都有专属 AI 分身</span>
         <span class="scan-source">GitHub Feeds / Every</span>
       </li>
       
-      <li class="scan-item">
+      <li class="scan-item" id="evt_014">
         <span class="scan-grade b">B 级</span>
         <span class="scan-title">Clarifai 删除 300 万张 OkCupid 用户照片，涉 FTC 和解</span>
         <span class="scan-source">TechCrunch AI</span>
       </li>
       
-      <li class="scan-item">
+      <li class="scan-item" id="evt_015">
         <span class="scan-grade b">B 级</span>
         <span class="scan-title">伊朗利用 AI 生成低质量内容精准触达不关注新闻的人群</span>
         <span class="scan-source">Hacker News AI</span>
       </li>
       
-      <li class="scan-item">
+      <li class="scan-item" id="evt_016">
         <span class="scan-grade b">B 级</span>
         <span class="scan-title">顶级律所因 AI 幻觉向破产法官道歉</span>
         <span class="scan-source">Hacker News AI</span>
       </li>
       
-      <li class="scan-item">
+      <li class="scan-item" id="evt_017">
         <span class="scan-grade c">C 级</span>
         <span class="scan-title">Starbucks ChatGPT 点单集成体验糟糕</span>
         <span class="scan-source">The Verge AI</span>
       </li>
       
-      <li class="scan-item">
+      <li class="scan-item" id="evt_018">
         <span class="scan-grade c">C 级</span>
         <span class="scan-title">SpaceX 称太空 AI 数据中心商业可行性尚待验证</span>
         <span class="scan-source">Hacker News AI</span>
       </li>
       
-      <li class="scan-item">
+      <li class="scan-item" id="evt_019">
         <span class="scan-grade c">C 级</span>
         <span class="scan-title">Bond 新社交平台用 AI 鼓励用户放下手机</span>
         <span class="scan-source">TechCrunch AI</span>
       </li>
       
-      <li class="scan-item">
+      <li class="scan-item" id="evt_020">
         <span class="scan-grade c">C 级</span>
         <span class="scan-title">AI Dungeon 开发商推出 Voyage AI RPG 创作平台</span>
         <span class="scan-source">TechCrunch AI</span>
       </li>
       
-      <li class="scan-item">
+      <li class="scan-item" id="evt_021">
         <span class="scan-grade c">C 级</span>
         <span class="scan-title">行业观点集锦：企业 AI 落地的人力因素与工具边界</span>
         <span class="scan-source">GitHub Feeds / Aaron Levie, Hacker News AI</span>
