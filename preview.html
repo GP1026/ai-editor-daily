@@ -119,10 +119,19 @@
     .storyline-timeline li { grid-template-columns: 1fr; gap: 2px; }
     .daily-row { grid-template-columns: 1fr; gap: 8px; }
   }
+  /* 预览横幅 */
+  .preview-banner {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+    background: var(--accent); color: #fff; text-align: center;
+    font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.1em;
+    padding: 8px 16px; text-transform: uppercase;
+  }
+  .preview-banner a { color: #fff; text-decoration: underline; margin-left: 12px; }
 </style>
 </head>
 <body>
-<div class="page">
+<div class="preview-banner">PREVIEW · 预览版 — 确认后再发布到正式页面<a href="weekly-2026-W17.html">查看正式版</a></div>
+<div class="page" style="margin-top: 36px;">
 
   <!-- 刊头 -->
   <header class="masthead">
