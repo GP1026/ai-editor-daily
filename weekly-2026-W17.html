@@ -95,6 +95,14 @@
   .closing-text { font-family: var(--font-display); font-weight: 400; font-style: italic; font-size: 19px; line-height: 1.7; color: var(--ink); max-width: 640px; margin: 0 auto; white-space: pre-line; font-variation-settings: "opsz" 60, "SOFT" 80; }
   .closing-sig { margin-top: 24px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; color: var(--gray); text-transform: uppercase; }
 
+  /* 展开/收起按钮 */
+  .expand-toggle {
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em;
+    color: var(--accent); cursor: pointer; padding: 8px 0 4px;
+    user-select: none; transition: color 0.15s;
+  }
+  .expand-toggle:hover { color: var(--accent-deep); text-decoration: underline; }
+
   .footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray-light); }
 
   @media (max-width: 720px) {
@@ -242,14 +250,20 @@
   <!-- 每日摘要 -->
   <section>
     <div class="section-label">Daily Recap · 每日速览</div>
-    <h2 class="section-title">五天，一天一句话</h2>
+<h2 class="section-title">五天全量事件</h2>
 
     <div class="daily-row">
       <div class="daily-date"><a href="2026-04-25.html">04.25</a><span class="weekday">Fri</span></div>
       <div class="daily-highlights">
-        <div class="event-line"><span class="grade-badge s">S</span> <a href="2026-04-25.html#evt_001">DeepSeek-V4 正式发布，开源逼近闭源顶级，定价仅六分之一</a></div>
-        <div class="event-line"><span class="grade-badge s">S</span> <a href="2026-04-25.html#evt_002">Google 拟 400 亿投资 Anthropic（现金+算力）</a></div>
-        <div class="event-line"><span class="grade-badge a">A</span> <a href="2026-04-25.html#evt_003">Musk 拟 600 亿收购 Cursor · Tesla 20 亿 AI 硬件收购 · ComfyUI 5 亿估值</a></div>
+        <div class="event-line"><span class="grade-badge s">S</span> <a href="2026-04-25.html#evt_001">DeepSeek-V4 发布：1.6 万亿参数开源模型逼近顶级闭源性能，定价仅为六分之一</a></div>
+        <div class="event-line"><span class="grade-badge s">S</span> <a href="2026-04-25.html#evt_002">Google 计划向 Anthropic 投资最高 400 亿美元现金与算力</a></div>
+        <div class="event-line"><span class="grade-badge a">A</span> <a href="2026-04-25.html#evt_003">Elon Musk 拟 600 亿美元收购 Cursor，Tim Cook 计划卸任 Apple CEO</a></div>
+        <div class="event-line"><span class="grade-badge a">A</span> <a href="2026-04-25.html#evt_004">Tesla 在季报中低调披露 20 亿美元 AI 硬件公司收购</a></div>
+        <div class="event-line"><span class="grade-badge a">A</span> <a href="2026-04-25.html#evt_005">ComfyUI 完成 3000 万美元融资，估值达 5 亿美元</a></div>
+        <div class="event-line"><span class="grade-badge b">B</span> <a href="2026-04-25.html#evt_006">Project Maven：军事 AI 如何重塑现代战争目标筛选效率</a></div>
+        <div class="event-line"><span class="grade-badge b">B</span> <a href="2026-04-25.html#evt_007">Mac mini 因本地 AI 模型需求激增遭抢购，eBay 大量溢价转卖</a></div>
+        <div class="event-line"><span class="grade-badge c">C</span> <a href="2026-04-25.html#evt_008">Palo Alto 两个中低危漏洞组合利用致 13000 台设备遭入侵</a></div>
+        <div class="event-line"><span class="grade-badge c">C</span> <a href="2026-04-25.html#evt_009">Meta 与 Thinking Machines Lab 之间的 AI 人才双向流动</a></div>
         <div class="daily-stat">10 条新闻 → 8 个事件 · S:2 A:3 · <a href="2026-04-25.html">阅读日报 →</a></div>
       </div>
     </div>
@@ -257,9 +271,30 @@
     <div class="daily-row">
       <div class="daily-date"><a href="2026-04-24.html">04.24</a><span class="weekday">Thu</span></div>
       <div class="daily-highlights">
-        <div class="event-line"><span class="grade-badge s">S</span> <a href="2026-04-24.html#evt_001">GPT-5.5 正式发布，Terminal-Bench 2.0 微弱超越 Mythos Preview</a></div>
-        <div class="event-line"><span class="grade-badge s">S</span> <a href="2026-04-24.html#evt_002">Anthropic 复盘 Claude 性能下滑：三个产品层 bug 叠加</a></div>
-        <div class="event-line"><span class="grade-badge s">S</span> <a href="2026-04-24.html#evt_003">DeepSeek 预览 V4 · Claude Agents Memory · Meta 裁员 10%</a></div>
+        <div class="event-line"><span class="grade-badge s">S</span> <a href="2026-04-24.html#evt_001">OpenAI 发布 GPT-5.5：重夺 agentic 基准榜首，定价激进</a></div>
+        <div class="event-line"><span class="grade-badge s">S</span> <a href="2026-04-24.html#evt_002">Anthropic 公开复盘 Claude 性能下滑：三个产品层面 bug 叠加，非模型退化</a></div>
+        <div class="event-line"><span class="grade-badge s">S</span> <a href="2026-04-24.html#evt_003">DeepSeek 预览 V4 模型：性能逼近闭源顶级，强调华为芯片兼容</a></div>
+        <div class="event-line"><span class="grade-badge a">A</span> <a href="2026-04-24.html#evt_004">Claude Managed Agents 内置跨会话 Memory 功能进入公测</a></div>
+        <div class="event-line"><span class="grade-badge a">A</span> <a href="2026-04-24.html#evt_005">Claude 新增 15 个日常生活类 App 连接器，目录总数超 200</a></div>
+        <div class="event-line"><span class="grade-badge a">A</span> <a href="2026-04-24.html#evt_006">Meta 裁员 10% 约 8000 人，同步大幅加注 AI 基础设施投入</a></div>
+        <div class="event-line"><span class="grade-badge a">A</span> <a href="2026-04-24.html#evt_007">Anthropic Mythos 模型遭未授权访问，安全品牌形象受损</a></div>
+        <div class="event-line"><span class="grade-badge a">A</span> <a href="2026-04-24.html#evt_008">Meta 与亚马逊签署数百万颗 AI CPU 大单，芯片竞争格局生变</a></div>
+        <div class="event-line"><span class="grade-badge a">A</span> <a href="2026-04-24.html#evt_009">85% 企业试点 AI agent，仅 5% 敢投产：信任架构成最大瓶颈</a></div>
+        <div class="event-line"><span class="grade-badge a">A</span> <a href="2026-04-24.html#evt_010">AI agent 仅凭 219 字规格说明在 12 小时内设计完整 RISC-V CPU</a></div>
+        <div style="display:none" class="event-line collapsible-event"><span class="grade-badge a">A</span> <a href="2026-04-24.html#evt_011">Tim Cook 卸任 Apple CEO，John Ternus 接棒掌舵 AI 时代的 Apple</a></div>
+        <div style="display:none" class="event-line collapsible-event"><span class="grade-badge b">B</span> <a href="2026-04-24.html#evt_012">医疗 AI 大规模部署，但疗效评估严重缺失</a></div>
+        <div style="display:none" class="event-line collapsible-event"><span class="grade-badge b">B</span> <a href="2026-04-24.html#evt_013">Tesla 250 亿美元 AI 支出计划遭投资者质疑</a></div>
+        <div style="display:none" class="event-line collapsible-event"><span class="grade-badge b">B</span> <a href="2026-04-24.html#evt_014">软件股因 ServiceNow、IBM 财报不及预期集体下挫</a></div>
+        <div style="display:none" class="event-line collapsible-event"><span class="grade-badge b">B</span> <a href="2026-04-24.html#evt_015">Cohere 收购德国 Aleph Alpha，加速欧洲企业 AI 布局</a></div>
+        <div style="display:none" class="event-line collapsible-event"><span class="grade-badge b">B</span> <a href="2026-04-24.html#evt_016">BAND 融资 1700 万美元，推出 AI agent 间通信的"通用编排器"</a></div>
+        <div style="display:none" class="event-line collapsible-event"><span class="grade-badge b">B</span> <a href="2026-04-24.html#evt_017">MirrorNeuron：面向本地 AI agent 的开源可靠运行时</a></div>
+        <div style="display:none" class="event-line collapsible-event"><span class="grade-badge b">B</span> <a href="2026-04-24.html#evt_018">Google Workspace 将 Gemini AI 功能默认开启</a></div>
+        <div style="display:none" class="event-line collapsible-event"><span class="grade-badge b">B</span> <a href="2026-04-24.html#evt_019">供应链裂缝制约 AI 扩张：地缘政治因素浮现</a></div>
+        <div style="display:none" class="event-line collapsible-event"><span class="grade-badge b">B</span> <a href="2026-04-24.html#evt_020">Unsupervised Learning 播客：AI Infra 稳定性与 Coding Agents 下一步</a></div>
+        <div style="display:none" class="event-line collapsible-event"><span class="grade-badge c">C</span> <a href="2026-04-24.html#evt_021">Era 融资 1100 万美元打造多形态 AI 可穿戴设备平台</a></div>
+        <div style="display:none" class="event-line collapsible-event"><span class="grade-badge c">C</span> <a href="2026-04-24.html#evt_022">Sierra 收购法国 AI 初创 Fragment、AI 托管门店暴露偏见等零散事件</a></div>
+        <div style="display:none" class="event-line collapsible-event"><span class="grade-badge c">C</span> <a href="2026-04-24.html#evt_023">其他零散消息：Nothing 语音听写、Sinceerly 去 AI 化工具、GIMP 禁 AI 政策等</a></div>
+        <div class="expand-toggle" onclick="var p=this.parentElement;var items=p.querySelectorAll(".collapsible-event");items.forEach(function(el){el.style.display=el.style.display==="none"?"flex":"none"});this.textContent=this.textContent.indexOf("展开")>=0?"收起 ▲":"展开其余 13 个事件 ▼"">展开其余 13 个事件 ▼</div>
         <div class="daily-stat">38 条新闻 → 22 个事件 · S:3 A:8 · <a href="2026-04-24.html">阅读日报 →</a></div>
       </div>
     </div>
@@ -267,9 +302,25 @@
     <div class="daily-row">
       <div class="daily-date"><a href="2026-04-23.html">04.23</a><span class="weekday">Wed</span></div>
       <div class="daily-highlights">
-        <div class="event-line"><span class="grade-badge s">S</span> <a href="2026-04-23.html#evt_001">OpenAI Workspace Agents 发布，企业 AI 无人值守时代</a></div>
-        <div class="event-line"><span class="grade-badge s">S</span> <a href="2026-04-23.html#evt_002">Google 第八代 TPU · Cloud Next 全面发力 Agent 平台</a></div>
-        <div class="event-line"><span class="grade-badge a">A</span> <a href="2026-04-23.html#evt_004">MS Office Agent Mode · Salesforce Vibes 2.0 · Stanford 单/多 agent 研究</a></div>
+        <div class="event-line"><span class="grade-badge s">S</span> <a href="2026-04-23.html#evt_001">OpenAI 推出 Workspace Agents：Custom GPTs 继任者，企业 AI 进入无人值守时代</a></div>
+        <div class="event-line"><span class="grade-badge s">S</span> <a href="2026-04-23.html#evt_002">Google 发布第八代 TPU：训练推理分芯，推理性能跃升近 10 倍，不交 Nvidia 税</a></div>
+        <div class="event-line"><span class="grade-badge s">S</span> <a href="2026-04-23.html#evt_003">Google Cloud Next 全面发力：企业 Agent 平台、Chrome agent 化、Workspace AI 化同步推出</a></div>
+        <div class="event-line"><span class="grade-badge a">A</span> <a href="2026-04-23.html#evt_004">Microsoft Office 推出 Agent Mode（"vibe working"），AI 从顾问升级为执行者</a></div>
+        <div class="event-line"><span class="grade-badge a">A</span> <a href="2026-04-23.html#evt_005">Salesforce Agentforce Vibes 2.0 瞄准企业 AI agent 的隐藏杀手：上下文过载</a></div>
+        <div class="event-line"><span class="grade-badge a">A</span> <a href="2026-04-23.html#evt_006">Stanford 研究：单 agent 往往不输多 agent，你可能在白交"群体税"</a></div>
+        <div class="event-line"><span class="grade-badge a">A</span> <a href="2026-04-23.html#evt_007">OpenAI 开源 Privacy Filter：本地 PII 脱敏模型，15 亿参数仅激活 5000 万</a></div>
+        <div class="event-line"><span class="grade-badge a">A</span> <a href="2026-04-23.html#evt_008">Claude Code 桌面端重大重设计：多 agent 并行工作流与侧边栏会话管理</a></div>
+        <div class="event-line"><span class="grade-badge b">B</span> <a href="2026-04-23.html#evt_009">Sony AI 乒乓球机器人 Ace 首次在 ITTF 规则下击败顶级人类选手</a></div>
+        <div class="event-line"><span class="grade-badge b">B</span> <a href="2026-04-23.html#evt_010">Anthropic Mythos 模型未向美国网络安全局（CISA）开放，分发策略引关注</a></div>
+        <div style="display:none" class="event-line collapsible-event"><span class="grade-badge b">B</span> <a href="2026-04-23.html#evt_011">NPM 与 PyPI 发现恶意包：植入后门将服务器变为中国 LLM 中继节点</a></div>
+        <div style="display:none" class="event-line collapsible-event"><span class="grade-badge b">B</span> <a href="2026-04-23.html#evt_012">Elizabeth Warren 发出 AI 泡沫警告：支出增速远超营收，与 2008 年金融危机前相似</a></div>
+        <div style="display:none" class="event-line collapsible-event"><span class="grade-badge b">B</span> <a href="2026-04-23.html#evt_013">AI 货币化困境：Anthropic 限制第三方工具 OpenClaw，token 经济学成核心议题</a></div>
+        <div style="display:none" class="event-line collapsible-event"><span class="grade-badge b">B</span> <a href="2026-04-23.html#evt_014">Tesla 2026 年资本支出提至 250 亿美元，全年自由现金流将转负</a></div>
+        <div style="display:none" class="event-line collapsible-event"><span class="grade-badge b">B</span> <a href="2026-04-23.html#evt_015">AI 行业观察：人们并不渴望自动化，AI 健康回答错误率达 50%</a></div>
+        <div style="display:none" class="event-line collapsible-event"><span class="grade-badge c">C</span> <a href="2026-04-23.html#evt_016">AI 时代人类角色再思考："AI 三明治"理论与"overcooking"现象</a></div>
+        <div style="display:none" class="event-line collapsible-event"><span class="grade-badge c">C</span> <a href="2026-04-23.html#evt_017">行业碎片：X 推 AI 信息流、美国议员观看 AI 越狱演示、Vercel 安全事件持续、Context AI 安全事故</a></div>
+        <div style="display:none" class="event-line collapsible-event"><span class="grade-badge c">C</span> <a href="2026-04-23.html#evt_018">小工具与小观察：Gemma 4 VLA 边缘部署、Dead Simple Email、Viscacha、Chrome 本地 LLM 等</a></div>
+        <div class="expand-toggle" onclick="var p=this.parentElement;var items=p.querySelectorAll(".collapsible-event");items.forEach(function(el){el.style.display=el.style.display==="none"?"flex":"none"});this.textContent=this.textContent.indexOf("展开")>=0?"收起 ▲":"展开其余 8 个事件 ▼"">展开其余 8 个事件 ▼</div>
         <div class="daily-stat">40 条新闻 → 18 个事件 · S:3 A:6 · <a href="2026-04-23.html">阅读日报 →</a></div>
       </div>
     </div>
@@ -277,9 +328,28 @@
     <div class="daily-row">
       <div class="daily-date"><a href="2026-04-22.html">04.22</a><span class="weekday">Tue</span></div>
       <div class="daily-highlights">
-        <div class="event-line"><span class="grade-badge s">S</span> <a href="2026-04-22.html#evt_001">SpaceX 拟 600 亿收购 Cursor，Musk AI 版图扩张</a></div>
-        <div class="event-line"><span class="grade-badge s">S</span> <a href="2026-04-22.html#evt_002">Anthropic Mythos 泄露 · Meta MCI 追踪员工行为</a></div>
-        <div class="event-line"><span class="grade-badge a">A</span> <a href="2026-04-22.html#evt_005">ChatGPT Images 2.0 · AI 安全审计加速 · Kimi K2.6 亮眼</a></div>
+        <div class="event-line"><span class="grade-badge s">S</span> <a href="2026-04-22.html#evt_001">SpaceX 拟以 600 亿美元收购 AI 编程平台 Cursor，Musk AI 版图再扩张</a></div>
+        <div class="event-line"><span class="grade-badge s">S</span> <a href="2026-04-22.html#evt_002">Anthropic 网络安全模型 Mythos 疑遭未授权访问，Altman 抨击为"恐惧营销"</a></div>
+        <div class="event-line"><span class="grade-badge s">S</span> <a href="2026-04-22.html#evt_003">Meta 部署员工键鼠追踪工具 MCI，采集行为数据训练 AI agent</a></div>
+        <div class="event-line"><span class="grade-badge a">A</span> <a href="2026-04-22.html#evt_004">YouTube 将 AI 深度伪造检测扩展至名人群体</a></div>
+        <div class="event-line"><span class="grade-badge a">A</span> <a href="2026-04-22.html#evt_005">ChatGPT Images 2.0 发布：新增联网搜索辅助、文字渲染大幅提升</a></div>
+        <div class="event-line"><span class="grade-badge a">A</span> <a href="2026-04-22.html#evt_006">AI 治理幻觉：72% 企业高估自身管控能力，Agent 安全治理体系亟待建立</a></div>
+        <div class="event-line"><span class="grade-badge a">A</span> <a href="2026-04-22.html#evt_007">Google Cloud Next 密集发布：Deep Research 双版本、Agentic Data Cloud、Thinking Machines Lab 数十亿美元合作</a></div>
+        <div class="event-line"><span class="grade-badge a">A</span> <a href="2026-04-22.html#evt_008">Kimi K2.6 让 agent 连跑数天，暴露企业级编排框架的根本性缺陷</a></div>
+        <div class="event-line"><span class="grade-badge a">A</span> <a href="2026-04-22.html#evt_009">Vercel 安全事件：OAuth 授权漏洞横跨四个组织边界完成渗透</a></div>
+        <div class="event-line"><span class="grade-badge a">A</span> <a href="2026-04-22.html#evt_010">AI 安全报告涌入"高质量混乱"时代：LLM 生成的报告推动 Linux 内核代码被批量移除</a></div>
+        <div style="display:none" class="event-line collapsible-event"><span class="grade-badge b">B</span> <a href="2026-04-22.html#evt_011">Netflix AI 合作协议威胁全球 VFX 从业者生计</a></div>
+        <div style="display:none" class="event-line collapsible-event"><span class="grade-badge b">B</span> <a href="2026-04-22.html#evt_012">AI 反弹浪潮渗入美国选举政治，60% 选民要求政府监管</a></div>
+        <div style="display:none" class="event-line collapsible-event"><span class="grade-badge b">B</span> <a href="2026-04-22.html#evt_013">Every 全员 AI agent 实验：当每位员工都有专属 AI 分身</a></div>
+        <div style="display:none" class="event-line collapsible-event"><span class="grade-badge b">B</span> <a href="2026-04-22.html#evt_014">Clarifai 删除 300 万张 OkCupid 用户照片，涉 FTC 和解</a></div>
+        <div style="display:none" class="event-line collapsible-event"><span class="grade-badge b">B</span> <a href="2026-04-22.html#evt_015">伊朗利用 AI 生成低质量内容精准触达不关注新闻的人群</a></div>
+        <div style="display:none" class="event-line collapsible-event"><span class="grade-badge b">B</span> <a href="2026-04-22.html#evt_016">顶级律所因 AI 幻觉向破产法官道歉</a></div>
+        <div style="display:none" class="event-line collapsible-event"><span class="grade-badge c">C</span> <a href="2026-04-22.html#evt_017">Starbucks ChatGPT 点单集成体验糟糕</a></div>
+        <div style="display:none" class="event-line collapsible-event"><span class="grade-badge c">C</span> <a href="2026-04-22.html#evt_018">SpaceX 称太空 AI 数据中心商业可行性尚待验证</a></div>
+        <div style="display:none" class="event-line collapsible-event"><span class="grade-badge c">C</span> <a href="2026-04-22.html#evt_019">Bond 新社交平台用 AI 鼓励用户放下手机</a></div>
+        <div style="display:none" class="event-line collapsible-event"><span class="grade-badge c">C</span> <a href="2026-04-22.html#evt_020">AI Dungeon 开发商推出 Voyage AI RPG 创作平台</a></div>
+        <div style="display:none" class="event-line collapsible-event"><span class="grade-badge c">C</span> <a href="2026-04-22.html#evt_021">行业观点集锦：企业 AI 落地的人力因素与工具边界</a></div>
+        <div class="expand-toggle" onclick="var p=this.parentElement;var items=p.querySelectorAll(".collapsible-event");items.forEach(function(el){el.style.display=el.style.display==="none"?"flex":"none"});this.textContent=this.textContent.indexOf("展开")>=0?"收起 ▲":"展开其余 11 个事件 ▼"">展开其余 11 个事件 ▼</div>
         <div class="daily-stat">46 条新闻 → 21 个事件 · S:3 A:7 · <a href="2026-04-22.html">阅读日报 →</a></div>
       </div>
     </div>
@@ -287,12 +357,25 @@
     <div class="daily-row">
       <div class="daily-date"><a href="2026-04-21.html">04.21</a><span class="weekday">Mon</span></div>
       <div class="daily-highlights">
-        <div class="event-line"><span class="grade-badge s">S</span> <a href="2026-04-21.html#evt_001">Amazon-Anthropic 50 亿 + 1000 亿 AWS 云支出承诺</a></div>
-        <div class="event-line"><span class="grade-badge s">S</span> <a href="2026-04-21.html#evt_002">AI 安全攻防全面升级：三线齐发</a></div>
-        <div class="event-line"><span class="grade-badge s">S</span> <a href="2026-04-21.html#evt_003">Apple CEO 换帅：Ternus 接棒 Cook</a></div>
+        <div class="event-line"><span class="grade-badge s">S</span> <a href="2026-04-21.html#evt_001">Amazon 再注资 Anthropic 50 亿美元，Anthropic 承诺回馈 1000 亿美元 AWS 云支出</a></div>
+        <div class="event-line"><span class="grade-badge s">S</span> <a href="2026-04-21.html#evt_002">AI 安全攻防全面升级：前沿模型加速漏洞发现，编程 Agent 密钥泄露漏洞曝光，90+ 机构 AI 工具遭劫持</a></div>
+        <div class="event-line"><span class="grade-badge s">S</span> <a href="2026-04-21.html#evt_003">Apple CEO 换帅：John Ternus 接棒 Tim Cook，AI 困局成首要挑战</a></div>
+        <div class="event-line"><span class="grade-badge a">A</span> <a href="2026-04-21.html#evt_004">Claude 推出 Live Artifacts：实时连接用户应用与文件的持久化构建能力</a></div>
+        <div class="event-line"><span class="grade-badge a">A</span> <a href="2026-04-21.html#evt_005">Circle CEO 描绘 AI agent 经济的金融结算基础设施蓝图</a></div>
+        <div class="event-line"><span class="grade-badge a">A</span> <a href="2026-04-21.html#evt_006">Google 将 Gemini 嵌入 Chrome，覆盖亚太七国市场</a></div>
+        <div class="event-line"><span class="grade-badge b">B</span> <a href="2026-04-21.html#evt_007">Aaron Levie：企业需要专职 Agent 部署岗位，未来将大规模增长</a></div>
+        <div class="event-line"><span class="grade-badge b">B</span> <a href="2026-04-21.html#evt_008">Matt Turck 质疑"AI TAM 等于劳动力市场总规模"的流行叙事</a></div>
+        <div class="event-line"><span class="grade-badge b">B</span> <a href="2026-04-21.html#evt_009">Vercel 安全事件后续：CEO 亲自澄清密钥轮换误区，推出 20+ 项安全改进</a></div>
+        <div class="event-line"><span class="grade-badge b">B</span> <a href="2026-04-21.html#evt_010">Yelp 大幅升级 AI 助手：从问答到预约的一站式数字礼宾体验</a></div>
+        <div style="display:none" class="event-line collapsible-event"><span class="grade-badge b">B</span> <a href="2026-04-21.html#evt_011">Von：多模型混合驱动的收入智能平台，八周收入超 50 万美元</a></div>
+        <div style="display:none" class="event-line collapsible-event"><span class="grade-badge c">C</span> <a href="2026-04-21.html#evt_012">AI 行业碎片观察：双 agent 协作、AI 写作识别、硅谷认知茧房</a></div>
+        <div style="display:none" class="event-line collapsible-event"><span class="grade-badge c">C</span> <a href="2026-04-21.html#evt_013">开发者工具更新：OpenClaw/wacli/gog 密集发版，AI 设计工具 Pencil 获推荐</a></div>
+        <div style="display:none" class="event-line collapsible-event"><span class="grade-badge c">C</span> <a href="2026-04-21.html#evt_014">其他：GRAI AI 音乐社交化、HuggingFace 技术博客、北极科考</a></div>
+        <div class="expand-toggle" onclick="var p=this.parentElement;var items=p.querySelectorAll(".collapsible-event");items.forEach(function(el){el.style.display=el.style.display==="none"?"flex":"none"});this.textContent=this.textContent.indexOf("展开")>=0?"收起 ▲":"展开其余 4 个事件 ▼"">展开其余 4 个事件 ▼</div>
         <div class="daily-stat">28 条新闻 → 14 个事件 · S:3 A:4 · <a href="2026-04-21.html">阅读日报 →</a></div>
       </div>
     </div>
+
   </section>
 
   <!-- 主编寄语 -->
