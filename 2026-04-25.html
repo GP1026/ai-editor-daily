@@ -63,6 +63,14 @@
   }
   .masthead-meta .stats { display: flex; gap: 24px; flex-wrap: wrap; }
   .masthead-meta .stats b { color: var(--ink); font-weight: 500; margin-left: 4px; }
+  .masthead-right { display: flex; align-items: center; gap: 14px; }
+  .masthead-right .weekly-link {
+    color: var(--accent); text-decoration: none; border: 1px solid var(--accent);
+    padding: 3px 10px; letter-spacing: 0.08em; font-weight: 500;
+    transition: background 0.15s;
+  }
+  .masthead-right .weekly-link:hover { background: rgba(154,40,40,0.08); }
+  .masthead-right .masthead-author { color: var(--gray); }
 
   /* 通用 section */
   section { margin-top: 56px; }
@@ -263,6 +271,17 @@
     font-family: var(--font-mono); font-size: 10.5px; color: var(--gray);
     letter-spacing: 0.04em; white-space: nowrap;
   }
+  .scan-source a {
+    color: var(--accent-deep); text-decoration: none; border-bottom: 1px dotted var(--accent-deep);
+  }
+  .scan-source a:hover { color: var(--accent); }
+  .scan-title a { color: var(--ink); text-decoration: none; }
+  .scan-title a:hover { color: var(--accent); text-decoration: underline; }
+  .source-row .name a {
+    color: var(--accent-deep); text-decoration: none;
+    font-style: italic; font-weight: 500;
+  }
+  .source-row .name a:hover { text-decoration: underline; }
 
   /* 主编寄语 */
   .closing {
@@ -292,6 +311,10 @@
     font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em;
     text-transform: uppercase; color: var(--gray-light);
   }
+  .footer .footer-weekly {
+    color: var(--accent); text-decoration: none; border-bottom: 1px dotted var(--accent);
+  }
+  .footer .footer-weekly:hover { color: var(--accent-deep); }
 
   /* 响应式 */
   @media (max-width: 720px) {
@@ -337,7 +360,10 @@
         <span>S 级 <b>2</b></span>
         <span>A 级 <b>3</b></span>
       </div>
-      <div>主笔 / Claude Editorial</div>
+      <div class="masthead-right">
+        <a class="weekly-link" href="weekly-2026-W17.html">本周 W17 →</a>
+        <span class="masthead-author">主笔 / Claude Editorial</span>
+      </div>
     </div>
   </header>
 
@@ -724,13 +750,19 @@
       
       <div class="source-table">
         
+        
         <div class="source-row">
-          <div class="name">VentureBeat</div>
+          <div class="name">
+            <a href="https://venturebeat.com/technology/deepseek-v4-arrives-with-near-state-of-the-art-intelligence-at-1-6th-the-cost-of-opus-4-7-gpt-5-5" target="_blank" rel="noopener">VentureBeat ↗</a>
+          </div>
           <div class="view">聚焦成本对比和商业冲击，强调定价压力</div>
         </div>
         
+        
         <div class="source-row">
-          <div class="name">MIT Technology Review</div>
+          <div class="name">
+            <a href="https://www.technologyreview.com/2026/04/24/1136422/why-deepseeks-v4-matters/" target="_blank" rel="noopener">MIT Technology Review ↗</a>
+          </div>
           <div class="view">从技术架构切入，重点分析昇腾优化的地缘战略含义</div>
         </div>
         
@@ -764,28 +796,96 @@
 
     <ul class="scan-list">
       
+      
+      
+      
+        
+          
+          
+        
+      
       <li class="scan-item" id="evt_006">
         <span class="scan-grade b">B 级</span>
-        <span class="scan-title">Project Maven：军事 AI 如何重塑现代战争目标筛选效率</span>
-        <span class="scan-source">The Verge AI</span>
+        <span class="scan-title">
+          <a href="https://www.theverge.com/ai-artificial-intelligence/917996/project-maven-military-ai-katrina-manson" target="_blank" rel="noopener">Project Maven：军事 AI 如何重塑现代战争目标筛选效率</a>
+        </span>
+        <span class="scan-source">
+          
+            
+              
+              <a href="https://www.theverge.com/ai-artificial-intelligence/917996/project-maven-military-ai-katrina-manson" target="_blank" rel="noopener">The Verge AI</a>
+            
+          
+        </span>
       </li>
+      
+      
+      
+      
+        
+          
+          
+        
       
       <li class="scan-item" id="evt_007">
         <span class="scan-grade b">B 级</span>
-        <span class="scan-title">Mac mini 因本地 AI 模型需求激增遭抢购，eBay 大量溢价转卖</span>
-        <span class="scan-source">TechCrunch AI</span>
+        <span class="scan-title">
+          <a href="https://techcrunch.com/2026/04/24/mac-mini-price-expensive-ebay-shortage-ai-memory/" target="_blank" rel="noopener">Mac mini 因本地 AI 模型需求激增遭抢购，eBay 大量溢价转卖</a>
+        </span>
+        <span class="scan-source">
+          
+            
+              
+              <a href="https://techcrunch.com/2026/04/24/mac-mini-price-expensive-ebay-shortage-ai-memory/" target="_blank" rel="noopener">TechCrunch AI</a>
+            
+          
+        </span>
       </li>
+      
+      
+      
+      
+        
+          
+          
+        
       
       <li class="scan-item" id="evt_008">
         <span class="scan-grade c">C 级</span>
-        <span class="scan-title">Palo Alto 两个中低危漏洞组合利用致 13000 台设备遭入侵</span>
-        <span class="scan-source">VentureBeat</span>
+        <span class="scan-title">
+          <a href="https://venturebeat.com/security/cvss-triage-failure-chained-vulnerability-audit-security-directors" target="_blank" rel="noopener">Palo Alto 两个中低危漏洞组合利用致 13000 台设备遭入侵</a>
+        </span>
+        <span class="scan-source">
+          
+            
+              
+              <a href="https://venturebeat.com/security/cvss-triage-failure-chained-vulnerability-audit-security-directors" target="_blank" rel="noopener">VentureBeat</a>
+            
+          
+        </span>
       </li>
+      
+      
+      
+      
+        
+          
+          
+        
       
       <li class="scan-item" id="evt_009">
         <span class="scan-grade c">C 级</span>
-        <span class="scan-title">Meta 与 Thinking Machines Lab 之间的 AI 人才双向流动</span>
-        <span class="scan-source">TechCrunch AI</span>
+        <span class="scan-title">
+          <a href="https://techcrunch.com/2026/04/24/metas-loss-is-thinking-machines-gain/" target="_blank" rel="noopener">Meta 与 Thinking Machines Lab 之间的 AI 人才双向流动</a>
+        </span>
+        <span class="scan-source">
+          
+            
+              
+              <a href="https://techcrunch.com/2026/04/24/metas-loss-is-thinking-machines-gain/" target="_blank" rel="noopener">TechCrunch AI</a>
+            
+          
+        </span>
       </li>
       
     </ul>
@@ -805,6 +905,7 @@
 
   <footer class="footer">
     <span>AI 主编日报 · 2026-04-25</span>
+    <a class="footer-weekly" href="weekly-2026-W17.html">查看本周周报 W17</a>
     <span>主笔 / Claude Editorial</span>
   </footer>
 
