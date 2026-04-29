@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 主���周刊 · 2026 第 18 周 · 04.27–05.03</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..900,0..100&family=Noto+Serif+SC:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f4ede0; --bg-deep: #ebe2d0; --ink: #1c1814; --ink-soft: #3a342c;
+    --gray: #756a5c; --gray-light: #a59b8c; --line: #c9bfac; --line-soft: #ddd2bd;
+    --accent: #9a2828; --accent-deep: #6e1d1d; --gold: #8b6914; --green: #3d5a3a;
+    --font-display: 'Fraunces', 'Noto Serif SC', serif;
+    --font-serif: 'Noto Serif SC', 'Fraunces', serif;
+    --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--bg); color: var(--ink); font-family: var(--font-serif); font-weight: 400; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .page { max-width: 920px; margin: 0 auto; padding: 56px 48px 96px; }
+  .masthead { border-bottom: 2px solid var(--ink); padding-bottom: 18px; margin-bottom: 8px; }
+  .masthead-top { display: flex; justify-content: space-between; align-items: flex-end; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray); margin-bottom: 14px; }
+  .masthead h1 { font-family: var(--font-display); font-weight: 600; font-size: 64px; line-height: 0.95; letter-spacing: -0.025em; font-variation-settings: "opsz" 144, "SOFT" 30; }
+  .masthead h1 .en { font-style: italic; font-weight: 400; font-size: 0.42em; color: var(--gray); margin-left: 14px; font-variation-settings: "opsz" 14, "SOFT" 100; }
+  .masthead .tagline { font-size: 13px; color: var(--gray); margin-top: 12px; letter-spacing: 0.04em; }
+  .masthead-meta { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-top: 4px; font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray); padding-top: 10px; border-top: 1px solid var(--line); }
+  .masthead-meta .stats { display: flex; gap: 24px; flex-wrap: wrap; }
+  .masthead-meta .stats b { color: var(--ink); font-weight: 500; margin-left: 4px; }
+  section { margin-top: 56px; }
+  .section-label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 12px; }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--line); }
+  .section-title { font-family: var(--font-display); font-weight: 500; font-size: 30px; line-height: 1.15; letter-spacing: -0.015em; color: var(--ink); margin-bottom: 24px; font-variation-settings: "opsz" 60; }
+  .editorial { margin-top: 32px; padding: 32px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .editorial-eyebrow { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+  .editorial-body { font-size: 17px; line-height: 1.85; color: var(--ink-soft); }
+  .editorial-body p { margin-bottom: 18px; }
+  .editorial-body p:last-child { margin-bottom: 0; }
+  .editorial-body p:first-child::first-letter { font-family: var(--font-display); font-weight: 600; font-size: 64px; float: left; line-height: 0.85; margin: 8px 10px 0 0; color: var(--accent); font-variation-settings: "opsz" 144; }
+  .editorial-body strong { font-weight: 600; color: var(--ink); background: linear-gradient(to top, rgba(154,40,40,0.12) 0%, rgba(154,40,40,0.12) 30%, transparent 30%); padding: 0 2px; }
+  .editorial-sign { margin-top: 24px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; color: var(--gray); text-transform: uppercase; }
+  .daily-row { display: grid; grid-template-columns: 80px 1fr; gap: 24px; padding: 20px 0; border-bottom: 1px solid var(--line-soft); }
+  .daily-row:last-child { border-bottom: none; }
+  .daily-date { font-family: var(--font-display); font-weight: 500; font-size: 18px; color: var(--ink); font-variation-settings: "opsz" 36; }
+  .daily-date a { color: var(--ink); }
+  .daily-date a:hover { color: var(--accent); }
+  .daily-date .weekday { display: block; font-family: var(--font-mono); font-size: 10px; color: var(--gray); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 2px; }
+  .daily-highlights { font-size: 14px; color: var(--ink-soft); line-height: 1.65; }
+  .daily-highlights .event-line { margin-bottom: 4px; }
+  .daily-stat { font-family: var(--font-mono); font-size: 10px; color: var(--gray); margin-top: 6px; letter-spacing: 0.06em; }
+  .data-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 20px; }
+  .data-card { padding: 20px 24px; border: 1px solid var(--line); background: rgba(255,253,248,0.5); }
+  .data-card-title { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; font-weight: 500; }
+  .bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; font-size: 13px; }
+  .bar-label { width: 110px; color: var(--ink-soft); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .bar-track { flex: 1; height: 14px; background: var(--bg-deep); border: 1px solid var(--line-soft); position: relative; }
+  .bar-fill { height: 100%; background: var(--accent); opacity: 0.2; }
+  .bar-fill.hot { opacity: 0.5; }
+  .bar-count { font-family: var(--font-mono); font-size: 10px; color: var(--gray); width: 24px; text-align: right; }
+  .tag-cloud { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+  .tag-pill { font-size: 13px; padding: 4px 14px; border-radius: 2px; border: 1px solid var(--line-soft); background: var(--bg-deep); color: var(--ink-soft); letter-spacing: 0.02em; }
+  .tag-pill.hot { color: var(--accent-deep); border-color: rgba(154,40,40,0.3); background: rgba(154,40,40,0.06); font-weight: 500; }
+  .tag-pill .count { font-family: var(--font-mono); font-size: 10px; color: var(--gray); margin-left: 4px; }
+  .grade-badge { display: inline-block; font-family: var(--font-mono); font-size: 9px; font-weight: 500; letter-spacing: 0.12em; padding: 1px 5px; border: 1px solid; margin-right: 6px; vertical-align: 1px; }
+  .grade-badge.s { color: var(--accent); border-color: var(--accent); }
+  .grade-badge.a { color: var(--gold); border-color: var(--gold); }
+  .event-line.grade-s a { color: var(--accent); font-weight: 600; }
+  .event-line.grade-a a { color: var(--gold); font-weight: 500; }
+  .event-line.grade-b a { color: var(--ink-soft); }
+  .event-line.grade-c a { color: var(--gray-light); }
+  .expand-toggle { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; color: var(--accent); cursor: pointer; padding: 8px 0 4px; user-select: none; }
+  .expand-toggle:hover { color: var(--accent-deep); text-decoration: underline; }
+  .closing { margin-top: 80px; padding: 36px 0 32px; border-top: 2px solid var(--ink); text-align: center; }
+  .closing-mark { font-family: var(--font-display); font-style: italic; font-size: 14px; letter-spacing: 0.12em; color: var(--accent); text-transform: uppercase; margin-bottom: 18px; font-variation-settings: "opsz" 14, "SOFT" 100; }
+  .closing-text { font-family: var(--font-display); font-weight: 400; font-style: italic; font-size: 19px; line-height: 1.7; color: var(--ink); max-width: 640px; margin: 0 auto; white-space: pre-line; font-variation-settings: "opsz" 60, "SOFT" 80; }
+  .closing-sig { margin-top: 24px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; color: var(--gray); text-transform: uppercase; }
+  .footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray-light); }
+  @media (max-width: 720px) {
+    .page { padding: 32px 22px 64px; }
+    .masthead h1 { font-size: 42px; }
+    .masthead h1 .en { display: block; margin-left: 0; margin-top: 6px; }
+    .data-grid { grid-template-columns: 1fr; }
+    .daily-row { grid-template-columns: 1fr; gap: 8px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="masthead">
+    <div class="masthead-top">
+      <div>2026 第 18 周 · 04.27–05.03</div>
+      <div>AI 主编周刊</div>
+    </div>
+    <h1>AI 主编周刊<span class="en">The Editor's Weekly</span></h1>
+    <div class="tagline">一周回望，看清 AI 世界的真实脉搏。不追热点，只追主线。</div>
+    <div class="masthead-meta">
+      <div class="stats">
+        <span>原始新闻 <b>42</b></span>
+        <span>合并事件 <b>32</b></span>
+        <span>S 级 <b>3</b></span>
+        <span>A 级 <b>6</b></span>
+        <span>覆盖 <b>1</b> 天</span>
+      </div>
+      <div>主笔 / Claude Editorial</div>
+    </div>
+  </header>
+
+  <article class="editorial">
+    <div class="editorial-eyebrow">— 本周观察 / Weekly Narrative</div>
+    <div class="editorial-body">
+      <p>本周观察将在周末生成完整版。目前已覆盖 1 天数据，以下为实时更新的每日速览和话题热力图。</p>
+    </div>
+    <div class="editorial-sign">— 编辑部 · 2026 第 18 周</div>
+  </article>
+
+  <section>
+    <div class="section-label">Heatmap · 本周话题热���</div>
+    <h2 class="section-title">哪些领域最热</h2>
+
+    <div class="data-grid">
+      <div class="data-card">
+        <div class="data-card-title">技术领域 Top 6</div>
+        <div class="bar-row"><span class="bar-label">Agent</span><span class="bar-track"><span class="bar-fill hot" style="width:100%"></span></span><span class="bar-count">16</span></div>
+        <div class="bar-row"><span class="bar-label">大模型/LLM</span><span class="bar-track"><span class="bar-fill hot" style="width:93%"></span></span><span class="bar-count">15</span></div>
+        <div class="bar-row"><span class="bar-label">安全/对齐</span><span class="bar-track"><span class="bar-fill" style="width:37%"></span></span><span class="bar-count">6</span></div>
+        <div class="bar-row"><span class="bar-label">基础设施/MLOps</span><span class="bar-track"><span class="bar-fill" style="width:25%"></span></span><span class="bar-count">4</span></div>
+        <div class="bar-row"><span class="bar-label">微调/训练</span><span class="bar-track"><span class="bar-fill" style="width:18%"></span></span><span class="bar-count">3</span></div>
+        <div class="bar-row"><span class="bar-label">搜索/信息检索</span><span class="bar-track"><span class="bar-fill" style="width:18%"></span></span><span class="bar-count">3</span></div>
+      </div>
+      <div class="data-card">
+        <div class="data-card-title">事件类型分布</div>
+        <div class="bar-row"><span class="bar-label">产品发布</span><span class="bar-track"><span class="bar-fill hot" style="width:100%"></span></span><span class="bar-count">7</span></div>
+        <div class="bar-row"><span class="bar-label">观点/评论</span><span class="bar-track"><span class="bar-fill hot" style="width:100%"></span></span><span class="bar-count">7</span></div>
+        <div class="bar-row"><span class="bar-label">研究成果</span><span class="bar-track"><span class="bar-fill hot" style="width:85%"></span></span><span class="bar-count">6</span></div>
+        <div class="bar-row"><span class="bar-label">政策/监管</span><span class="bar-track"><span class="bar-fill" style="width:57%"></span></span><span class="bar-count">4</span></div>
+        <div class="bar-row"><span class="bar-label">行业动态</span><span class="bar-track"><span class="bar-fill" style="width:42%"></span></span><span class="bar-count">3</span></div>
+        <div class="bar-row"><span class="bar-label">融资/收购</span><span class="bar-track"><span class="bar-fill" style="width:28%"></span></span><span class="bar-count">2</span></div>
+      </div>
+    </div>
+
+    <div style="margin-top: 24px;">
+      <div class="data-card-title" style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; font-weight: 500;">影响力维度</div>
+      <div class="tag-cloud">
+        <span class="tag-pill hot">信号性 <span class="count">17</span></span>
+        <span class="tag-pill hot">实用性 <span class="count">13</span></span>
+        <span class="tag-pill">争议性 <span class="count">8</span></span>
+        <span class="tag-pill">生态性 <span class="count">5</span></span>
+        <span class="tag-pill">突破性 <span class="count">4</span></span>
+        <span class="tag-pill">规模性 <span class="count">3</span></span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">Daily Recap · 每日速览</div>
+    <h2 class="section-title">1 天全量事件</h2>
+
+    <div class="daily-row">
+      <div class="daily-date"><a href="2026-04-28.html">04.28</a><span class="weekday">Tue</span></div>
+      <div class="daily-highlights">
+        <div class="event-line grade-s"><span class="grade-badge s">S</span> <a href="2026-04-28.html#evt_001">Microsoft 与 OpenAI 协议大改:AGI 条款删除,OpenAI 获多云销售权</a></div>
+        <div class="event-line grade-s"><span class="grade-badge s">S</span> <a href="2026-04-28.html#evt_002">Musk vs Altman/OpenAI 庭审正式开庭,索赔 1340 亿美元</a></div>
+        <div class="event-line grade-s"><span class="grade-badge s">S</span> <a href="2026-04-28.html#evt_003">Google 签署五角大楼机密 AI 协议,内部 600+ 员工联署抗议</a></div>
+        <div class="event-line grade-a"><span class="grade-badge a">A</span> <a href="2026-04-28.html#evt_004">David Silver 创立 Ineffable Intelligence,11 亿美元押注「无人类数据 AI」</a></div>
+        <div class="event-line grade-a"><span class="grade-badge a">A</span> <a href="2026-04-28.html#evt_005">小米开源 MiMo-V2.5,万亿 MoE 模型 agent 任务效率领跑</a></div>
+        <div class="event-line collapsible-event grade-a" style="display:none"><span class="grade-badge a">A</span> <a href="2026-04-28.html#evt_006">Mistral AI 发布 Workflows,生产级 agent 编排引擎日处理已达百万级</a></div>
+        <div class="event-line collapsible-event grade-a" style="display:none"><span class="grade-badge a">A</span> <a href="2026-04-28.html#evt_007">ASI-EVOLVE:让 AI 自动设计 AI,3B 模型 MMLU +18 分</a></div>
+        <div class="event-line collapsible-event grade-a" style="display:none"><span class="grade-badge a">A</span> <a href="2026-04-28.html#evt_008">中国出手阻止 Meta 收购 AI agent 初创公司 Manus</a></div>
+        <div class="event-line collapsible-event grade-a" style="display:none"><span class="grade-badge a">A</span> <a href="2026-04-28.html#evt_009">Profound CEO 系统阐述「agent-led growth」:SEO 时代终结</a></div>
+        <div class="event-line collapsible-event grade-b" style="display:none"><span class="grade-badge b">B</span> <a href="2026-04-28.html#evt_012">Google DeepMind 发布 Decoupled DiLoCo 弹性分布式训练方案</a></div>
+        <div class="event-line collapsible-event grade-b" style="display:none"><span class="grade-badge b">B</span> <a href="2026-04-28.html#evt_013">AI 招聘系统对 AI 撰写的简历存在系统性「自我偏好」</a></div>
+        <div class="event-line collapsible-event grade-b" style="display:none"><span class="grade-badge b">B</span> <a href="2026-04-28.html#evt_014">Neo Semiconductor 3D X-DRAM 通过概念验证,获新融资挑战 HBM</a></div>
+        <div class="event-line collapsible-event grade-b" style="display:none"><span class="grade-badge b">B</span> <a href="2026-04-28.html#evt_015">Red Hat OpenClaw 维护者推 Tank OS,容器化 agent 部署</a></div>
+        <div class="event-line collapsible-event grade-b" style="display:none"><span class="grade-badge b">B</span> <a href="2026-04-28.html#evt_016">Canva AI 被曝自动将「Palestine」替换为「Ukraine」</a></div>
+        <div class="event-line collapsible-event grade-b" style="display:none"><span class="grade-badge b">B</span> <a href="2026-04-28.html#evt_017">Garry Tan 公布 GStack /pair-agent:Claude Code 与本地浏览器深度集成</a></div>
+        <div class="event-line collapsible-event grade-b" style="display:none"><span class="grade-badge b">B</span> <a href="2026-04-28.html#evt_018">MIT Tech Review:AI 炒作与商业落地之间的「中间步骤」依然空白</a></div>
+        <div class="event-line collapsible-event grade-b" style="display:none"><span class="grade-badge b">B</span> <a href="2026-04-28.html#evt_019">Matt Turck:从未见过硅谷与企业之间如此巨大的认知落差</a></div>
+        <div class="event-line collapsible-event grade-c" style="display:none"><span class="grade-badge c">C</span> <a href="2026-04-28.html#evt_020">Taylor Swift 因 AI 仿声风险申请声音/形象商标保护</a></div>
+        <div class="event-line collapsible-event grade-c" style="display:none"><span class="grade-badge c">C</span> <a href="2026-04-28.html#evt_021">Replit CEO 启动「8 周赚到第一笔收入」创业挑战 + 进入加拿大</a></div>
+        <div class="event-line collapsible-event grade-c" style="display:none"><span class="grade-badge c">C</span> <a href="2026-04-28.html#evt_022">Tibo 五条单人 AI SaaS 创业建议(月入 $1M+)</a></div>
+        <div class="event-line collapsible-event grade-c" style="display:none"><span class="grade-badge c">C</span> <a href="2026-04-28.html#evt_023">Steinberger 案例:codex 自主用浏览器变通绕开 GitHub API 限速</a></div>
+        <div class="event-line collapsible-event grade-c" style="display:none"><span class="grade-badge c">C</span> <a href="2026-04-28.html#evt_024">Bevel 3.0 发布,定位「最智能健康与生物学伴侣」</a></div>
+        <div class="event-line collapsible-event grade-c" style="display:none"><span class="grade-badge c">C</span> <a href="2026-04-28.html#evt_025">观察:资深 AI 用户每天只与一个 agent 交互</a></div>
+        <div class="event-line collapsible-event grade-c" style="display:none"><span class="grade-badge c">C</span> <a href="2026-04-28.html#evt_026">AI 进入「恶意合规」时代:字面满足、违背意图</a></div>
+        <div class="event-line collapsible-event grade-c" style="display:none"><span class="grade-badge c">C</span> <a href="2026-04-28.html#evt_027">伦敦警察厅就警员使用 Palantir AI 工具展开内部调查</a></div>
+        <div class="event-line collapsible-event grade-c" style="display:none"><span class="grade-badge c">C</span> <a href="2026-04-28.html#evt_028">Otter 推跨企业工具搜索 + Windows 客户端</a></div>
+        <div class="event-line collapsible-event grade-c" style="display:none"><span class="grade-badge c">C</span> <a href="2026-04-28.html#evt_029">实验:用 1930 年前知识训练的 LLM 自主推导量子力学</a></div>
+        <div class="event-line collapsible-event grade-c" style="display:none"><span class="grade-badge c">C</span> <a href="2026-04-28.html#evt_030">其他工具/小项目速览(Sage-Wiki / PrePrompt / AI-X Scale / Agent Capsule)</a></div>
+        <div class="event-line collapsible-event grade-c" style="display:none"><span class="grade-badge c">C</span> <a href="2026-04-28.html#evt_031">其他产品/融资速览(Skye / Neurable / Canonical / NVIDIA 超声)</a></div>
+        <div class="expand-toggle" onclick="var p=this.parentElement;var items=p.querySelectorAll(&quot;.collapsible-event&quot;);items.forEach(function(el){el.style.display=el.style.display===&quot;none&quot;?&quot;flex&quot;:&quot;none&quot;});this.textContent=this.textContent.indexOf(&quot;展开&quot;)>=0?&quot;收起 ▲&quot;:&quot;展开其余 24 个事件 ▼&quot;">展开其余 24 个事件 ▼</div>
+        <div class="daily-stat">42 条新闻 → 32 个事件 · S:3 A:6 · <a href="2026-04-28.html">阅读日报 →</a></div>
+      </div>
+    </div>
+
+  </section>
+
+  <footer class="footer">
+    <span>AI 主编周刊 · 2026 第 18 周</span>
+    <span><a href="index.html" style="color: var(--gray-light);">返回存档</a></span>
+  </footer>
+
+</div>
+</body>
+</html>
