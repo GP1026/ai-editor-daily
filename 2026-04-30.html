@@ -25,12 +25,13 @@
     --font-serif: 'Noto Serif SC', 'Fraunces', serif;
     --font-mono: 'JetBrains Mono', 'Courier New', monospace;
   }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; min-width: 0; }
   html, body {
     background: var(--bg); color: var(--ink);
     font-family: var(--font-serif); font-weight: 400;
     line-height: 1.7; -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    overflow-x: hidden; max-width: 100vw;  /* 兜底:防止任何子元素溢出导致横向滚动 */
   }
   .page { max-width: 880px; margin: 0 auto; padding: 56px 48px 96px; position: relative; }
 
@@ -318,21 +319,37 @@
 
   /* 响应式 */
   @media (max-width: 720px) {
-    .page { padding: 32px 22px 64px; }
-    .masthead h1 { font-size: 48px; }
-    .masthead h1 .en { display: block; margin-left: 0; margin-top: 6px; }
-    .event { grid-template-columns: 1fr; gap: 12px; }
-    .event-num { font-size: 36px; }
+    .page { padding: 32px 16px 48px; }  /* 缩小左右内边距,把宽度尽可能让给内容 */
+    .masthead h1 { font-size: 44px; }
+    .masthead h1 .en { display: block; margin-left: 0; margin-top: 6px; font-size: 0.5em; }
+    .editorial-body { font-size: 15.5px; line-height: 1.8; }
+    .editorial-body p:first-child::first-letter { font-size: 48px; }
+    .event { grid-template-columns: 1fr; gap: 8px; padding: 28px 0; }
+    .event-num { font-size: 32px; }
+    .event-headline { font-size: 21px; line-height: 1.3; }
     .deep-row { grid-template-columns: 1fr; gap: 6px; }
     .deep-label { padding-top: 0; }
+    .deep-content { font-size: 14.5px; }
     .source-view { grid-template-columns: 1fr; gap: 4px; }
     .source-name {
       text-align: left; border-right: none; border-left: 2px solid var(--line);
       padding-right: 0; padding-left: 10px;
     }
+    .multi-source-event { padding: 18px 16px; }
     .source-row { grid-template-columns: 1fr; gap: 4px; }
-    .scan-item { grid-template-columns: 40px 1fr; }
-    .scan-source { grid-column: 2; }
+    .judgment { padding: 14px 16px; font-size: 14px; }
+    .scan-item { grid-template-columns: 40px 1fr; gap: 12px; }
+    .scan-source { grid-column: 2; white-space: normal; }  /* 取消 nowrap 防长 source 名撑宽 */
+    .scan-title { font-size: 14.5px; }
+    /* 长 URL/中文连串强制换行(中文默认会断,长 URL 默认不会) */
+    .scan-title, .scan-source, .source-link-item a, .deep-content,
+    .source-text, .source-row .view, .editorial-body p,
+    .event-headline, .judgment {
+      overflow-wrap: anywhere; word-break: break-word;
+    }
+    /* 来源链接行改成纵向 */
+    .source-link-item { flex-direction: column; align-items: flex-start; gap: 2px; }
+    .source-link-item .src-name { min-width: auto; }
   }
 </style>
 </head>
