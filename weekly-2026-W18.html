@@ -56,8 +56,7 @@
   .bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; font-size: 13px; }
   .bar-label { width: 110px; color: var(--ink-soft); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .bar-track { flex: 1; height: 14px; background: var(--bg-deep); border: 1px solid var(--line-soft); position: relative; }
-  .bar-fill { height: 100%; background: var(--accent); opacity: 0.2; }
-  .bar-fill.hot { opacity: 0.5; }
+  .bar-fill { height: 100%; background: var(--accent); opacity: 0.25; }
   .bar-count { font-family: var(--font-mono); font-size: 10px; color: var(--gray); width: 24px; text-align: right; }
   .tag-cloud { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
   .tag-pill { font-size: 13px; padding: 4px 14px; border-radius: 2px; border: 1px solid var(--line-soft); background: var(--bg-deep); color: var(--ink-soft); letter-spacing: 0.02em; }
@@ -111,7 +110,7 @@
   <article class="editorial">
     <div class="editorial-eyebrow">— 本周观察 / Weekly Narrative</div>
     <div class="editorial-body">
-      <p>本周观察将在周末生成完整版。目前已覆盖 1 天数据，以下为实时更新的每日速览和话题热力图。</p>
+      <p>本周观察将在周末生成完整版。目前已覆盖 5 天数据，以下为实时更新的每日速览和话题热力图。</p>
     </div>
     <div class="editorial-sign">— 编辑部 · 2026 第 18 周</div>
   </article>
@@ -123,33 +122,33 @@
     <div class="data-grid">
       <div class="data-card">
         <div class="data-card-title">技术领域 Top 6</div>
-        <div class="bar-row"><span class="bar-label">Agent</span><span class="bar-track"><span class="bar-fill hot" style="width:100%"></span></span><span class="bar-count">16</span></div>
-        <div class="bar-row"><span class="bar-label">大模型/LLM</span><span class="bar-track"><span class="bar-fill hot" style="width:93%"></span></span><span class="bar-count">15</span></div>
-        <div class="bar-row"><span class="bar-label">安全/对齐</span><span class="bar-track"><span class="bar-fill" style="width:37%"></span></span><span class="bar-count">6</span></div>
-        <div class="bar-row"><span class="bar-label">基础设施/MLOps</span><span class="bar-track"><span class="bar-fill" style="width:25%"></span></span><span class="bar-count">4</span></div>
-        <div class="bar-row"><span class="bar-label">微调/训练</span><span class="bar-track"><span class="bar-fill" style="width:18%"></span></span><span class="bar-count">3</span></div>
-        <div class="bar-row"><span class="bar-label">搜索/信息检索</span><span class="bar-track"><span class="bar-fill" style="width:18%"></span></span><span class="bar-count">3</span></div>
+        <div class="bar-row"><span class="bar-label">大模型/LLM</span><span class="bar-track"><span class="bar-fill" style="width:100%;opacity:0.85"></span></span><span class="bar-count">118</span></div>
+        <div class="bar-row"><span class="bar-label">Agent</span><span class="bar-track"><span class="bar-fill" style="width:85%;opacity:0.76"></span></span><span class="bar-count">101</span></div>
+        <div class="bar-row"><span class="bar-label">基础设施/MLOps</span><span class="bar-track"><span class="bar-fill" style="width:27%;opacity:0.41"></span></span><span class="bar-count">33</span></div>
+        <div class="bar-row"><span class="bar-label">安全/对齐</span><span class="bar-track"><span class="bar-fill" style="width:26%;opacity:0.41"></span></span><span class="bar-count">31</span></div>
+        <div class="bar-row"><span class="bar-label">微调/训练</span><span class="bar-track"><span class="bar-fill" style="width:20%;opacity:0.37"></span></span><span class="bar-count">24</span></div>
+        <div class="bar-row"><span class="bar-label">图像/视频生成</span><span class="bar-track"><span class="bar-fill" style="width:13%;opacity:0.33"></span></span><span class="bar-count">16</span></div>
       </div>
       <div class="data-card">
         <div class="data-card-title">事件类型分布</div>
-        <div class="bar-row"><span class="bar-label">产品发布</span><span class="bar-track"><span class="bar-fill hot" style="width:100%"></span></span><span class="bar-count">7</span></div>
-        <div class="bar-row"><span class="bar-label">观点/评论</span><span class="bar-track"><span class="bar-fill hot" style="width:100%"></span></span><span class="bar-count">7</span></div>
-        <div class="bar-row"><span class="bar-label">研究成果</span><span class="bar-track"><span class="bar-fill hot" style="width:85%"></span></span><span class="bar-count">6</span></div>
-        <div class="bar-row"><span class="bar-label">政策/监管</span><span class="bar-track"><span class="bar-fill" style="width:57%"></span></span><span class="bar-count">4</span></div>
-        <div class="bar-row"><span class="bar-label">行业动态</span><span class="bar-track"><span class="bar-fill" style="width:42%"></span></span><span class="bar-count">3</span></div>
-        <div class="bar-row"><span class="bar-label">融资/收购</span><span class="bar-track"><span class="bar-fill" style="width:28%"></span></span><span class="bar-count">2</span></div>
+        <div class="bar-row"><span class="bar-label">观点/评论</span><span class="bar-track"><span class="bar-fill" style="width:100%;opacity:0.85"></span></span><span class="bar-count">65</span></div>
+        <div class="bar-row"><span class="bar-label">产品发布</span><span class="bar-track"><span class="bar-fill" style="width:83%;opacity:0.75"></span></span><span class="bar-count">54</span></div>
+        <div class="bar-row"><span class="bar-label">行业动态</span><span class="bar-track"><span class="bar-fill" style="width:55%;opacity:0.58"></span></span><span class="bar-count">36</span></div>
+        <div class="bar-row"><span class="bar-label">研究成果</span><span class="bar-track"><span class="bar-fill" style="width:41%;opacity:0.5"></span></span><span class="bar-count">27</span></div>
+        <div class="bar-row"><span class="bar-label">教程/工具</span><span class="bar-track"><span class="bar-fill" style="width:21%;opacity:0.38"></span></span><span class="bar-count">14</span></div>
+        <div class="bar-row"><span class="bar-label">开源发布</span><span class="bar-track"><span class="bar-fill" style="width:20%;opacity:0.37"></span></span><span class="bar-count">13</span></div>
       </div>
     </div>
 
     <div style="margin-top: 24px;">
       <div class="data-card-title" style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; font-weight: 500;">影响力维度</div>
       <div class="tag-cloud">
-        <span class="tag-pill hot">信号性 <span class="count">17</span></span>
-        <span class="tag-pill hot">实用性 <span class="count">13</span></span>
-        <span class="tag-pill">争议性 <span class="count">8</span></span>
-        <span class="tag-pill">生态性 <span class="count">5</span></span>
-        <span class="tag-pill">突破性 <span class="count">4</span></span>
-        <span class="tag-pill">规模性 <span class="count">3</span></span>
+        <span class="tag-pill hot">信号性 <span class="count">101</span></span>
+        <span class="tag-pill hot">实用性 <span class="count">86</span></span>
+        <span class="tag-pill">争议性 <span class="count">47</span></span>
+        <span class="tag-pill">规模性 <span class="count">45</span></span>
+        <span class="tag-pill">突破性 <span class="count">28</span></span>
+        <span class="tag-pill">生态性 <span class="count">22</span></span>
       </div>
     </div>
   </section>
